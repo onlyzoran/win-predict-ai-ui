@@ -32,13 +32,22 @@ jobs:
         with:
           repository: onlyzoran/win-predict-ai-icons
           path: win-predict-ai-icons
-          token: ${{ secrets.NODE_AUTH_TOKEN }}
+          token: ${{ secrets.NODE_AUTH_TOKEN || github.token }}
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: win-predict-ai-ui/package-lock.json
+          cache-dependency-path: |
+            win-predict-ai-ui/package-lock.json
+            win-predict-ai-icons/package-lock.json
+
+      # file: link points at source repo — dist/ is gitignored, build it first
+      - name: Build icons
+        working-directory: win-predict-ai-icons
+        run: |
+          npm ci
+          npm run build
 
       - run: npm ci
 
