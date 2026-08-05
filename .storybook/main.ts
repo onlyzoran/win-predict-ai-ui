@@ -10,8 +10,13 @@ const config: StorybookConfig = {
     name: '@storybook/vue3-vite',
     options: {},
   },
-  async viteFinal(config) {
+  async viteFinal(config, { configType }) {
+    const base =
+      process.env.STORYBOOK_BASE ||
+      (configType === 'PRODUCTION' ? '/win-predict-ai-ui/' : '/')
+
     return mergeConfig(config, {
+      base,
       plugins: [tailwindcss()],
       resolve: {
         alias: {
