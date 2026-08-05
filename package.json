@@ -25,6 +25,7 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
+    "@onlyzoran/win-predict-ai-icons": "^0.4.0",
     "@vueuse/core": "^14.0.0",
     "reka-ui": "^2.0.0",
     "vue": "^3.3.0"
@@ -34,7 +35,7 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
-    "@onlyzoran/win-predict-ai-icons": "^0.4.0",
+    "@onlyzoran/win-predict-ai-icons": "file:../win-predict-ai-icons",
     "@storybook/addon-docs": "^9.1.20",
     "@storybook/vue3": "^9.1.20",
     "@storybook/vue3-vite": "^9.1.20",

@@ -154,7 +154,9 @@ npm run storybook
 
 Откроется превью на `http://localhost:6006`. Theme CSS для превью — копия токенов apps (только Storybook).
 
-Публичный каталог: [GitHub Pages](https://onlyzoran.github.io/win-predict-ai-ui/) (деплой из `main` через Actions). В настройках репозитория: **Settings → Pages → Source: GitHub Actions**. В Secrets нужен `NODE_AUTH_TOKEN` (`read:packages`) для установки `@onlyzoran/win-predict-ai-icons`.
+Публичный каталог: [GitHub Pages](https://onlyzoran.github.io/win-predict-ai-ui/) (деплой из `main` через Actions). В настройках репозитория: **Settings → Pages → Source: GitHub Actions**.
+
+Secret `NODE_AUTH_TOKEN` должен уметь **checkout** приватного `onlyzoran/win-predict-ai-icons` (достаточно `contents: read` / fine-grained: Contents read на icons). CI ставит icons через `file:../win-predict-ai-icons`, как локально.
 
 ```bash
 npm run build-storybook

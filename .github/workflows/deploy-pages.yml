@@ -17,23 +17,38 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: win-predict-ai-ui
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout UI
+        uses: actions/checkout@v4
+        with:
+          path: win-predict-ai-ui
+
+      # package-lock resolves icons via file:../win-predict-ai-icons
+      - name: Checkout icons
+        uses: actions/checkout@v4
+        with:
+          repository: onlyzoran/win-predict-ai-icons
+          path: win-predict-ai-icons
+          token: ${{ secrets.NODE_AUTH_TOKEN }}
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-          registry-url: https://npm.pkg.github.com
-          scope: '@onlyzoran'
+          cache-dependency-path: win-predict-ai-ui/package-lock.json
+
       - run: npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
       - run: npm run build-storybook
         env:
           STORYBOOK_BASE: /win-predict-ai-ui/
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: storybook-static
+          path: win-predict-ai-ui/storybook-static
 
   deploy:
     needs: build
