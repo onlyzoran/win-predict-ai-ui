@@ -1,5 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { IconPencil, IconPin, IconSearch } from '@onlyzoran/win-predict-ai-icons'
+import {
+  IconArrowsSort,
+  IconFlag,
+  IconGripVertical,
+  IconPencil,
+  IconPin,
+  IconSearch,
+} from '@onlyzoran/win-predict-ai-icons'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../src/components/ui/tabs'
 
 const meta = {
@@ -228,9 +235,18 @@ function leagueDetailTabsTemplate() {
 
       <Tabs default-value="standings" class="w-full">
         <TabsList aria-label="League detail sections">
-          <TabsTrigger value="standings">Standings</TabsTrigger>
-          <TabsTrigger value="playoff">Playoff projection</TabsTrigger>
-          <TabsTrigger value="movement">Standings movement</TabsTrigger>
+          <TabsTrigger value="standings" variant="with-icon">
+            <IconGripVertical aria-hidden="true" />
+            Standings
+          </TabsTrigger>
+          <TabsTrigger value="playoff" variant="with-icon">
+            <IconFlag aria-hidden="true" />
+            Playoff projection
+          </TabsTrigger>
+          <TabsTrigger value="movement" variant="with-icon">
+            <IconArrowsSort aria-hidden="true" />
+            Standings movement
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="standings" class="space-y-4">
@@ -343,9 +359,19 @@ function leagueDetailTabsTemplate() {
   `
 }
 
+const leagueDetailComponents = {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+  IconGripVertical,
+  IconFlag,
+  IconArrowsSort,
+}
+
 export const LeagueDetail: Story = {
   render: () => ({
-    components: { Tabs, TabsList, TabsTrigger, TabsContent },
+    components: leagueDetailComponents,
     template: leagueDetailTabsTemplate(),
   }),
 }
@@ -353,7 +379,7 @@ export const LeagueDetail: Story = {
 export const LeagueDetailLight: Story = {
   globals: { theme: 'light' },
   render: () => ({
-    components: { Tabs, TabsList, TabsTrigger, TabsContent },
+    components: leagueDetailComponents,
     template: leagueDetailTabsTemplate(),
   }),
 }
@@ -361,7 +387,7 @@ export const LeagueDetailLight: Story = {
 export const LeagueDetailDark: Story = {
   globals: { theme: 'dark' },
   render: () => ({
-    components: { Tabs, TabsList, TabsTrigger, TabsContent },
+    components: leagueDetailComponents,
     template: leagueDetailTabsTemplate(),
   }),
 }
