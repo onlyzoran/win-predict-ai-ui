@@ -47,6 +47,9 @@ const preview: Preview = {
       },
       template: `
         <div class="min-h-screen bg-background text-foreground p-6">
+          <p class="mb-4 rounded-md bg-amber-500/15 px-3 py-2 text-sm font-medium text-amber-800 dark:text-amber-200">
+            PR preview test — close this PR after checking GitHub Pages.
+          </p>
           <story />
         </div>
       `,
