@@ -1,0 +1,71 @@
+name: Deploy PR Storybook preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+# Share group with main Pages deploy to avoid racing pushes to gh-pages
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout UI
+        uses: actions/checkout@v4
+
+      - name: Checkout icons
+        if: github.event.action != 'closed'
+        uses: actions/checkout@v4
+        with:
+          repository: onlyzoran/win-predict-ai-icons
+          path: win-predict-ai-icons
+          token: ${{ secrets.NODE_AUTH_TOKEN || github.token }}
+
+      - name: Link icons as sibling
+        if: github.event.action != 'closed'
+        run: ln -sfn "${GITHUB_WORKSPACE}/win-predict-ai-icons" "${GITHUB_WORKSPACE}/../win-predict-ai-icons"
+
+      - uses: actions/setup-node@v4
+        if: github.event.action != 'closed'
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            win-predict-ai-icons/package-lock.json
+
+      - name: Build icons
+        if: github.event.action != 'closed'
+        working-directory: win-predict-ai-icons
+        run: |
+          npm ci
+          npm run build
+
+      - name: Install and build Storybook
+        if: github.event.action != 'closed'
+        env:
+          STORYBOOK_BASE: /win-predict-ai-ui/pr-preview/pr-${{ github.event.number }}/
+        run: |
+          npm ci
+          npm run build-storybook
+          touch storybook-static/.nojekyll
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./storybook-static/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          # Avoid failing the job when Pages briefly errors during concurrent updates
+          wait-for-pages-deployment: false
