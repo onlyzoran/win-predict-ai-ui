@@ -1,0 +1,51 @@
+name: UI component
+description: Запрос на новый или расширенный shared-компонент в @onlyzoran/win-predict-ai-ui
+title: "[ui] "
+labels: []
+body:
+  - type: input
+    id: component_name
+    attributes:
+      label: Название компонента
+      description: Например Card, Badge, EmptyState
+      placeholder: Card
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Контекст использования
+      description: Где будет жить в продукте (список прогнозов, настройки, админка…)
+      placeholder: Карточка матча в ленте прогнозов
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Слоты / props / состояния
+      description: Обязательный API, варианты, hover/focus/disabled, адаптив
+      placeholder: |
+        - слоты: header, content, footer
+        - props: …
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Ограничения
+      description: Что нельзя ломать, ссылки на макеты, a11y-требования
+      placeholder: Только семантические токены; light + dark в Storybook
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ## Запуск UI-агента
+
+        После создания issue добавь комментарий:
+
+        ```
+        /ui-agent
+        ```
+
+        Агент прочитает `DESIGN.md`, реализует компонент в этом репозитории и откроет PR с обоснованием UX/UI.

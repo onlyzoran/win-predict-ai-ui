@@ -4,6 +4,8 @@ Shared Vue 3 UI components for Win Predict AI: header shell, theme toggle, local
 
 Design tokens (CSS variables) stay in the apps — this package ships utility-class markup that expects the same zinc / shadcn-vue theme as `win-predict-ai`.
 
+**Design for humans and agents:** see [`DESIGN.md`](./DESIGN.md) (tokens, layout, Card conventions, do/don't). UI-agent runs from an issue comment `/ui-agent`.
+
 ## Установка
 
 Пакет публикуется в **GitHub Packages**, не в публичный npm.
