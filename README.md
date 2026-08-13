@@ -186,17 +186,27 @@ npm run storybook
 
 ## Публикация в GitHub Packages
 
-1. В `package.json`: `"name": "@onlyzoran/win-predict-ai-ui"`, `publishConfig.registry` → GitHub Packages.
-2. `.npmrc` со scope `@onlyzoran` и `${NODE_AUTH_TOKEN}`.
-3. PAT с `write:packages`:
+После мержа в `main` workflow **Release package** сам поднимает версию и публикует пакет.
+
+| Как задать bump | Результат |
+| --- | --- |
+| новые `.vue` в `src/components/` (кроме внутреннего `ui/dropdown-menu`) | `minor` |
+| без новых компонентов | `patch` |
+| `[major]` / `[minor]` / `[patch]` в сообщении коммита | принудительно |
+| `[skip release]` | не публиковать |
+
+Вручную: **Actions → Release package → Run workflow** (выбор patch / minor / major).
+
+Локально (если нужно):
 
 ```bash
-export NODE_AUTH_TOKEN=ghp_xxxxxxxx
-npm run build
+export NODE_AUTH_TOKEN=ghp_xxxxxxxx   # write:packages
+npm version patch|minor|major
 npm publish
+git push && git push --tags
 ```
 
-`prepublishOnly` запускает `build` перед publish.
+`prepublishOnly` запускает `build` перед publish. Registry: `https://npm.pkg.github.com` (см. `.npmrc`).
 
 ## Структура
 
