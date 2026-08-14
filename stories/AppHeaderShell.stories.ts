@@ -94,3 +94,13 @@ export const BrandOnly: Story = {
     `,
   }),
 }
+
+export const Light: Story = {
+  globals: { theme: 'light' },
+  ...WithGitHubAndActions,
+}
+
+export const Dark: Story = {
+  globals: { theme: 'dark' },
+  ...WithGitHubAndActions,
+}
