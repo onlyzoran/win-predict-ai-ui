@@ -4,7 +4,8 @@
   "description": "Shared Vue 3 UI components for Win Predict AI (header shell, theme, locale)",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "src/themes"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -14,9 +15,14 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
-    }
+    },
+    "./themes": "./src/themes/index.css",
+    "./themes/zinc.css": "./src/themes/zinc.css",
+    "./themes/slate-teal.css": "./src/themes/slate-teal.css"
   },
-  "sideEffects": false,
+  "sideEffects": [
+    "src/themes/**/*.css"
+  ],
   "scripts": {
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json",
     "type-check": "vue-tsc --noEmit -p tsconfig.build.json",
