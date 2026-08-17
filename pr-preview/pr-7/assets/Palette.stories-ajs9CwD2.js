@@ -1,4 +1,4 @@
-const d={title:"Win Predict AI / UI / Palette",tags:["autodocs"],parameters:{layout:"padded"}};function s(){return`
+const o={title:"Win Predict AI / UI / Palette",tags:["autodocs"],parameters:{layout:"padded"}};function e(){return`
     <div class="mx-auto flex w-full max-w-3xl flex-col gap-8">
       <section>
         <h2 class="mb-3 text-sm font-semibold text-foreground">Surfaces</h2>
@@ -102,22 +102,36 @@ const d={title:"Win Predict AI / UI / Palette",tags:["autodocs"],parameters:{lay
         </div>
       </section>
     </div>
-  `}const e={render:()=>({template:s()})},t={globals:{theme:"light"},render:()=>({template:s()})},r={globals:{theme:"dark"},render:()=>({template:s()})};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
-  render: () => ({
-    template: paletteTemplate()
-  })
-}`,...e.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
-  globals: {
-    theme: 'light'
-  },
+  `}const t={render:()=>({template:e()})},r={globals:{theme:"legacy-light"},render:()=>({template:e()})},s={globals:{theme:"legacy-dark"},render:()=>({template:e()})},a={globals:{theme:"win-predict-light"},render:()=>({template:e()})},d={globals:{theme:"win-predict-dark"},render:()=>({template:e()})};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
   render: () => ({
     template: paletteTemplate()
   })
 }`,...t.parameters?.docs?.source}}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
   globals: {
-    theme: 'dark'
+    theme: 'legacy-light'
   },
   render: () => ({
     template: paletteTemplate()
   })
-}`,...r.parameters?.docs?.source}}};const a=["Default","Light","Dark"];export{r as Dark,e as Default,t as Light,a as __namedExportsOrder,d as default};
+}`,...r.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  globals: {
+    theme: 'legacy-dark'
+  },
+  render: () => ({
+    template: paletteTemplate()
+  })
+}`,...s.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  globals: {
+    theme: 'win-predict-light'
+  },
+  render: () => ({
+    template: paletteTemplate()
+  })
+}`,...a.parameters?.docs?.source}}};d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
+  globals: {
+    theme: 'win-predict-dark'
+  },
+  render: () => ({
+    template: paletteTemplate()
+  })
+}`,...d.parameters?.docs?.source}}};const n=["Default","LegacyLight","LegacyDark","WinPredictLight","WinPredictDark"];export{t as Default,s as LegacyDark,r as LegacyLight,d as WinPredictDark,a as WinPredictLight,n as __namedExportsOrder,o as default};
