@@ -47,7 +47,7 @@ export const Default: Story = {
 }
 
 export const Light: Story = {
-  globals: { theme: 'light' },
+  globals: { theme: 'win-predict-light' },
   render: () => ({
     components: { Tabs, TabsList, TabsTrigger, TabsContent },
     template: tabsTemplate(),
@@ -55,7 +55,7 @@ export const Light: Story = {
 }
 
 export const Dark: Story = {
-  globals: { theme: 'dark' },
+  globals: { theme: 'win-predict-dark' },
   render: () => ({
     components: { Tabs, TabsList, TabsTrigger, TabsContent },
     template: tabsTemplate(),
@@ -120,7 +120,7 @@ export const WithIcons: Story = {
 }
 
 export const WithIconsLight: Story = {
-  globals: { theme: 'light' },
+  globals: { theme: 'win-predict-light' },
   render: () => ({
     components: { Tabs, TabsList, TabsTrigger, TabsContent, IconSearch, IconPin, IconPencil },
     template: withIconsTemplate(),
@@ -128,7 +128,7 @@ export const WithIconsLight: Story = {
 }
 
 export const WithIconsDark: Story = {
-  globals: { theme: 'dark' },
+  globals: { theme: 'win-predict-dark' },
   render: () => ({
     components: { Tabs, TabsList, TabsTrigger, TabsContent, IconSearch, IconPin, IconPencil },
     template: withIconsTemplate(),
@@ -377,7 +377,7 @@ export const LeagueDetail: Story = {
 }
 
 export const LeagueDetailLight: Story = {
-  globals: { theme: 'light' },
+  globals: { theme: 'win-predict-light' },
   render: () => ({
     components: leagueDetailComponents,
     template: leagueDetailTabsTemplate(),
@@ -385,7 +385,7 @@ export const LeagueDetailLight: Story = {
 }
 
 export const LeagueDetailDark: Story = {
-  globals: { theme: 'dark' },
+  globals: { theme: 'win-predict-dark' },
   render: () => ({
     components: leagueDetailComponents,
     template: leagueDetailTabsTemplate(),

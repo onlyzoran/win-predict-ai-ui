@@ -22,11 +22,11 @@ export const Default: Story = {
 }
 
 export const Light: Story = {
-  globals: { theme: 'light' },
+  globals: { theme: 'win-predict-light' },
   args: { ...Default.args },
 }
 
 export const Dark: Story = {
-  globals: { theme: 'dark' },
+  globals: { theme: 'win-predict-dark' },
   args: { ...Default.args },
 }

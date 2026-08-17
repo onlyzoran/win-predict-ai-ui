@@ -125,15 +125,29 @@ export const Default: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'light' },
+export const LegacyLight: Story = {
+  globals: { theme: 'legacy-light' },
   render: () => ({
     template: paletteTemplate(),
   }),
 }
 
-export const Dark: Story = {
-  globals: { theme: 'dark' },
+export const LegacyDark: Story = {
+  globals: { theme: 'legacy-dark' },
+  render: () => ({
+    template: paletteTemplate(),
+  }),
+}
+
+export const WinPredictLight: Story = {
+  globals: { theme: 'win-predict-light' },
+  render: () => ({
+    template: paletteTemplate(),
+  }),
+}
+
+export const WinPredictDark: Story = {
+  globals: { theme: 'win-predict-dark' },
   render: () => ({
     template: paletteTemplate(),
   }),
