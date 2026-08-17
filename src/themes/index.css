@@ -1,0 +1,14 @@
+/*
+ * Все палитры Win Predict AI — единый источник правды для app, admin и Storybook.
+ *
+ * Использование в потребителе:
+ *   @import '@onlyzoran/win-predict-ai-ui/themes';
+ *   @import '@onlyzoran/win-predict-ai-ui/themes/zinc.css';
+ *   @import '@onlyzoran/win-predict-ai-ui/themes/slate-teal.css';
+ *
+ * Активация: data-palette="zinc" | "slate-teal" на html (или корневом контейнере),
+ * переключение dark mode — класс .dark на том же элементе.
+ */
+
+@import './zinc.css';
+@import './slate-teal.css';

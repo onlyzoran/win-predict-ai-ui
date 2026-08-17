@@ -5,8 +5,9 @@
 ## Философия
 
 - Shared Vue 3 package в стиле **zinc / shadcn-vue**.
-- **Design tokens живут в приложениях** (CSS variables). Этот пакет отдаёт markup с utility-классами (`bg-card`, `text-muted-foreground`, `rounded-lg`), которые ожидают ту же тему, что и `win-predict-ai`.
-- Theme CSS из `.storybook/preview.css` — **только для Storybook**. Не публиковать и не импортировать в runtime apps.
+- **Design tokens** — единый источник правды в `src/themes/` (CSS-переменные). Публикуются в npm; app и admin импортируют `@onlyzoran/win-predict-ai-ui/themes`.
+- Компоненты используют utility-классы (`bg-card`, `text-muted-foreground`, …), которые читают те же CSS variables.
+- Storybook подключает те же файлы через `.storybook/preview.css` — дублирования hex нет.
 
 ## Цвета
 
@@ -23,10 +24,9 @@
 
 **Do:** `bg-card`, `border-border`, `text-muted-foreground`, `focus-visible:ring-ring/50`.
 
-**Don't (в новых компонентах):** сырые hex, `oklch(...)` в SFC, палитра `zinc-*` / `slate-*` как замена токенам.  
-`ThemeToggle` ещё содержит `zinc-*` — **не копировать** как образец для новых компонентов.
+**Don't (в новых компонентах):** сырые hex, `oklch(...)` в SFC, палитра `zinc-*` / `slate-*` как замена токенам.
 
-Не меняй значения токенов в `.storybook/preview.css` без явной задачи в issue (токены apps — источник правды).
+Значения токенов менять только в `src/themes/*.css` (и синхронно проверять Storybook). Имена токенов и utility-классы не трогать.
 
 ## Типографика
 
@@ -54,6 +54,7 @@
 | Публичный компонент | `src/components/<Name>.vue` |
 | Внутренние reka/shadcn куски | `src/components/ui/<primitive>/` |
 | Публичный экспорт | `src/index.ts` |
+| Темы (CSS tokens) | `src/themes/` — `@onlyzoran/win-predict-ai-ui/themes` |
 | Storybook | `stories/<Name>.stories.ts`, title `Win Predict AI / UI / <Name>` |
 
 Стори: минимум **Default** + **Light** / **Dark** через `globals.theme`, по образцу `ThemeToggle.stories.ts`.
@@ -81,7 +82,7 @@
 
 **Don't**
 
-- Тащить theme CSS в npm-пакет / импортировать его в apps.
+- Дублировать hex/oklch тем в app/admin — импортировать из `@onlyzoran/win-predict-ai-ui/themes`.
 - Менять приложения-потребители из этого репо.
 - Добавлять шрифты или сырые цвета «для красоты».
 - Мержить без человека; UI-агент только открывает PR.
