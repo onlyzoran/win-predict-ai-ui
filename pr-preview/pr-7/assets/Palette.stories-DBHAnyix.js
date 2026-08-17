@@ -102,36 +102,36 @@ const o={title:"Win Predict AI / UI / Palette",tags:["autodocs"],parameters:{lay
         </div>
       </section>
     </div>
-  `}const t={render:()=>({template:e()})},r={globals:{theme:"legacy-light"},render:()=>({template:e()})},s={globals:{theme:"legacy-dark"},render:()=>({template:e()})},a={globals:{theme:"win-predict-light"},render:()=>({template:e()})},d={globals:{theme:"win-predict-dark"},render:()=>({template:e()})};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  `}const t={render:()=>({template:e()})},r={globals:{theme:"zinc-light"},render:()=>({template:e()})},s={globals:{theme:"zinc-dark"},render:()=>({template:e()})},a={globals:{theme:"slate-teal-light"},render:()=>({template:e()})},d={globals:{theme:"slate-teal-dark"},render:()=>({template:e()})};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
   render: () => ({
     template: paletteTemplate()
   })
 }`,...t.parameters?.docs?.source}}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
   globals: {
-    theme: 'legacy-light'
+    theme: 'zinc-light'
   },
   render: () => ({
     template: paletteTemplate()
   })
 }`,...r.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
   globals: {
-    theme: 'legacy-dark'
+    theme: 'zinc-dark'
   },
   render: () => ({
     template: paletteTemplate()
   })
 }`,...s.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
   globals: {
-    theme: 'win-predict-light'
+    theme: 'slate-teal-light'
   },
   render: () => ({
     template: paletteTemplate()
   })
 }`,...a.parameters?.docs?.source}}};d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
   globals: {
-    theme: 'win-predict-dark'
+    theme: 'slate-teal-dark'
   },
   render: () => ({
     template: paletteTemplate()
   })
-}`,...d.parameters?.docs?.source}}};const n=["Default","LegacyLight","LegacyDark","WinPredictLight","WinPredictDark"];export{t as Default,s as LegacyDark,r as LegacyLight,d as WinPredictDark,a as WinPredictLight,n as __namedExportsOrder,o as default};
+}`,...d.parameters?.docs?.source}}};const n=["Default","ZincLight","ZincDark","SlateTealLight","SlateTealDark"];export{t as Default,d as SlateTealDark,a as SlateTealLight,s as ZincDark,r as ZincLight,n as __namedExportsOrder,o as default};
