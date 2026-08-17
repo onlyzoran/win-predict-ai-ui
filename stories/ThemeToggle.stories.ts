@@ -22,11 +22,11 @@ export const Default: Story = {
 }
 
 export const Light: Story = {
-  globals: { theme: 'light' },
+  globals: { theme: 'slate-teal-light' },
   args: { ...Default.args },
 }
 
 export const Dark: Story = {
-  globals: { theme: 'dark' },
+  globals: { theme: 'slate-teal-dark' },
   args: { ...Default.args },
 }

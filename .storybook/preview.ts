@@ -2,6 +2,36 @@ import type { Preview } from '@storybook/vue3'
 import { computed, onMounted, watch } from 'vue'
 import './preview.css'
 
+/** Toolbar values: zinc-light | zinc-dark | slate-teal-light | slate-teal-dark */
+const THEME_VALUES = [
+  'zinc-light',
+  'zinc-dark',
+  'slate-teal-light',
+  'slate-teal-dark',
+] as const
+
+type ThemeValue = (typeof THEME_VALUES)[number]
+
+function parseTheme(value: string): { palette: 'zinc' | 'slate-teal'; dark: boolean } {
+  switch (value as ThemeValue) {
+    case 'zinc-light':
+      return { palette: 'zinc', dark: false }
+    case 'zinc-dark':
+      return { palette: 'zinc', dark: true }
+    case 'slate-teal-dark':
+      return { palette: 'slate-teal', dark: true }
+    case 'slate-teal-light':
+    default:
+      return { palette: 'slate-teal', dark: false }
+  }
+}
+
+function applyTheme(value: string) {
+  const { palette, dark } = parseTheme(value)
+  document.documentElement.setAttribute('data-palette', palette)
+  document.documentElement.classList.toggle('dark', dark)
+}
+
 const preview: Preview = {
   parameters: {
     layout: 'fullscreen',
@@ -15,30 +45,28 @@ const preview: Preview = {
   },
   globalTypes: {
     theme: {
-      description: 'Color theme',
+      description: 'Color palette and mode (Storybook-only)',
       toolbar: {
-        title: 'Theme',
-        icon: 'circlehollow',
+        title: 'Palette',
+        icon: 'paintbrush',
         items: [
-          { value: 'light', title: 'Light', icon: 'sun' },
-          { value: 'dark', title: 'Dark', icon: 'moon' },
+          { value: 'zinc-light', title: 'Zinc · Light', icon: 'sun' },
+          { value: 'zinc-dark', title: 'Zinc · Dark', icon: 'moon' },
+          { value: 'slate-teal-light', title: 'Slate + Teal · Light', icon: 'sun' },
+          { value: 'slate-teal-dark', title: 'Slate + Teal · Dark', icon: 'moon' },
         ],
         dynamicTitle: true,
       },
     },
   },
   initialGlobals: {
-    theme: 'light',
+    theme: 'slate-teal-light',
   },
   decorators: [
     (story, context) => ({
       components: { story },
       setup() {
         const theme = computed(() => context.globals.theme as string)
-
-        function applyTheme(value: string) {
-          document.documentElement.classList.toggle('dark', value === 'dark')
-        }
 
         onMounted(() => applyTheme(theme.value))
         watch(theme, applyTheme)
