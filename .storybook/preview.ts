@@ -2,27 +2,27 @@ import type { Preview } from '@storybook/vue3'
 import { computed, onMounted, watch } from 'vue'
 import './preview.css'
 
-/** Toolbar values: legacy-light | legacy-dark | win-predict-light | win-predict-dark */
+/** Toolbar values: zinc-light | zinc-dark | slate-teal-light | slate-teal-dark */
 const THEME_VALUES = [
-  'legacy-light',
-  'legacy-dark',
-  'win-predict-light',
-  'win-predict-dark',
+  'zinc-light',
+  'zinc-dark',
+  'slate-teal-light',
+  'slate-teal-dark',
 ] as const
 
 type ThemeValue = (typeof THEME_VALUES)[number]
 
-function parseTheme(value: string): { palette: 'legacy' | 'win-predict'; dark: boolean } {
+function parseTheme(value: string): { palette: 'zinc' | 'slate-teal'; dark: boolean } {
   switch (value as ThemeValue) {
-    case 'legacy-light':
-      return { palette: 'legacy', dark: false }
-    case 'legacy-dark':
-      return { palette: 'legacy', dark: true }
-    case 'win-predict-dark':
-      return { palette: 'win-predict', dark: true }
-    case 'win-predict-light':
+    case 'zinc-light':
+      return { palette: 'zinc', dark: false }
+    case 'zinc-dark':
+      return { palette: 'zinc', dark: true }
+    case 'slate-teal-dark':
+      return { palette: 'slate-teal', dark: true }
+    case 'slate-teal-light':
     default:
-      return { palette: 'win-predict', dark: false }
+      return { palette: 'slate-teal', dark: false }
   }
 }
 
@@ -50,17 +50,17 @@ const preview: Preview = {
         title: 'Palette',
         icon: 'paintbrush',
         items: [
-          { value: 'legacy-light', title: 'Старый · Light (zinc)', icon: 'sun' },
-          { value: 'legacy-dark', title: 'Старый · Dark (zinc)', icon: 'moon' },
-          { value: 'win-predict-light', title: 'Новый · Light (teal)', icon: 'sun' },
-          { value: 'win-predict-dark', title: 'Новый · Dark (teal)', icon: 'moon' },
+          { value: 'zinc-light', title: 'Zinc · Light', icon: 'sun' },
+          { value: 'zinc-dark', title: 'Zinc · Dark', icon: 'moon' },
+          { value: 'slate-teal-light', title: 'Slate + Teal · Light', icon: 'sun' },
+          { value: 'slate-teal-dark', title: 'Slate + Teal · Dark', icon: 'moon' },
         ],
         dynamicTitle: true,
       },
     },
   },
   initialGlobals: {
-    theme: 'win-predict-light',
+    theme: 'slate-teal-light',
   },
   decorators: [
     (story, context) => ({

@@ -47,15 +47,15 @@
 /*
  * Storybook-only palettes (не публикуются в npm).
  *
- * data-palette="legacy" — исходная zinc/shadcn-схема из main (до PR).
- * data-palette="win-predict" — новая палитра Win Predict (Design Read ниже).
+ * data-palette="zinc" — нейтральный zinc/shadcn (achromatic primary, без tint).
+ * data-palette="slate-teal" — холодный slate (~235°) + teal-акцент (~195°).
  *
- * Design Read (win-predict): спортивный терминал прогнозов — спокойный, точный, вечерний;
- * не zinc-SaaS и не кислотный dark. Акцент teal ~195°.
+ * Design Read (slate-teal): спортивный терминал прогнозов — спокойный, точный, вечерний;
+ * не zinc-SaaS и не кислотный dark.
  */
 
-/* ── Legacy (старый zinc/shadcn) · Light ── */
-html[data-palette='legacy'] {
+/* ── Zinc (нейтральный shadcn) · Light ── */
+html[data-palette='zinc'] {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -90,8 +90,8 @@ html[data-palette='legacy'] {
   --sidebar-ring: oklch(0.705 0.015 286.067);
 }
 
-/* ── Legacy · Dark ── */
-html[data-palette='legacy'].dark {
+/* ── Zinc · Dark ── */
+html[data-palette='zinc'].dark {
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
@@ -125,8 +125,8 @@ html[data-palette='legacy'].dark {
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
-/* ── Win Predict (новый) · Light ── */
-html[data-palette='win-predict'] {
+/* ── Slate + Teal · Light ── */
+html[data-palette='slate-teal'] {
   --radius: 0.625rem;
   --background: oklch(0.978 0.006 235);
   --foreground: oklch(0.24 0.025 235);
@@ -161,8 +161,8 @@ html[data-palette='win-predict'] {
   --sidebar-ring: oklch(0.48 0.13 195);
 }
 
-/* ── Win Predict · Dark ── */
-html[data-palette='win-predict'].dark {
+/* ── Slate + Teal · Dark ── */
+html[data-palette='slate-teal'].dark {
   --background: oklch(0.17 0.022 235);
   --foreground: oklch(0.92 0.012 235);
   --card: oklch(0.22 0.026 235);

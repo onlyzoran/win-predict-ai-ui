@@ -96,11 +96,11 @@ export const BrandOnly: Story = {
 }
 
 export const Light: Story = {
-  globals: { theme: 'win-predict-light' },
+  globals: { theme: 'slate-teal-light' },
   ...WithGitHubAndActions,
 }
 
 export const Dark: Story = {
-  globals: { theme: 'win-predict-dark' },
+  globals: { theme: 'slate-teal-dark' },
   ...WithGitHubAndActions,
 }
