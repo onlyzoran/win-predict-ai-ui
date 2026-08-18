@@ -36,32 +36,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      # package-lock resolves icons via file:../win-predict-ai-icons
-      - name: Checkout icons
-        uses: actions/checkout@v4
-        with:
-          repository: onlyzoran/win-predict-ai-icons
-          path: win-predict-ai-icons
-          token: ${{ secrets.NODE_AUTH_TOKEN || github.token }}
-
-      - name: Link icons as sibling
-        run: ln -sfn "${GITHUB_WORKSPACE}/win-predict-ai-icons" "${GITHUB_WORKSPACE}/../win-predict-ai-icons"
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: |
-            package-lock.json
-            win-predict-ai-icons/package-lock.json
+          cache-dependency-path: package-lock.json
           registry-url: https://npm.pkg.github.com
           scope: '@onlyzoran'
-
-      - name: Build icons
-        working-directory: win-predict-ai-icons
-        run: |
-          npm ci
-          npm run build
 
       - run: npm ci
         env:

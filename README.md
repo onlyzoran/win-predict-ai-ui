@@ -181,7 +181,7 @@ npm run storybook
 `https://onlyzoran.github.io/win-predict-ai-ui/pr-preview/pr-<N>/`.
 После закрытия PR превью удаляется.
 
-Secret `NODE_AUTH_TOKEN` должен уметь **checkout** приватного `onlyzoran/win-predict-ai-icons` (достаточно `contents: read` / fine-grained: Contents read на icons). CI ставит icons через `file:../win-predict-ai-icons`, как локально.
+Secret `NODE_AUTH_TOKEN` должен иметь **read:packages** для установки `@onlyzoran/win-predict-ai-icons` из GitHub Packages (fine-grained: Packages read на icons или classic `read:packages`).
 
 ```bash
 npm run build-storybook
