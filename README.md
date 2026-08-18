@@ -37,7 +37,7 @@ npm install @onlyzoran/win-predict-ai-ui
 | --- | --- |
 | `vue` | ^3.3 |
 | `@vueuse/core` | ^14 |
-| `@onlyzoran/win-predict-ai-icons` | ^0.13 |
+| `@onlyzoran/win-predict-ai-icons` | ^0.14 |
 | `reka-ui` | ^2 |
 
 ## Tailwind content / sources
