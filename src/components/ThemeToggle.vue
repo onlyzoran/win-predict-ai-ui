@@ -43,8 +43,8 @@ function toggleTheme() {
       class="pointer-events-none absolute top-1/2 inline-flex size-6 -translate-y-1/2 items-center justify-center rounded-full shadow-sm transition-[left,right,background-color,color,box-shadow] duration-200"
       :class="
         isDark
-          ? 'right-0.5 left-auto bg-background text-foreground shadow-md'
-          : 'left-0.5 right-auto bg-card text-muted-foreground'
+          ? 'right-0.3 left-auto bg-background text-foreground shadow-md'
+          : 'left-0.3 right-auto bg-card text-muted-foreground'
       "
     >
       <IconMoon v-if="isDark" class="size-3.5" :stroke="2" />
