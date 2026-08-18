@@ -2,7 +2,7 @@
 
 Shared Vue 3 UI components for Win Predict AI: header shell, theme toggle, locale switcher.
 
-Design tokens (CSS variables) stay in the apps — this package ships utility-class markup that expects the same zinc / shadcn-vue theme as `win-predict-ai`.
+Design tokens (CSS variables) live in `src/themes/` and ship with the package — app and admin import `@onlyzoran/win-predict-ai-ui/themes`.
 
 **Design for humans and agents:** see [`DESIGN.md`](./DESIGN.md) (tokens, layout, Card conventions, do/don't). UI-agent: `/ui-agent` on an issue (new PR) or on an open PR (same-branch revision).
 
@@ -84,7 +84,21 @@ export default {
 @source "../../node_modules/@onlyzoran/win-predict-ai-ui/dist";
 ```
 
-Приложения уже шарят zinc/shadcn CSS variables — **не** импортируйте theme CSS из этого пакета в runtime apps.
+## Темы (CSS tokens)
+
+Палитры: `zinc`, `slate-teal`, `claude-plus`. Единый источник — `src/themes/*.css`.
+
+```css
+/* все палитры */
+@import '@onlyzoran/win-predict-ai-ui/themes';
+
+/* или одна */
+@import '@onlyzoran/win-predict-ai-ui/themes/claude-plus.css';
+```
+
+Активация на `html` (или корневом контейнере): `data-palette="claude-plus"`, dark mode — класс `.dark` на том же элементе.
+
+Константы для runtime: `PALETTES`, `DEFAULT_PALETTE`, тип `Palette` из основного экспорта пакета.
 
 ## Использование
 
@@ -217,6 +231,7 @@ src/
     LocaleSwitcher.vue
     AppHeaderShell.vue
     ui/dropdown-menu/   # минимальный shadcn/reka набор (внутренний)
+  themes/               # CSS tokens (zinc, slate-teal, claude-plus) — в npm
   utils/cn.ts
   index.ts
 stories/                # Storybook stories (не в npm)
