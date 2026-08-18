@@ -40,11 +40,11 @@ function toggleTheme() {
     @click="toggleTheme"
   >
     <span
-      class="pointer-events-none absolute top-1/2 left-[calc(var(--spacing)*0.3)] inline-flex size-6 -translate-y-1/2 items-center justify-center rounded-full shadow-sm transition-[transform,background-color,color,box-shadow] duration-200"
+      class="pointer-events-none absolute top-1/2 inline-flex size-6 -translate-y-1/2 items-center justify-center rounded-full shadow-sm transition-[left,right,background-color,color,box-shadow] duration-200"
       :class="
         isDark
-          ? 'translate-x-[calc(var(--spacing)*7.4)] bg-background text-foreground shadow-md'
-          : 'translate-x-0 bg-card text-muted-foreground'
+          ? 'right-0.5 left-auto bg-background text-foreground shadow-md'
+          : 'left-0.5 right-auto bg-card text-muted-foreground'
       "
     >
       <IconMoon v-if="isDark" class="size-3.5" :stroke="2" />
