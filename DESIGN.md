@@ -44,8 +44,8 @@
 - Vue SFC, `<script setup lang="ts">`.
 - Стили: Tailwind utility + `cn()` из `src/utils/cn.ts` (`clsx` + `tailwind-merge`).
 - Headless: **reka-ui** (shadcn-vue style) под `src/components/ui/` — внутренние примитивы, не обязаны быть в публичном API.
-- Иконки: `@onlyzoran/win-predict-ai-icons` (peer), не копировать SVG в пакет без нужды.
-- Не ломать peer dependencies (`vue`, `@vueuse/core`, icons, `reka-ui`).
+- Иконки: `@onlyzoran/win-predict-ai-icons` (dependency пакета, external в сборке), не копировать SVG в пакет без нужды.
+- Не ломать peer dependencies (`vue`, `@vueuse/core`, `reka-ui`).
 
 ## Где что класть
 
