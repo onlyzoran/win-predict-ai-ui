@@ -1,4 +1,4 @@
-const o={title:"Win Predict AI / UI / Palette",tags:["autodocs"],parameters:{layout:"padded"}};function e(){return`
+const n={title:"Win Predict AI / UI / Palette",tags:["autodocs"],parameters:{layout:"padded"}};function e(){return`
     <div class="mx-auto flex w-full max-w-3xl flex-col gap-8">
       <section>
         <h2 class="mb-3 text-sm font-semibold text-foreground">Surfaces</h2>
@@ -102,7 +102,7 @@ const o={title:"Win Predict AI / UI / Palette",tags:["autodocs"],parameters:{lay
         </div>
       </section>
     </div>
-  `}const t={render:()=>({template:e()})},r={globals:{theme:"zinc-light"},render:()=>({template:e()})},s={globals:{theme:"zinc-dark"},render:()=>({template:e()})},a={globals:{theme:"slate-teal-light"},render:()=>({template:e()})},d={globals:{theme:"slate-teal-dark"},render:()=>({template:e()})};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  `}const t={render:()=>({template:e()})},r={globals:{theme:"zinc-light"},render:()=>({template:e()})},s={globals:{theme:"zinc-dark"},render:()=>({template:e()})},a={globals:{theme:"slate-teal-light"},render:()=>({template:e()})},d={globals:{theme:"slate-teal-dark"},render:()=>({template:e()})},o={globals:{theme:"claude-plus-light"},render:()=>({template:e()})},l={globals:{theme:"claude-plus-dark"},render:()=>({template:e()})};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
   render: () => ({
     template: paletteTemplate()
   })
@@ -134,4 +134,18 @@ const o={title:"Win Predict AI / UI / Palette",tags:["autodocs"],parameters:{lay
   render: () => ({
     template: paletteTemplate()
   })
-}`,...d.parameters?.docs?.source}}};const n=["Default","ZincLight","ZincDark","SlateTealLight","SlateTealDark"];export{t as Default,d as SlateTealDark,a as SlateTealLight,s as ZincDark,r as ZincLight,n as __namedExportsOrder,o as default};
+}`,...d.parameters?.docs?.source}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  globals: {
+    theme: 'claude-plus-light'
+  },
+  render: () => ({
+    template: paletteTemplate()
+  })
+}`,...o.parameters?.docs?.source}}};l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  globals: {
+    theme: 'claude-plus-dark'
+  },
+  render: () => ({
+    template: paletteTemplate()
+  })
+}`,...l.parameters?.docs?.source}}};const c=["Default","ZincLight","ZincDark","SlateTealLight","SlateTealDark","ClaudePlusLight","ClaudePlusDark"];export{l as ClaudePlusDark,o as ClaudePlusLight,t as Default,d as SlateTealDark,a as SlateTealLight,s as ZincDark,r as ZincLight,c as __namedExportsOrder,n as default};
