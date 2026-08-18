@@ -152,3 +152,17 @@ export const SlateTealDark: Story = {
     template: paletteTemplate(),
   }),
 }
+
+export const ClaudePlusLight: Story = {
+  globals: { theme: 'claude-plus-light' },
+  render: () => ({
+    template: paletteTemplate(),
+  }),
+}
+
+export const ClaudePlusDark: Story = {
+  globals: { theme: 'claude-plus-dark' },
+  render: () => ({
+    template: paletteTemplate(),
+  }),
+}

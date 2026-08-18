@@ -47,6 +47,9 @@
 /* Палитры — единый источник правды в src/themes/ (публикуются в npm). */
 @import '../src/themes/index.css';
 
+/* Claude+ — Storybook-only, не в npm exports (см. issue #10). */
+@import '../src/themes/claude-plus.css';
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

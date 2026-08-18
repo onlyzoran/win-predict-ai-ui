@@ -2,17 +2,21 @@ import type { Preview } from '@storybook/vue3'
 import { computed, onMounted, watch } from 'vue'
 import './preview.css'
 
-/** Toolbar values: zinc-light | zinc-dark | slate-teal-light | slate-teal-dark */
+/** Toolbar values: zinc | slate-teal | claude-plus × light/dark */
 const THEME_VALUES = [
   'zinc-light',
   'zinc-dark',
   'slate-teal-light',
   'slate-teal-dark',
+  'claude-plus-light',
+  'claude-plus-dark',
 ] as const
 
 type ThemeValue = (typeof THEME_VALUES)[number]
 
-function parseTheme(value: string): { palette: 'zinc' | 'slate-teal'; dark: boolean } {
+type PaletteName = 'zinc' | 'slate-teal' | 'claude-plus'
+
+function parseTheme(value: string): { palette: PaletteName; dark: boolean } {
   switch (value as ThemeValue) {
     case 'zinc-light':
       return { palette: 'zinc', dark: false }
@@ -20,6 +24,10 @@ function parseTheme(value: string): { palette: 'zinc' | 'slate-teal'; dark: bool
       return { palette: 'zinc', dark: true }
     case 'slate-teal-dark':
       return { palette: 'slate-teal', dark: true }
+    case 'claude-plus-light':
+      return { palette: 'claude-plus', dark: false }
+    case 'claude-plus-dark':
+      return { palette: 'claude-plus', dark: true }
     case 'slate-teal-light':
     default:
       return { palette: 'slate-teal', dark: false }
@@ -54,6 +62,8 @@ const preview: Preview = {
           { value: 'zinc-dark', title: 'Zinc · Dark', icon: 'moon' },
           { value: 'slate-teal-light', title: 'Slate + Teal · Light', icon: 'sun' },
           { value: 'slate-teal-dark', title: 'Slate + Teal · Dark', icon: 'moon' },
+          { value: 'claude-plus-light', title: 'Claude+ · Light', icon: 'sun' },
+          { value: 'claude-plus-dark', title: 'Claude+ · Dark', icon: 'moon' },
         ],
         dynamicTitle: true,
       },
