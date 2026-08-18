@@ -16,6 +16,7 @@ concurrency:
 permissions:
   contents: write
   pull-requests: write
+  packages: read
 
 jobs:
   deploy-preview:
@@ -24,37 +25,19 @@ jobs:
       - name: Checkout UI
         uses: actions/checkout@v4
 
-      - name: Checkout icons
-        if: github.event.action != 'closed'
-        uses: actions/checkout@v4
-        with:
-          repository: onlyzoran/win-predict-ai-icons
-          path: win-predict-ai-icons
-          token: ${{ secrets.NODE_AUTH_TOKEN || github.token }}
-
-      - name: Link icons as sibling
-        if: github.event.action != 'closed'
-        run: ln -sfn "${GITHUB_WORKSPACE}/win-predict-ai-icons" "${GITHUB_WORKSPACE}/../win-predict-ai-icons"
-
       - uses: actions/setup-node@v4
         if: github.event.action != 'closed'
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: |
-            package-lock.json
-            win-predict-ai-icons/package-lock.json
-
-      - name: Build icons
-        if: github.event.action != 'closed'
-        working-directory: win-predict-ai-icons
-        run: |
-          npm ci
-          npm run build
+          cache-dependency-path: package-lock.json
+          registry-url: https://npm.pkg.github.com
+          scope: '@onlyzoran'
 
       - name: Install and build Storybook
         if: github.event.action != 'closed'
         env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN || github.token }}
           STORYBOOK_BASE: /win-predict-ai-ui/pr-preview/pr-${{ github.event.number }}/
         run: |
           npm ci
