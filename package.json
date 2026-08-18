@@ -31,7 +31,7 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "@onlyzoran/win-predict-ai-icons": "^0.4.0",
+    "@onlyzoran/win-predict-ai-icons": "^0.13.0",
     "@vueuse/core": "^14.0.0",
     "reka-ui": "^2.0.0",
     "vue": "^3.3.0"
