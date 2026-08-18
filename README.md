@@ -86,7 +86,7 @@ export default {
 
 ## Темы (CSS tokens)
 
-Палитры: `zinc`, `slate-teal`, `claude-plus`. Единый источник — `src/themes/*.css`.
+Палитры: `zinc`, `slate-teal`, `claude-plus`, `pastel`. Единый источник — `src/themes/*.css`.
 
 ```css
 /* все палитры */

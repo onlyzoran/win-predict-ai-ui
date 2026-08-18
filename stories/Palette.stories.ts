@@ -11,7 +11,35 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-function paletteTemplate() {
+function outcomesSection() {
+  return `
+      <section>
+        <h2 class="mb-3 text-sm font-semibold text-foreground">Outcomes</h2>
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div class="rounded-lg border border-border bg-outcome-final p-4 text-outcome-final-foreground">
+            <p class="text-xs font-medium uppercase tracking-wide opacity-80">outcome-final</p>
+            <p class="mt-1 text-lg font-semibold tabular-nums">FT 2 : 1</p>
+            <p class="mt-0.5 text-xs opacity-80">Финальный итог матча</p>
+          </div>
+          <div class="rounded-lg border border-border bg-outcome-intermediate p-4 text-outcome-intermediate-foreground">
+            <p class="text-xs font-medium uppercase tracking-wide opacity-80">outcome-intermediate</p>
+            <p class="mt-1 text-lg font-semibold tabular-nums">HT 1 : 0</p>
+            <p class="mt-0.5 text-xs opacity-80">Промежуточный итог (тайм)</p>
+          </div>
+        </div>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="inline-flex items-center rounded-md bg-outcome-final px-2 py-0.5 text-xs font-medium text-outcome-final-foreground">
+            Final
+          </span>
+          <span class="inline-flex items-center rounded-md bg-outcome-intermediate px-2 py-0.5 text-xs font-medium text-outcome-intermediate-foreground">
+            Half-time
+          </span>
+        </div>
+      </section>
+  `
+}
+
+function paletteTemplate(includeOutcomes = false) {
   return `
     <div class="mx-auto flex w-full max-w-3xl flex-col gap-8">
       <section>
@@ -98,6 +126,8 @@ function paletteTemplate() {
         </div>
       </section>
 
+      ${includeOutcomes ? outcomesSection() : ''}
+
       <section>
         <h2 class="mb-3 text-sm font-semibold text-foreground">Borders &amp; input</h2>
         <div class="flex flex-wrap gap-3">
@@ -164,5 +194,19 @@ export const ClaudePlusDark: Story = {
   globals: { theme: 'claude-plus-dark' },
   render: () => ({
     template: paletteTemplate(),
+  }),
+}
+
+export const PastelLight: Story = {
+  globals: { theme: 'pastel-light' },
+  render: () => ({
+    template: paletteTemplate(true),
+  }),
+}
+
+export const PastelDark: Story = {
+  globals: { theme: 'pastel-dark' },
+  render: () => ({
+    template: paletteTemplate(true),
   }),
 }
