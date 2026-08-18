@@ -18,7 +18,8 @@
     },
     "./themes": "./src/themes/index.css",
     "./themes/zinc.css": "./src/themes/zinc.css",
-    "./themes/slate-teal.css": "./src/themes/slate-teal.css"
+    "./themes/slate-teal.css": "./src/themes/slate-teal.css",
+    "./themes/claude-plus.css": "./src/themes/claude-plus.css"
   },
   "sideEffects": [
     "src/themes/**/*.css"
