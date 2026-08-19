@@ -1,4 +1,4 @@
-import{r as c}from"./iframe-BPPaNDPi.js";import{f as d}from"./index-t1fCn_T3.js";import{_ as i}from"./AppHeaderShell-C_oB_jx6.js";import"./preload-helper-CWSTMizN.js";import"./LocaleSwitcher-iPw1ZbUH.js";import"./cn-D8NXG6TH.js";import"./ThemeToggle-DQWerUoH.js";const o=["en","ru"],s={en:"English",ru:"Русский"},L={title:"Win Predict AI / UI / AppHeaderShell",component:i,tags:["autodocs"]},e={args:{locale:"en",locales:o,localeLabels:s,localeAriaLabel:"Language",themeAriaLabelLight:"Switch to light theme",themeAriaLabelDark:"Switch to dark theme",githubUrl:"https://github.com/onlyzoran/win-predict-ai",githubAriaLabel:"GitHub"},render:a=>({components:{AppHeaderShell:i,IconLogin:d},setup(){const n=c(a.locale);return{args:a,locale:n,locales:o,localeLabels:s}},template:`
+import{r as c}from"./iframe-DuI5vkNz.js";import{f as p}from"./index-xocHJDrQ.js";import{_ as i}from"./AppHeaderShell-DEiszBge.js";import"./preload-helper-CWSTMizN.js";import"./LocaleSwitcher-DY7m2XzD.js";import"./RovingFocusGroup-CLf0CVnC.js";import"./cn-CBdnK8wL.js";import"./nullish-CHIgUVhi.js";import"./ThemeToggle-B-EARujL.js";const o=["en","ru"],s={en:"English",ru:"Русский"},x={title:"Win Predict AI / UI / AppHeaderShell",component:i,tags:["autodocs"]},e={args:{locale:"en",locales:o,localeLabels:s,localeAriaLabel:"Language",themeAriaLabelLight:"Switch to light theme",themeAriaLabelDark:"Switch to dark theme",githubUrl:"https://github.com/onlyzoran/win-predict-ai",githubAriaLabel:"GitHub"},render:a=>({components:{AppHeaderShell:i,IconLogin:p},setup(){const n=c(a.locale);return{args:a,locale:n,locales:o,localeLabels:s}},template:`
       <div class="pt-16">
         <AppHeaderShell
           v-model:locale="locale"
@@ -136,4 +136,4 @@ import{r as c}from"./iframe-BPPaNDPi.js";import{f as d}from"./index-t1fCn_T3.js"
     theme: 'slate-teal-dark'
   },
   ...WithGitHubAndActions
-}`,...r.parameters?.docs?.source}}};const f=["WithGitHubAndActions","BrandOnly","Light","Dark"];export{l as BrandOnly,r as Dark,t as Light,e as WithGitHubAndActions,f as __namedExportsOrder,L as default};
+}`,...r.parameters?.docs?.source}}};const H=["WithGitHubAndActions","BrandOnly","Light","Dark"];export{l as BrandOnly,r as Dark,t as Light,e as WithGitHubAndActions,H as __namedExportsOrder,x as default};

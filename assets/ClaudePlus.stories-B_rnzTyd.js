@@ -1,4 +1,4 @@
-import{r}from"./iframe-BPPaNDPi.js";import{f as a}from"./index-t1fCn_T3.js";import{_ as o}from"./AppHeaderShell-C_oB_jx6.js";import"./preload-helper-CWSTMizN.js";import"./LocaleSwitcher-iPw1ZbUH.js";import"./cn-D8NXG6TH.js";import"./ThemeToggle-DQWerUoH.js";const s=["en","ru"],l={en:"English",ru:"Русский"},d=[{match:"Arsenal — Chelsea",league:"EPL",prob:"62%",edge:"+4.2",trendClass:"bg-chart-1"},{match:"Real Madrid — Barcelona",league:"La Liga",prob:"54%",edge:"+1.8",trendClass:"bg-chart-2"},{match:"Bayern — Dortmund",league:"Bundesliga",prob:"71%",edge:"+6.1",trendClass:"bg-chart-3"},{match:"Inter — Milan",league:"Serie A",prob:"48%",edge:"-0.5",trendClass:"bg-chart-4"},{match:"PSG — Lyon",league:"Ligue 1",prob:"67%",edge:"+3.4",trendClass:"bg-chart-5"}];function n(){return`
+import{r}from"./iframe-DuI5vkNz.js";import{f as a}from"./index-xocHJDrQ.js";import{_ as o}from"./AppHeaderShell-DEiszBge.js";import"./preload-helper-CWSTMizN.js";import"./LocaleSwitcher-DY7m2XzD.js";import"./RovingFocusGroup-CLf0CVnC.js";import"./cn-CBdnK8wL.js";import"./nullish-CHIgUVhi.js";import"./ThemeToggle-B-EARujL.js";const s=["en","ru"],l={en:"English",ru:"Русский"},d=[{match:"Arsenal — Chelsea",league:"EPL",prob:"62%",edge:"+4.2",trendClass:"bg-chart-1"},{match:"Real Madrid — Barcelona",league:"La Liga",prob:"54%",edge:"+1.8",trendClass:"bg-chart-2"},{match:"Bayern — Dortmund",league:"Bundesliga",prob:"71%",edge:"+6.1",trendClass:"bg-chart-3"},{match:"Inter — Milan",league:"Serie A",prob:"48%",edge:"-0.5",trendClass:"bg-chart-4"},{match:"PSG — Lyon",league:"Ligue 1",prob:"67%",edge:"+3.4",trendClass:"bg-chart-5"}];function n(){return`
     <div class="flex min-h-[32rem] flex-col gap-0 overflow-hidden rounded-lg border border-border bg-background">
       <AppHeaderShell
         v-model:locale="locale"
@@ -98,7 +98,7 @@ import{r}from"./iframe-BPPaNDPi.js";import{f as a}from"./index-t1fCn_T3.js";impo
         </main>
       </div>
     </div>
-  `}const x={title:"Win Predict AI / UI / Claude+",tags:["autodocs"],parameters:{layout:"padded"}},e={globals:{theme:"claude-plus-light"},render:()=>({components:{AppHeaderShell:o,IconLogin:a},setup(){return{locale:r("en"),locales:s,localeLabels:l,predictions:d}},template:n()})},t={globals:{theme:"claude-plus-dark"},render:()=>({components:{AppHeaderShell:o,IconLogin:a},setup(){return{locale:r("en"),locales:s,localeLabels:l,predictions:d}},template:n()})};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+  `}const v={title:"Win Predict AI / UI / Claude+",tags:["autodocs"],parameters:{layout:"padded"}},e={globals:{theme:"claude-plus-light"},render:()=>({components:{AppHeaderShell:o,IconLogin:a},setup(){return{locale:r("en"),locales:s,localeLabels:l,predictions:d}},template:n()})},t={globals:{theme:"claude-plus-dark"},render:()=>({components:{AppHeaderShell:o,IconLogin:a},setup(){return{locale:r("en"),locales:s,localeLabels:l,predictions:d}},template:n()})};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
   globals: {
     theme: 'claude-plus-light'
   },
@@ -138,4 +138,4 @@ import{r}from"./iframe-BPPaNDPi.js";import{f as a}from"./index-t1fCn_T3.js";impo
     },
     template: terminalTemplate()
   })
-}`,...t.parameters?.docs?.source}}};const f=["Light","Dark"];export{t as Dark,e as Light,f as __namedExportsOrder,x as default};
+}`,...t.parameters?.docs?.source}}};const y=["Light","Dark"];export{t as Dark,e as Light,y as __namedExportsOrder,v as default};
