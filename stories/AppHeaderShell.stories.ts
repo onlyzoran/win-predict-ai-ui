@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { withAllPalettes } from './storyHelpers'
 import { ref } from 'vue'
 import { IconLogin } from '@onlyzoran/win-predict-ai-icons'
 import AppHeaderShell from '../src/components/AppHeaderShell.vue'
@@ -95,12 +96,13 @@ export const BrandOnly: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  ...WithGitHubAndActions,
-}
 
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  ...WithGitHubAndActions,
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(WithGitHubAndActions)
+

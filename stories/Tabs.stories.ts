@@ -8,6 +8,7 @@ import {
   IconSearch,
 } from '@onlyzoran/win-predict-ai-icons'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../src/components/ui/tabs'
+import { withAllPalettes } from './storyHelpers'
 
 const meta = {
   title: 'Win Predict AI / UI / Tabs',
@@ -46,21 +47,14 @@ export const Default: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: () => ({
-    components: { Tabs, TabsList, TabsTrigger, TabsContent },
-    template: tabsTemplate(),
-  }),
-}
-
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: () => ({
-    components: { Tabs, TabsList, TabsTrigger, TabsContent },
-    template: tabsTemplate(),
-  }),
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
 
 export const NarrowScroll: Story = {
   render: () => ({
@@ -119,21 +113,14 @@ export const WithIcons: Story = {
   }),
 }
 
-export const WithIconsLight: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: () => ({
-    components: { Tabs, TabsList, TabsTrigger, TabsContent, IconSearch, IconPin, IconPencil },
-    template: withIconsTemplate(),
-  }),
-}
-
-export const WithIconsDark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: () => ({
-    components: { Tabs, TabsList, TabsTrigger, TabsContent, IconSearch, IconPin, IconPencil },
-    template: withIconsTemplate(),
-  }),
-}
+export const {
+  WithIconsZincLight,
+  WithIconsZincDark,
+  WithIconsSlateTealLight,
+  WithIconsSlateTealDark,
+  WithIconsClaudePlusLight,
+  WithIconsClaudePlusDark,
+} = withAllPalettes(WithIcons, 'WithIcons')
 
 export const IconOnly: Story = {
   render: () => ({
@@ -376,18 +363,11 @@ export const LeagueDetail: Story = {
   }),
 }
 
-export const LeagueDetailLight: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: () => ({
-    components: leagueDetailComponents,
-    template: leagueDetailTabsTemplate(),
-  }),
-}
-
-export const LeagueDetailDark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: () => ({
-    components: leagueDetailComponents,
-    template: leagueDetailTabsTemplate(),
-  }),
-}
+export const {
+  LeagueDetailZincLight,
+  LeagueDetailZincDark,
+  LeagueDetailSlateTealLight,
+  LeagueDetailSlateTealDark,
+  LeagueDetailClaudePlusLight,
+  LeagueDetailClaudePlusDark,
+} = withAllPalettes(LeagueDetail, 'LeagueDetail')

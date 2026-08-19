@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import ThemeToggle from '../src/components/ThemeToggle.vue'
+import { withAllPalettes } from './storyHelpers'
 
 const meta = {
   title: 'Win Predict AI / UI / ThemeToggle',
@@ -21,15 +22,14 @@ export const Default: Story = {
   },
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  args: { ...Default.args },
-}
-
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  args: { ...Default.args },
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
 
 const headerShellTemplate = `
   <header
@@ -39,8 +39,7 @@ const headerShellTemplate = `
   </header>
 `
 
-export const ClaudePlusLight: Story = {
-  globals: { theme: 'claude-plus-light' },
+export const InHeader: Story = {
   args: { ...Default.args },
   render: (args) => ({
     components: { ThemeToggle },
@@ -51,14 +50,11 @@ export const ClaudePlusLight: Story = {
   }),
 }
 
-export const ClaudePlusDark: Story = {
-  globals: { theme: 'claude-plus-dark' },
-  args: { ...Default.args },
-  render: (args) => ({
-    components: { ThemeToggle },
-    setup() {
-      return { args }
-    },
-    template: headerShellTemplate,
-  }),
-}
+export const {
+  InHeaderZincLight,
+  InHeaderZincDark,
+  InHeaderSlateTealLight,
+  InHeaderSlateTealDark,
+  InHeaderClaudePlusLight,
+  InHeaderClaudePlusDark,
+} = withAllPalettes(InHeader, 'InHeader')

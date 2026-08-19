@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { withAllPalettes } from './storyHelpers'
 import { ref } from 'vue'
 import LocaleSwitcher from '../src/components/LocaleSwitcher.vue'
 
@@ -22,14 +23,15 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Controlled: Story = {
-  args: {
-    modelValue: 'en',
-    locales,
-    labels,
-    ariaLabel: 'Language',
-  },
-  render: (args) => ({
+const controlledArgs = {
+  modelValue: 'en',
+  locales,
+  labels,
+  ariaLabel: 'Language',
+}
+
+function controlledRender(args: typeof controlledArgs) {
+  return {
     components: { LocaleSwitcher },
     setup() {
       const locale = ref(args.modelValue)
@@ -46,5 +48,21 @@ export const Controlled: Story = {
         <span class="text-sm text-muted-foreground">Selected: <code>{{ locale }}</code></span>
       </div>
     `,
-  }),
+  }
 }
+
+export const Default: Story = {
+  args: controlledArgs,
+  render: (args) => controlledRender(args),
+}
+
+
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
+
