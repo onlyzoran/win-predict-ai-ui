@@ -1,0 +1,1 @@
+import{c as i}from"./createContext-BfrTAnai.js";import{a9 as r}from"./iframe-oW6crexX.js";const[n]=i("ConfigProvider");function u(s,o="reka"){let e;const t=n({useId:void 0});return t.useId?e=t.useId():e=r?.(),o?`${o}-${e}`:e}export{n as i,u};
