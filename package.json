@@ -1,6 +1,6 @@
 {
   "name": "@onlyzoran/win-predict-ai-ui",
-  "version": "0.1.6",
+  "version": "0.3.0",
   "description": "Shared Vue 3 UI components for Win Predict AI (header shell, theme, locale)",
   "type": "module",
   "files": [
@@ -33,20 +33,22 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "@onlyzoran/win-predict-ai-icons": "^0.13.0",
+    "@unovis/vue": "^1.6.0",
     "@vueuse/core": "^14.0.0",
     "reka-ui": "^2.0.0",
     "vue": "^3.3.0"
   },
   "dependencies": {
+    "@onlyzoran/win-predict-ai-icons": "^0.14.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
-    "@onlyzoran/win-predict-ai-icons": "file:../win-predict-ai-icons",
     "@storybook/addon-docs": "^9.1.20",
     "@storybook/vue3": "^9.1.20",
     "@storybook/vue3-vite": "^9.1.20",
+    "@unovis/ts": "^1.6.7",
+    "@unovis/vue": "^1.6.7",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.13.3",
     "@vitejs/plugin-vue": "^6.0.8",

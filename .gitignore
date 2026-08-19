@@ -1,9 +1,6 @@
 # Dependencies
 node_modules/
 
-# CI checks out icons into the workspace (file:../win-predict-ai-icons)
-/win-predict-ai-icons/
-
 # Build
 dist/
 storybook-static/
