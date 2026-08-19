@@ -28,7 +28,7 @@ const leagueTeams = [
   { name: 'Others (25)', pct: '74%' },
 ]
 
-function leaguePredictionCardTemplate() {
+function leaguePredictionCardTemplate(withHeaderAction = true) {
   const teamRows = leagueTeams
     .map(
       (team, index) => `
@@ -41,21 +41,25 @@ function leaguePredictionCardTemplate() {
     )
     .join('')
 
-  return `
-    <Card class="w-full p-0 sm:max-w-xs sm:min-w-3xs">
-      <CardHeader class="px-4 pt-4">
-        <div class="flex justify-between">
-          <CardTitle class="flex items-center gap-2">
-            <IconBallFootball aria-hidden="true" class="size-4" />
-            MLB World Series 26/27
-          </CardTitle>
-          <button
+  const headerAction = withHeaderAction
+    ? `<button
             type="button"
             class="rounded-md px-2 py-1 text-sm font-medium uppercase text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
             aria-label="Pin tournament"
           >
             <IconPin aria-hidden="true" />
-          </button>
+          </button>`
+    : ''
+
+  return `
+    <Card class="w-full p-0 sm:max-w-xs sm:min-w-3xs">
+      <CardHeader class="px-4 pt-4">
+        <div class="flex min-h-8 items-center justify-between">
+          <CardTitle class="flex items-center gap-2">
+            <IconBallFootball aria-hidden="true" class="size-4" />
+            MLB World Series 26/27
+          </CardTitle>
+          ${headerAction}
         </div>
         <div
           class="bg-primary/20 relative mt-4 h-1 w-full overflow-hidden rounded-full"
@@ -98,15 +102,20 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-function renderLeaguePredictionCard() {
+function renderLeaguePredictionCard(withHeaderAction = true) {
   return {
     components: cardComponents,
-    template: leaguePredictionCardTemplate(),
+    template: leaguePredictionCardTemplate(withHeaderAction),
   }
 }
 
 export const Default: Story = {
   render: () => renderLeaguePredictionCard(),
+}
+
+/** Без pin в header — высота строки заголовка совпадает с Default (min-h-8 под action). */
+export const WithoutHeaderAction: Story = {
+  render: () => renderLeaguePredictionCard(false),
 }
 
 export const ZincLight: Story = {
