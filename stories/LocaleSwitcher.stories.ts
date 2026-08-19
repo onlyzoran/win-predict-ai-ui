@@ -22,14 +22,15 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Controlled: Story = {
-  args: {
-    modelValue: 'en',
-    locales,
-    labels,
-    ariaLabel: 'Language',
-  },
-  render: (args) => ({
+const controlledArgs = {
+  modelValue: 'en',
+  locales,
+  labels,
+  ariaLabel: 'Language',
+}
+
+function controlledRender(args: typeof controlledArgs) {
+  return {
     components: { LocaleSwitcher },
     setup() {
       const locale = ref(args.modelValue)
@@ -46,5 +47,22 @@ export const Controlled: Story = {
         <span class="text-sm text-muted-foreground">Selected: <code>{{ locale }}</code></span>
       </div>
     `,
-  }),
+  }
+}
+
+export const Default: Story = {
+  args: controlledArgs,
+  render: (args) => controlledRender(args),
+}
+
+export const Light: Story = {
+  globals: { theme: 'slate-teal-light' },
+  args: controlledArgs,
+  render: (args) => controlledRender(args),
+}
+
+export const Dark: Story = {
+  globals: { theme: 'slate-teal-dark' },
+  args: controlledArgs,
+  render: (args) => controlledRender(args),
 }
