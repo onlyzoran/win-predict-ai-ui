@@ -1,12 +1,23 @@
 /** Story-only types — decoupled from win-predict-ai app. */
 
 export interface TeamStandings {
-  group: string
+  /** Conference / league group — MLB, NFL. */
+  group?: string
   playoffSeed?: number
   played?: number
   wins: number
   losses: number
-  winPercent: number
+  /** Win percentage — MLB, NFL. */
+  winPercent?: number
+  /** League table rank — football. */
+  rank?: number
+  /** Draws — football. */
+  draws?: number
+  /** League points — football. */
+  points?: number
+  goalsFor?: number
+  goalsAgainst?: number
+  goalDifference?: number
 }
 
 export interface TeamProbability {

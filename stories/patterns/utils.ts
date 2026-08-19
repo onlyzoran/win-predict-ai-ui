@@ -41,3 +41,32 @@ export function hasWinsStandings(
 ): boolean {
   return teams.some((team) => team.standings != null)
 }
+
+export function hasFootballStandings(
+  teams: Array<{
+    standings?: {
+      points?: number
+      goalsFor?: number
+      draws?: number
+    }
+  }>,
+): boolean {
+  return teams.some(
+    (team) =>
+      team.standings != null &&
+      (team.standings.points != null ||
+        team.standings.goalsFor != null ||
+        team.standings.draws != null),
+  )
+}
+
+export function formatFootballRecord(wins: number, draws: number, losses: number): string {
+  return `${wins}–${draws}–${losses}`
+}
+
+export function formatGoalDifference(value: number): string {
+  if (value > 0) {
+    return `+${value}`
+  }
+  return String(value)
+}

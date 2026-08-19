@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { withAllPalettes } from '../storyHelpers'
 import TournamentStandingsPanelPattern from './demos/TournamentStandingsPanelPattern.vue'
-import { mlbWorldSeriesTeams, probabilityOnlyTeams } from './fixtures/teams'
+import { eplStandingsTeams, mlbWorldSeriesTeams, probabilityOnlyTeams, rplStandingsTeams } from './fixtures/teams'
 
 const meta = {
   title: 'Win Predict AI / Patterns / TournamentStandingsPanel',
@@ -42,6 +42,30 @@ export const ProbabilityOnly: Story = {
     components: { TournamentStandingsPanelPattern },
     setup: () => ({ teams: probabilityOnlyTeams }),
     template: '<TournamentStandingsPanelPattern :teams="teams" />',
+  }),
+}
+
+export const FootballRpl: Story = {
+  render: () => ({
+    components: { TournamentStandingsPanelPattern },
+    setup: () => ({ teams: rplStandingsTeams }),
+    template: '<TournamentStandingsPanelPattern :teams="teams" show-glossary />',
+  }),
+}
+
+export const FootballEpl: Story = {
+  render: () => ({
+    components: { TournamentStandingsPanelPattern },
+    setup: () => ({ teams: eplStandingsTeams }),
+    template: '<TournamentStandingsPanelPattern :teams="teams" show-chart show-glossary />',
+  }),
+}
+
+export const FootballCompact: Story = {
+  render: () => ({
+    components: { TournamentStandingsPanelPattern },
+    setup: () => ({ teams: rplStandingsTeams }),
+    template: '<TournamentStandingsPanelPattern :teams="teams" compact show-glossary />',
   }),
 }
 
