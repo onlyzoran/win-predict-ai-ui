@@ -54,7 +54,7 @@ function leaguePredictionCardTemplate() {
             class="rounded-md px-2 py-1 text-sm font-medium uppercase text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
             aria-label="Pin tournament"
           >
-            <IconPin aria-hidden="true" class="size-4" />
+            <IconPin aria-hidden="true" />
           </button>
         </div>
         <div
