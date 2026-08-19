@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { withAllPalettes } from '../storyHelpers'
 import MlbLeagueBracketPattern from './demos/MlbLeagueBracketPattern.vue'
 import { mockMlbPlayoffBracket } from './fixtures/bracket'
 
@@ -35,12 +36,13 @@ export const Vertical: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  ...AmericanLeague,
-}
 
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  ...AmericanLeague,
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(AmericanLeague)
+

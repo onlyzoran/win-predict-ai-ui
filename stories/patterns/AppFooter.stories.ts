@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { withAllPalettes } from '../storyHelpers'
 import AppFooterPattern from './demos/AppFooterPattern.vue'
 
 const meta = {
@@ -24,12 +25,13 @@ export const Mobile: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  ...Default,
-}
 
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  ...Default,
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
+

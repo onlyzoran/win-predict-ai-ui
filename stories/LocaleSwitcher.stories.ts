@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { withAllPalettes } from './storyHelpers'
 import { ref } from 'vue'
 import LocaleSwitcher from '../src/components/LocaleSwitcher.vue'
 
@@ -55,14 +56,13 @@ export const Default: Story = {
   render: (args) => controlledRender(args),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  args: controlledArgs,
-  render: (args) => controlledRender(args),
-}
 
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  args: controlledArgs,
-  render: (args) => controlledRender(args),
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
+

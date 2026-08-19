@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { Badge, type BadgeVariant } from '../src/components/ui/badge'
+import { withAllPalettes } from './storyHelpers'
 
 const meta = {
   title: 'Win Predict AI / UI / Badge',
@@ -27,17 +28,14 @@ export const Default: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  args: { ...Default.args },
-  render: Default.render,
-}
-
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  args: { ...Default.args },
-  render: Default.render,
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
 
 const variants: BadgeVariant[] = ['default', 'secondary', 'destructive', 'outline']
 const labels = ['Live', 'NL', 'Injury', 'Outline']
@@ -63,15 +61,14 @@ export const VariantMatrix: Story = {
   }),
 }
 
-export const VariantMatrixLight: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: VariantMatrix.render,
-}
-
-export const VariantMatrixDark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: VariantMatrix.render,
-}
+export const {
+  VariantMatrixZincLight,
+  VariantMatrixZincDark,
+  VariantMatrixSlateTealLight,
+  VariantMatrixSlateTealDark,
+  VariantMatrixClaudePlusLight,
+  VariantMatrixClaudePlusDark,
+} = withAllPalettes(VariantMatrix, 'VariantMatrix')
 
 export const InTableContext: Story = {
   render: () => ({

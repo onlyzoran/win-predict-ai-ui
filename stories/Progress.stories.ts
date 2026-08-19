@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { withAllPalettes } from './storyHelpers'
 import { Progress } from '../src/components/ui/progress'
 
 const meta = {
@@ -29,17 +30,16 @@ export const Default: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  args: { ...Default.args },
-  render: Default.render,
-}
 
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  args: { ...Default.args },
-  render: Default.render,
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
+
 
 export const Values: Story = {
   render: () => ({

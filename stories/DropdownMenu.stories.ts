@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '../src/components/ui/dropdown-menu'
+import { withAllPalettes } from './storyHelpers'
 
 const meta = {
   title: 'Win Predict AI / UI / DropdownMenu',
@@ -83,15 +84,14 @@ export const Default: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: Default.render,
-}
-
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: Default.render,
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
 
 export const RadioGroup: Story = {
   render: () => ({
@@ -110,12 +110,11 @@ export const RadioGroup: Story = {
   }),
 }
 
-export const RadioGroupLight: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: RadioGroup.render,
-}
-
-export const RadioGroupDark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: RadioGroup.render,
-}
+export const {
+  RadioGroupZincLight,
+  RadioGroupZincDark,
+  RadioGroupSlateTealLight,
+  RadioGroupSlateTealDark,
+  RadioGroupClaudePlusLight,
+  RadioGroupClaudePlusDark,
+} = withAllPalettes(RadioGroup, 'RadioGroup')

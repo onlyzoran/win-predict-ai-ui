@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { IconSearch } from '@onlyzoran/win-predict-ai-icons'
 import { Button, type ButtonSize, type ButtonVariant } from '../src/components/ui/button'
+import { withAllPalettes } from './storyHelpers'
 
 const meta = {
   title: 'Win Predict AI / UI / Button',
@@ -35,17 +36,14 @@ export const Default: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  args: { ...Default.args },
-  render: Default.render,
-}
-
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  args: { ...Default.args },
-  render: Default.render,
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
 
 const variants: ButtonVariant[] = ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link']
 const sizes: ButtonSize[] = ['default', 'xs', 'sm', 'lg']
@@ -94,15 +92,14 @@ export const VariantSizeMatrix: Story = {
   }),
 }
 
-export const VariantSizeMatrixLight: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: VariantSizeMatrix.render,
-}
-
-export const VariantSizeMatrixDark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: VariantSizeMatrix.render,
-}
+export const {
+  VariantSizeMatrixZincLight,
+  VariantSizeMatrixZincDark,
+  VariantSizeMatrixSlateTealLight,
+  VariantSizeMatrixSlateTealDark,
+  VariantSizeMatrixClaudePlusLight,
+  VariantSizeMatrixClaudePlusDark,
+} = withAllPalettes(VariantSizeMatrix, 'VariantSizeMatrix')
 
 export const IconSizes: Story = {
   render: () => ({

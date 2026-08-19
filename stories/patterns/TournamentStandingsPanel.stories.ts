@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { withAllPalettes } from '../storyHelpers'
 import TournamentStandingsPanelPattern from './demos/TournamentStandingsPanelPattern.vue'
 import { mlbWorldSeriesTeams, probabilityOnlyTeams } from './fixtures/teams'
 
@@ -44,12 +45,13 @@ export const ProbabilityOnly: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  ...WithChart,
-}
 
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  ...WithChart,
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(WithChart)
+

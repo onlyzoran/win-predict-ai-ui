@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { withAllPalettes } from '../storyHelpers'
 import StandingsRankChartPattern from './demos/StandingsRankChartPattern.vue'
 import { mockRankSeries } from './fixtures/rankSeries'
 
@@ -20,12 +21,13 @@ export const Default: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  ...Default,
-}
 
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  ...Default,
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
+

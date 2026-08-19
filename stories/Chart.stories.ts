@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ChartContainer } from '../src/components/ui/chart'
+import { withAllPalettes } from './storyHelpers'
 import ChartWinOddsDemo from './ChartWinOddsDemo.vue'
 
 const meta = {
@@ -26,18 +27,11 @@ export const Default: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: () => ({
-    components: { ChartWinOddsDemo },
-    template: '<ChartWinOddsDemo />',
-  }),
-}
-
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: () => ({
-    components: { ChartWinOddsDemo },
-    template: '<ChartWinOddsDemo />',
-  }),
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)

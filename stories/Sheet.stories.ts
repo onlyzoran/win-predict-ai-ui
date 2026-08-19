@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '../src/components/ui/sheet'
+import { withAllPalettes } from './storyHelpers'
 
 const meta = {
   title: 'Win Predict AI / UI / Sheet',
@@ -68,21 +69,14 @@ export const Default: Story = {
   }),
 }
 
-export const Light: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: () => ({
-    components: sheetComponents,
-    template: sheetWithHeaderFooter('right'),
-  }),
-}
-
-export const Dark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: () => ({
-    components: sheetComponents,
-    template: sheetWithHeaderFooter('right'),
-  }),
-}
+export const {
+  ZincLight,
+  ZincDark,
+  SlateTealLight,
+  SlateTealDark,
+  ClaudePlusLight,
+  ClaudePlusDark,
+} = withAllPalettes(Default)
 
 export const SideVariants: Story = {
   render: () => ({
@@ -97,12 +91,11 @@ export const SideVariants: Story = {
   }),
 }
 
-export const SideVariantsLight: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: SideVariants.render,
-}
-
-export const SideVariantsDark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: SideVariants.render,
-}
+export const {
+  SideVariantsZincLight,
+  SideVariantsZincDark,
+  SideVariantsSlateTealLight,
+  SideVariantsSlateTealDark,
+  SideVariantsClaudePlusLight,
+  SideVariantsClaudePlusDark,
+} = withAllPalettes(SideVariants, 'SideVariants')
