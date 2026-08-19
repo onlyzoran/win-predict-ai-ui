@@ -1,1 +1,0 @@
-import{c as i}from"./createContext-DFVDcGMr.js";import{a4 as r}from"./iframe-B5mGNOHy.js";const[n]=i("ConfigProvider");function u(s,o="reka"){let e;const t=n({useId:void 0});return t.useId?e=t.useId():e=r?.(),o?`${o}-${e}`:e}export{n as i,u};

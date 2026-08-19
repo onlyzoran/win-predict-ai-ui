@@ -1,0 +1,18 @@
+import{d as c,f as u,b as t,a,u as n,r as f,o as g}from"./iframe-CZbg21jV.js";import{x as h,c as b,f as x}from"./index-BRmrF3c1.js";import{_}from"./LocaleSwitcher-BTPvTIQ4.js";import{_ as k}from"./ThemeToggle-D5B_QNyk.js";import"./preload-helper-DR0Ra8Iv.js";import"./DropdownMenuTrigger-DcSzUJej.js";import"./Presence-BxBsFUlv.js";import"./Primitive-B616n9Qm.js";import"./index-BfW2HXGB.js";import"./index-D7g1-zI5.js";import"./useForwardExpose-DTCiqJDU.js";import"./useId-DCtzg9yx.js";import"./createContext-9E_p4YM4.js";import"./Teleport-442Fj_HE.js";import"./nullish-CHIgUVhi.js";import"./cn-DaT-yT0k.js";import"./RovingFocusGroup-By-EjTts.js";const v={class:"pt-16"},A={class:"fixed top-0 right-0 left-0 z-50 flex h-14 items-center justify-between border-b bg-background/80 px-6 shadow-sm backdrop-blur-md"},w={class:"flex items-center gap-1"},H={href:"#",class:"inline-flex items-center gap-1.5 rounded-md p-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground sm:px-2 sm:py-1.5","aria-label":"Appearance settings"},P={href:"https://github.com/onlyzoran/win-predict-ai",target:"_blank",rel:"noreferrer",class:"rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground","aria-label":"GitHub"},y={href:"#",class:"inline-flex items-center gap-1.5 rounded-md p-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground sm:px-2 sm:py-1.5","aria-label":"Login"},i=c({__name:"AppHeaderPattern",setup(D){const l=f("en"),d=["en","ru"],p={en:"English",ru:"Русский"};return(L,e)=>(g(),u("div",v,[t("header",A,[e[4]||(e[4]=t("div",{class:"min-w-0"},[t("a",{href:"#",class:"font-semibold text-foreground hover:opacity-80"},"Win Predict AI")],-1)),t("div",w,[a(_,{modelValue:l.value,"onUpdate:modelValue":e[0]||(e[0]=m=>l.value=m),locales:d,labels:p,"aria-label":"Language"},null,8,["modelValue"]),a(k,{"aria-label-light":"Switch to light theme","aria-label-dark":"Switch to dark theme"}),t("a",H,[a(n(h),{size:16,"aria-hidden":"true"}),e[1]||(e[1]=t("span",{class:"hidden sm:inline"},"Theme",-1))]),e[3]||(e[3]=t("span",{class:"mx-1 h-5 w-px bg-border","aria-hidden":"true"},null,-1)),t("a",P,[a(n(b),{size:16,"aria-hidden":"true"})]),t("a",y,[a(n(x),{size:16,"aria-hidden":"true"}),e[2]||(e[2]=t("span",{class:"hidden sm:inline"},"Login",-1))])])]),e[5]||(e[5]=t("p",{class:"text-sm text-muted-foreground"}," Full app header — compare with AppHeaderShell (no Appearance link, slot-based brand/actions). ",-1))]))}});i.__docgenInfo={exportName:"default",displayName:"AppHeaderPattern",description:"",tags:{},sourceFiles:["/home/runner/work/win-predict-ai-ui/win-predict-ai-ui/stories/patterns/demos/AppHeaderPattern.vue"]};const J={title:"Win Predict AI / Patterns / AppHeader",component:i,tags:["autodocs"],parameters:{layout:"fullscreen"}},r={render:()=>({components:{AppHeaderPattern:i},template:"<AppHeaderPattern />"})},o={globals:{theme:"slate-teal-light"},...r},s={globals:{theme:"slate-teal-dark"},...r};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+  render: () => ({
+    components: {
+      AppHeaderPattern
+    },
+    template: '<AppHeaderPattern />'
+  })
+}`,...r.parameters?.docs?.source}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  globals: {
+    theme: 'slate-teal-light'
+  },
+  ...Default
+}`,...o.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  globals: {
+    theme: 'slate-teal-dark'
+  },
+  ...Default
+}`,...s.parameters?.docs?.source}}};const K=["Default","Light","Dark"];export{s as Dark,r as Default,o as Light,K as __namedExportsOrder,J as default};
