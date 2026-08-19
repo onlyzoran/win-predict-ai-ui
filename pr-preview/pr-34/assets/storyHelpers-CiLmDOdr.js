@@ -1,1 +1,0 @@
-const s=[["ZincLight","zinc-light"],["ZincDark","zinc-dark"],["SlateTealLight","slate-teal-light"],["SlateTealDark","slate-teal-dark"],["ClaudePlusLight","claude-plus-light"],["ClaudePlusDark","claude-plus-dark"]];function u(l,a=""){const t={};for(const[e,i]of s)t[`${a}${e}`]={...l,globals:{...l.globals,theme:i}};return t}export{u as w};
