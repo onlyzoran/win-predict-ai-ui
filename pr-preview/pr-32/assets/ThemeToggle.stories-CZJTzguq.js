@@ -1,4 +1,4 @@
-import{_ as o}from"./ThemeToggle-CmLNchm2.js";import"./iframe-dNbJB5Cb.js";import"./preload-helper-DR0Ra8Iv.js";import"./index-DH-FERnp.js";import"./index-CrwLdkTu.js";const u={title:"Win Predict AI / UI / ThemeToggle",component:o,tags:["autodocs"],argTypes:{ariaLabelLight:{control:"text"},ariaLabelDark:{control:"text"}}},e={args:{ariaLabelLight:"Switch to light theme",ariaLabelDark:"Switch to dark theme"}},a={globals:{theme:"slate-teal-light"},args:{...e.args}},r={globals:{theme:"slate-teal-dark"},args:{...e.args}},l=`
+import{_ as o}from"./ThemeToggle-CyBcg4Q1.js";import"./iframe-CEcj8ys-.js";import"./preload-helper-DR0Ra8Iv.js";import"./index--yy_xmLr.js";import"./index-qujQPUfq.js";import"./index-GzIrTbA5.js";const i={title:"Win Predict AI / UI / ThemeToggle",component:o,tags:["autodocs"],argTypes:{ariaLabelLight:{control:"text"},ariaLabelDark:{control:"text"}}},e={args:{ariaLabelLight:"Switch to light theme",ariaLabelDark:"Switch to dark theme"}},a={globals:{theme:"slate-teal-light"},args:{...e.args}},r={globals:{theme:"slate-teal-dark"},args:{...e.args}},l=`
   <header
     class="flex h-14 items-center justify-end border-b border-border bg-background/80 px-6 shadow-sm backdrop-blur-md"
   >
@@ -59,4 +59,4 @@ import{_ as o}from"./ThemeToggle-CmLNchm2.js";import"./iframe-dNbJB5Cb.js";impor
     },
     template: headerShellTemplate
   })
-}`,...s.parameters?.docs?.source}}};const h=["Default","Light","Dark","ClaudePlusLight","ClaudePlusDark"];export{s as ClaudePlusDark,t as ClaudePlusLight,r as Dark,e as Default,a as Light,h as __namedExportsOrder,u as default};
+}`,...s.parameters?.docs?.source}}};const h=["Default","Light","Dark","ClaudePlusLight","ClaudePlusDark"];export{s as ClaudePlusDark,t as ClaudePlusLight,r as Dark,e as Default,a as Light,h as __namedExportsOrder,i as default};

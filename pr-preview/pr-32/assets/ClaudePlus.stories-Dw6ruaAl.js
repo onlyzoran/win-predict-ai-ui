@@ -1,4 +1,4 @@
-import{r}from"./iframe-dNbJB5Cb.js";import{f as a}from"./index-DH-FERnp.js";import{_ as o}from"./AppHeaderShell-BKx-n85w.js";import"./preload-helper-DR0Ra8Iv.js";import"./index-CrwLdkTu.js";import"./LocaleSwitcher-xkfvsCdz.js";import"./RovingFocusGroup-CFV45uun.js";import"./cn-NULjfwdo.js";import"./useId-DHJB7rgs.js";import"./useForwardExpose-CLoJ9jCo.js";import"./nullish-CHIgUVhi.js";import"./ThemeToggle-CmLNchm2.js";const s=["en","ru"],l={en:"English",ru:"Русский"},d=[{match:"Arsenal — Chelsea",league:"EPL",prob:"62%",edge:"+4.2",trendClass:"bg-chart-1"},{match:"Real Madrid — Barcelona",league:"La Liga",prob:"54%",edge:"+1.8",trendClass:"bg-chart-2"},{match:"Bayern — Dortmund",league:"Bundesliga",prob:"71%",edge:"+6.1",trendClass:"bg-chart-3"},{match:"Inter — Milan",league:"Serie A",prob:"48%",edge:"-0.5",trendClass:"bg-chart-4"},{match:"PSG — Lyon",league:"Ligue 1",prob:"67%",edge:"+3.4",trendClass:"bg-chart-5"}];function n(){return`
+import{r}from"./iframe-CEcj8ys-.js";import{f as a}from"./index--yy_xmLr.js";import{_ as o}from"./AppHeaderShell-Dhol35YK.js";import"./preload-helper-DR0Ra8Iv.js";import"./LocaleSwitcher-bGvTzOjZ.js";import"./RovingFocusGroup-BUDQFy0z.js";import"./Primitive-DgBgeqSA.js";import"./index-qujQPUfq.js";import"./index-GzIrTbA5.js";import"./createContext-sQmaukuv.js";import"./useId-BZJGG6rp.js";import"./useForwardExpose-3zj45elM.js";import"./nullish-CHIgUVhi.js";import"./cn-DaT-yT0k.js";import"./ThemeToggle-CyBcg4Q1.js";const s=["en","ru"],l={en:"English",ru:"Русский"},d=[{match:"Arsenal — Chelsea",league:"EPL",prob:"62%",edge:"+4.2",trendClass:"bg-chart-1"},{match:"Real Madrid — Barcelona",league:"La Liga",prob:"54%",edge:"+1.8",trendClass:"bg-chart-2"},{match:"Bayern — Dortmund",league:"Bundesliga",prob:"71%",edge:"+6.1",trendClass:"bg-chart-3"},{match:"Inter — Milan",league:"Serie A",prob:"48%",edge:"-0.5",trendClass:"bg-chart-4"},{match:"PSG — Lyon",league:"Ligue 1",prob:"67%",edge:"+3.4",trendClass:"bg-chart-5"}];function n(){return`
     <div class="flex min-h-[32rem] flex-col gap-0 overflow-hidden rounded-lg border border-border bg-background">
       <AppHeaderShell
         v-model:locale="locale"
@@ -98,7 +98,7 @@ import{r}from"./iframe-dNbJB5Cb.js";import{f as a}from"./index-DH-FERnp.js";impo
         </main>
       </div>
     </div>
-  `}const L={title:"Win Predict AI / UI / Claude+",tags:["autodocs"],parameters:{layout:"padded"}},e={globals:{theme:"claude-plus-light"},render:()=>({components:{AppHeaderShell:o,IconLogin:a},setup(){return{locale:r("en"),locales:s,localeLabels:l,predictions:d}},template:n()})},t={globals:{theme:"claude-plus-dark"},render:()=>({components:{AppHeaderShell:o,IconLogin:a},setup(){return{locale:r("en"),locales:s,localeLabels:l,predictions:d}},template:n()})};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+  `}const A={title:"Win Predict AI / UI / Claude+",tags:["autodocs"],parameters:{layout:"padded"}},e={globals:{theme:"claude-plus-light"},render:()=>({components:{AppHeaderShell:o,IconLogin:a},setup(){return{locale:r("en"),locales:s,localeLabels:l,predictions:d}},template:n()})},t={globals:{theme:"claude-plus-dark"},render:()=>({components:{AppHeaderShell:o,IconLogin:a},setup(){return{locale:r("en"),locales:s,localeLabels:l,predictions:d}},template:n()})};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
   globals: {
     theme: 'claude-plus-light'
   },
@@ -138,4 +138,4 @@ import{r}from"./iframe-dNbJB5Cb.js";import{f as a}from"./index-DH-FERnp.js";impo
     },
     template: terminalTemplate()
   })
-}`,...t.parameters?.docs?.source}}};const k=["Light","Dark"];export{t as Dark,e as Light,k as __namedExportsOrder,L as default};
+}`,...t.parameters?.docs?.source}}};const I=["Light","Dark"];export{t as Dark,e as Light,I as __namedExportsOrder,A as default};
