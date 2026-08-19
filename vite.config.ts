@@ -19,6 +19,7 @@ export default defineConfig({
     rollupOptions: {
       external: [
         'vue',
+        '@unovis/vue',
         '@vueuse/core',
         '@onlyzoran/win-predict-ai-icons',
         'reka-ui',

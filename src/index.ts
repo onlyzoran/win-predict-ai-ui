@@ -17,3 +17,16 @@ export {
   CardHeader,
   CardTitle,
 } from './components/ui/card'
+
+export {
+  ChartContainer,
+  ChartCrosshair,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+  componentToString,
+  provideChartContext,
+  useChart,
+  THEMES,
+  type ChartConfig,
+} from './components/ui/chart'
