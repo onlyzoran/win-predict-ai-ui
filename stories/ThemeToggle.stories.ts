@@ -30,3 +30,35 @@ export const Dark: Story = {
   globals: { theme: 'slate-teal-dark' },
   args: { ...Default.args },
 }
+
+const headerShellTemplate = `
+  <header
+    class="flex h-14 items-center justify-end border-b border-border bg-background/80 px-6 shadow-sm backdrop-blur-md"
+  >
+    <ThemeToggle v-bind="args" />
+  </header>
+`
+
+export const ClaudePlusLight: Story = {
+  globals: { theme: 'claude-plus-light' },
+  args: { ...Default.args },
+  render: (args) => ({
+    components: { ThemeToggle },
+    setup() {
+      return { args }
+    },
+    template: headerShellTemplate,
+  }),
+}
+
+export const ClaudePlusDark: Story = {
+  globals: { theme: 'claude-plus-dark' },
+  args: { ...Default.args },
+  render: (args) => ({
+    components: { ThemeToggle },
+    setup() {
+      return { args }
+    },
+    template: headerShellTemplate,
+  }),
+}
