@@ -157,3 +157,79 @@
   box-shadow: var(--nexora-glass-shadow);
   border-color: var(--border);
 }
+
+/*
+ * Primary CTA — violet → blue-violet gradient (референс Nexora CRM).
+ * Storybook-only override поверх bg-primary / bg-sidebar-primary.
+ */
+[data-palette='nexora'] {
+  --nexora-primary-gradient: linear-gradient(
+    135deg,
+    oklch(0.46 0.25 295) 0%,
+    oklch(0.52 0.22 277) 46%,
+    oklch(0.56 0.17 228) 100%
+  );
+  --nexora-primary-gradient-hover: linear-gradient(
+    135deg,
+    oklch(0.5 0.25 295) 0%,
+    oklch(0.56 0.22 277) 46%,
+    oklch(0.6 0.17 228) 100%
+  );
+  --nexora-primary-shadow:
+    0 1px 0 oklch(1 0 0 / 24%) inset,
+    0 4px 18px oklch(0.52 0.22 277 / 32%);
+}
+
+[data-palette='nexora'].dark {
+  --nexora-primary-gradient: linear-gradient(
+    135deg,
+    oklch(0.56 0.22 295) 0%,
+    oklch(0.68 0.19 277) 50%,
+    oklch(0.72 0.14 210) 100%
+  );
+  --nexora-primary-gradient-hover: linear-gradient(
+    135deg,
+    oklch(0.6 0.22 295) 0%,
+    oklch(0.72 0.19 277) 50%,
+    oklch(0.76 0.14 210) 100%
+  );
+  --nexora-primary-shadow:
+    0 1px 0 oklch(1 0 0 / 16%) inset,
+    0 6px 28px oklch(0.68 0.19 277 / 38%);
+}
+
+[data-palette='nexora'] :is(
+    button.bg-primary,
+    a.bg-primary,
+    [data-slot='button'].bg-primary,
+    .bg-sidebar-primary
+  ) {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: var(--nexora-primary-gradient);
+  box-shadow: var(--nexora-primary-shadow);
+  transition:
+    background-image 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+[data-palette='nexora'] :is(
+    button.bg-primary,
+    a.bg-primary,
+    [data-slot='button'].bg-primary,
+    .bg-sidebar-primary
+  ):hover {
+  background-color: transparent;
+  background-image: var(--nexora-primary-gradient-hover);
+}
+
+[data-palette='nexora'] :is(button.bg-primary, a.bg-primary, [data-slot='button'].bg-primary):active {
+  transform: translateY(1px);
+}
+
+[data-palette='nexora'] .bg-primary:not(:is(button, a, [data-slot='button'])) {
+  background-color: transparent;
+  background-image: var(--nexora-primary-gradient);
+  box-shadow: var(--nexora-primary-shadow);
+}

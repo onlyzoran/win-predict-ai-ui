@@ -106,6 +106,24 @@ function paletteTemplate(glass = false) {
       </section>
 
       <section>
+        <h2 class="mb-3 text-sm font-semibold text-foreground">Controls</h2>
+        <div class="flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground"
+          >
+            Primary CTA
+          </button>
+          <button
+            type="button"
+            class="inline-flex h-9 items-center justify-center rounded-md border border-border bg-background px-4 text-sm font-medium text-foreground shadow-xs hover:bg-accent hover:text-accent-foreground"
+          >
+            Outline
+          </button>
+        </div>
+      </section>
+
+      <section>
         <h2 class="mb-3 text-sm font-semibold text-foreground">Borders &amp; input</h2>
         <div class="flex flex-wrap gap-3">
           <div class="rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground">
