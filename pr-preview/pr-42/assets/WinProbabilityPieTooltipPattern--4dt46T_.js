@@ -1,0 +1,4 @@
+import{d as a,o as i,f as r,b as o,t,u as n}from"./iframe-CjsSOzag.js";import{f as s}from"./utils-DlQ6874p.js";const d={class:"grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl"},l={class:"font-medium"},m={class:"font-mono font-medium tabular-nums text-foreground"},p=a({__name:"WinProbabilityPieTooltipPattern",props:{payload:{}},setup(e){return(c,u)=>(i(),r("div",d,[o("div",l,t(e.payload?.name??"Los Angeles Dodgers"),1),o("div",m,t(n(s)(e.payload?.winProbability??.17)),1)]))}});p.__docgenInfo={exportName:"default",displayName:"WinProbabilityPieTooltipPattern",description:"",tags:{},props:[{name:"payload",required:!1,type:{name:`{
+  name?: string
+  winProbability?: number
+}`}}],sourceFiles:["/home/runner/work/win-predict-ai-ui/win-predict-ai-ui/stories/patterns/demos/WinProbabilityPieTooltipPattern.vue"]};export{p as _};
