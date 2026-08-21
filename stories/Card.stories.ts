@@ -6,6 +6,14 @@ const meta = {
   title: 'Win Predict AI / UI / Card',
   component: Card,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Card использует семантические токены (`bg-card`, `text-card-foreground`). Палитру и light/dark переключайте через toolbar **Palette** — отдельные story под каждую тему не нужны.',
+      },
+    },
+  },
 } satisfies Meta<typeof Card>
 
 export default meta
@@ -23,53 +31,5 @@ export const WithoutHeaderAction: Story = {
   render: () => ({
     components: { LeaguePredictionCardDemo },
     template: '<LeaguePredictionCardDemo :with-header-action="false" />',
-  }),
-}
-
-export const ZincLight: Story = {
-  globals: { theme: 'zinc-light' },
-  render: () => ({
-    components: { LeaguePredictionCardDemo },
-    template: '<LeaguePredictionCardDemo />',
-  }),
-}
-
-export const ZincDark: Story = {
-  globals: { theme: 'zinc-dark' },
-  render: () => ({
-    components: { LeaguePredictionCardDemo },
-    template: '<LeaguePredictionCardDemo />',
-  }),
-}
-
-export const SlateTealLight: Story = {
-  globals: { theme: 'slate-teal-light' },
-  render: () => ({
-    components: { LeaguePredictionCardDemo },
-    template: '<LeaguePredictionCardDemo />',
-  }),
-}
-
-export const SlateTealDark: Story = {
-  globals: { theme: 'slate-teal-dark' },
-  render: () => ({
-    components: { LeaguePredictionCardDemo },
-    template: '<LeaguePredictionCardDemo />',
-  }),
-}
-
-export const ClaudePlusLight: Story = {
-  globals: { theme: 'claude-plus-light' },
-  render: () => ({
-    components: { LeaguePredictionCardDemo },
-    template: '<LeaguePredictionCardDemo />',
-  }),
-}
-
-export const ClaudePlusDark: Story = {
-  globals: { theme: 'claude-plus-dark' },
-  render: () => ({
-    components: { LeaguePredictionCardDemo },
-    template: '<LeaguePredictionCardDemo />',
   }),
 }
