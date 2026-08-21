@@ -44,7 +44,7 @@ function toggleTheme() {
       :class="
         isDark
           ? 'right-0.5 left-auto bg-background text-foreground shadow-md'
-          : 'left-0.5 right-auto bg-card text-muted-foreground'
+          : 'left-px right-auto bg-card text-muted-foreground'
       "
     >
       <IconMoon v-if="isDark" class="size-3.5" :stroke="2" />
