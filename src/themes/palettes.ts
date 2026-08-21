@@ -1,5 +1,5 @@
 /** Имена палитр, совпадающие с атрибутом data-palette в CSS-темах. */
-export const PALETTES = ['zinc', 'slate-teal', 'claude-plus'] as const
+export const PALETTES = ['zinc', 'slate-teal', 'claude-plus', 'pastel'] as const
 
 export type Palette = (typeof PALETTES)[number]
 
