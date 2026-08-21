@@ -1,0 +1,81 @@
+/*
+ * Nexora — Storybook-only (не публикуется в npm).
+ * Референс: https://dribbble.com/shots/27160035-Nexora-Futuristic-CRM-Dashboard
+ *
+ * Design Read: спортивный терминал прогнозов в духе Nexora — холодный футуристичный
+ * кокpit с violet-акцентом, вечерний и точный; не zinc-SaaS и не кислотный cyberpunk.
+ *
+ * Акцентный hue: violet ~277° — «live» данные и AI-ощущение на indigo-нейтралях;
+ * точечно на primary / ring / sidebar-primary.
+ *
+ * Light + dark через класс .dark на том же элементе с data-palette="nexora".
+ */
+
+[data-palette='nexora'] {
+  --radius: 0.75rem;
+  --background: oklch(0.962 0.014 278);
+  --foreground: oklch(0.22 0.042 278);
+  --card: oklch(0.988 0.01 278);
+  --card-foreground: oklch(0.22 0.042 278);
+  --popover: oklch(0.995 0.008 278);
+  --popover-foreground: oklch(0.22 0.042 278);
+  --primary: oklch(0.52 0.22 277);
+  --primary-foreground: oklch(0.98 0.012 277);
+  --secondary: oklch(0.928 0.022 278);
+  --secondary-foreground: oklch(0.28 0.038 278);
+  --muted: oklch(0.938 0.018 278);
+  --muted-foreground: oklch(0.46 0.034 278);
+  --accent: oklch(0.908 0.028 278);
+  --accent-foreground: oklch(0.28 0.038 278);
+  --destructive: oklch(0.55 0.22 25);
+  --border: oklch(0.872 0.024 278);
+  --input: oklch(0.898 0.02 278);
+  --ring: oklch(0.52 0.22 277);
+  --chart-1: oklch(0.52 0.22 277);
+  --chart-2: oklch(0.58 0.14 195);
+  --chart-3: oklch(0.62 0.16 55);
+  --chart-4: oklch(0.58 0.18 330);
+  --chart-5: oklch(0.54 0.15 150);
+  --sidebar: oklch(0.945 0.018 278);
+  --sidebar-foreground: oklch(0.24 0.04 278);
+  --sidebar-primary: oklch(0.52 0.22 277);
+  --sidebar-primary-foreground: oklch(0.98 0.012 277);
+  --sidebar-accent: oklch(0.908 0.028 278);
+  --sidebar-accent-foreground: oklch(0.28 0.038 278);
+  --sidebar-border: oklch(0.872 0.024 278);
+  --sidebar-ring: oklch(0.52 0.22 277);
+}
+
+[data-palette='nexora'].dark {
+  --background: oklch(0.145 0.042 278);
+  --foreground: oklch(0.93 0.018 278);
+  --card: oklch(0.195 0.048 278);
+  --card-foreground: oklch(0.93 0.018 278);
+  --popover: oklch(0.215 0.05 278);
+  --popover-foreground: oklch(0.93 0.018 278);
+  --primary: oklch(0.68 0.19 277);
+  --primary-foreground: oklch(0.145 0.042 278);
+  --secondary: oklch(0.245 0.044 278);
+  --secondary-foreground: oklch(0.93 0.018 278);
+  --muted: oklch(0.225 0.04 278);
+  --muted-foreground: oklch(0.66 0.034 278);
+  --accent: oklch(0.265 0.052 278);
+  --accent-foreground: oklch(0.93 0.018 278);
+  --destructive: oklch(0.65 0.19 22);
+  --border: oklch(0.32 0.042 278 / 58%);
+  --input: oklch(0.26 0.04 278);
+  --ring: oklch(0.68 0.19 277);
+  --chart-1: oklch(0.68 0.19 277);
+  --chart-2: oklch(0.72 0.13 195);
+  --chart-3: oklch(0.76 0.15 55);
+  --chart-4: oklch(0.7 0.17 330);
+  --chart-5: oklch(0.7 0.14 150);
+  --sidebar: oklch(0.115 0.038 278);
+  --sidebar-foreground: oklch(0.88 0.022 278);
+  --sidebar-primary: oklch(0.68 0.19 277);
+  --sidebar-primary-foreground: oklch(0.145 0.042 278);
+  --sidebar-accent: oklch(0.245 0.044 278);
+  --sidebar-accent-foreground: oklch(0.88 0.022 278);
+  --sidebar-border: oklch(0.32 0.042 278 / 58%);
+  --sidebar-ring: oklch(0.68 0.19 277);
+}

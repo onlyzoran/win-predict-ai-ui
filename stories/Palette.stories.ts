@@ -166,3 +166,17 @@ export const ClaudePlusDark: Story = {
     template: paletteTemplate(),
   }),
 }
+
+export const NexoraLight: Story = {
+  globals: { theme: 'nexora-light' },
+  render: () => ({
+    template: paletteTemplate(),
+  }),
+}
+
+export const NexoraDark: Story = {
+  globals: { theme: 'nexora-dark' },
+  render: () => ({
+    template: paletteTemplate(),
+  }),
+}

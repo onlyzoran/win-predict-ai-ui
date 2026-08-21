@@ -47,6 +47,9 @@
 /* Палитры — единый источник правды в src/themes/ (публикуются в npm). */
 @import '../src/themes/index.css';
 
+/* Storybook-only: nexora не входит в npm-пакет. */
+@import './themes/nexora.css';
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
