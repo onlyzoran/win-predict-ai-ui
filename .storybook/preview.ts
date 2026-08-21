@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/vue3'
-import { addons, useGlobals } from 'storybook/preview-api'
-import { watch } from 'vue'
+import { addons } from 'storybook/preview-api'
 import './preview.css'
 
 /** Toolbar values: zinc | slate-teal | claude-plus × light/dark */
@@ -84,15 +83,6 @@ const preview: Preview = {
 
       return {
         components: { story },
-        setup() {
-          const [globals] = useGlobals()
-
-          watch(
-            () => globals.theme as string,
-            (theme) => applyTheme(theme),
-            { immediate: true },
-          )
-        },
         template: `
           <div class="min-h-screen bg-background text-foreground p-6">
             <story />
