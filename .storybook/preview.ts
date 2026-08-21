@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/vue3'
-import { computed, onMounted, watch } from 'vue'
+import { addons, useGlobals } from 'storybook/preview-api'
+import { watch } from 'vue'
 import './preview.css'
 
 /** Toolbar values: zinc | slate-teal | claude-plus × light/dark */
@@ -40,6 +41,11 @@ function applyTheme(value: string) {
   document.documentElement.classList.toggle('dark', dark)
 }
 
+// Toolbar меняет globals без remount декоратора — слушаем канал Storybook.
+addons.getChannel().on('globalsUpdated', ({ globals }: { globals: { theme?: string } }) => {
+  if (globals.theme) applyTheme(globals.theme)
+})
+
 const preview: Preview = {
   parameters: {
     layout: 'fullscreen',
@@ -73,22 +79,27 @@ const preview: Preview = {
     theme: 'slate-teal-light',
   },
   decorators: [
-    (story, context) => ({
-      components: { story },
-      setup() {
-        const theme = computed(() => context.globals.theme as string)
+    (story, context) => {
+      applyTheme(context.globals.theme as string)
 
-        onMounted(() => applyTheme(theme.value))
-        watch(theme, applyTheme)
+      return {
+        components: { story },
+        setup() {
+          const [globals] = useGlobals()
 
-        return { theme }
-      },
-      template: `
-        <div class="min-h-screen bg-background text-foreground p-6">
-          <story />
-        </div>
-      `,
-    }),
+          watch(
+            () => globals.theme as string,
+            (theme) => applyTheme(theme),
+            { immediate: true },
+          )
+        },
+        template: `
+          <div class="min-h-screen bg-background text-foreground p-6">
+            <story />
+          </div>
+        `,
+      }
+    },
   ],
 }
 
