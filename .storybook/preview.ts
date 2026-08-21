@@ -46,6 +46,10 @@ function applyTheme(value: string) {
   document.documentElement.classList.toggle('dark', dark)
 }
 
+function isNexoraTheme(value: string) {
+  return value === 'nexora-light' || value === 'nexora-dark'
+}
+
 const preview: Preview = {
   parameters: {
     layout: 'fullscreen',
@@ -85,14 +89,20 @@ const preview: Preview = {
       components: { story },
       setup() {
         const theme = computed(() => context.globals.theme as string)
+        const isNexora = computed(() => isNexoraTheme(theme.value))
 
         onMounted(() => applyTheme(theme.value))
         watch(theme, applyTheme)
 
-        return { theme }
+        return { isNexora }
       },
       template: `
-        <div class="min-h-screen bg-background text-foreground p-6">
+        <div
+          :class="[
+            'min-h-screen p-6 text-foreground',
+            isNexora ? 'nexora-canvas' : 'bg-background',
+          ]"
+        >
           <story />
         </div>
       `,

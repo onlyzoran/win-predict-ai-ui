@@ -19,7 +19,7 @@ const predictions = [
 
 function terminalTemplate() {
   return `
-    <div class="flex min-h-[32rem] flex-col gap-0 overflow-hidden rounded-lg border border-border bg-background">
+    <div class="nexora-glass-panel flex min-h-[32rem] flex-col gap-0 overflow-hidden rounded-xl border border-border bg-card/70">
       <AppHeaderShell
         v-model:locale="locale"
         :locales="locales"
@@ -45,7 +45,7 @@ function terminalTemplate() {
       </AppHeaderShell>
 
       <div class="flex flex-1">
-        <aside class="hidden w-44 shrink-0 border-r border-sidebar-border bg-sidebar p-3 sm:block">
+        <aside class="hidden w-44 shrink-0 border-r border-sidebar-border bg-sidebar/80 p-3 sm:block">
           <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Navigation</p>
           <nav class="flex flex-col gap-1">
             <a href="#" class="rounded-md bg-sidebar-primary px-2.5 py-1.5 text-sm font-medium text-sidebar-primary-foreground">
@@ -74,7 +74,7 @@ function terminalTemplate() {
             </button>
           </div>
 
-          <div class="flex h-20 items-end gap-2 rounded-lg border border-border bg-card p-3">
+          <div class="nexora-glass-panel flex h-20 items-end gap-2 rounded-lg border border-border bg-card/75 p-3">
             <div class="h-[65%] flex-1 rounded-sm bg-chart-1" title="Win rate" />
             <div class="h-[45%] flex-1 rounded-sm bg-chart-2" title="ROI" />
             <div class="h-[80%] flex-1 rounded-sm bg-chart-3" title="Edge" />
@@ -82,7 +82,7 @@ function terminalTemplate() {
             <div class="h-[70%] flex-1 rounded-sm bg-chart-5" title="Accuracy" />
           </div>
 
-          <div class="overflow-hidden rounded-lg border border-border bg-card">
+          <div class="nexora-glass-panel overflow-hidden rounded-lg border border-border bg-card/75">
             <table class="w-full text-sm">
               <thead class="border-b border-border bg-muted/50">
                 <tr>
