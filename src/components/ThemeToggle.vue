@@ -43,7 +43,7 @@ function toggleTheme() {
       class="pointer-events-none absolute top-1/2 inline-flex size-6 -translate-y-1/2 items-center justify-center rounded-full shadow-sm transition-[left,right,background-color,color,box-shadow] duration-200"
       :class="
         isDark
-          ? 'right-0.5 left-auto bg-background text-foreground shadow-md'
+          ? 'right-px left-auto bg-background text-foreground shadow-md'
           : 'left-px right-auto bg-card text-muted-foreground'
       "
     >
