@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/vue3'
-import { computed, onMounted, watch } from 'vue'
+import { addons } from 'storybook/preview-api'
 import './preview.css'
 
 /** Toolbar values: zinc | slate-teal | claude-plus | nexora × light/dark */
@@ -46,9 +46,10 @@ function applyTheme(value: string) {
   document.documentElement.classList.toggle('dark', dark)
 }
 
-function isNexoraTheme(value: string) {
-  return value === 'nexora-light' || value === 'nexora-dark'
-}
+// Toolbar меняет globals без remount декоратора — слушаем канал Storybook.
+addons.getChannel().on('globalsUpdated', ({ globals }: { globals: { theme?: string } }) => {
+  if (globals.theme) applyTheme(globals.theme)
+})
 
 const preview: Preview = {
   parameters: {
@@ -85,28 +86,18 @@ const preview: Preview = {
     theme: 'slate-teal-light',
   },
   decorators: [
-    (story, context) => ({
-      components: { story },
-      setup() {
-        const theme = computed(() => context.globals.theme as string)
-        const isNexora = computed(() => isNexoraTheme(theme.value))
+    (story, context) => {
+      applyTheme(context.globals.theme as string)
 
-        onMounted(() => applyTheme(theme.value))
-        watch(theme, applyTheme)
-
-        return { isNexora }
-      },
-      template: `
-        <div
-          :class="[
-            'min-h-screen p-6 text-foreground',
-            isNexora ? 'nexora-canvas' : 'bg-background',
-          ]"
-        >
-          <story />
-        </div>
-      `,
-    }),
+      return {
+        components: { story },
+        template: `
+          <div class="min-h-screen bg-background text-foreground p-6 nexora-canvas">
+            <story />
+          </div>
+        `,
+      }
+    },
   ],
 }
 
