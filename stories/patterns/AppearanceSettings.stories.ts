@@ -11,7 +11,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Story-only replica of AppearanceView palette picker. Selections are local state — use Storybook Palette toolbar for live theme preview.',
+          'Story-only replica of AppearanceView palette picker. Selections are local state — use Storybook Palette toolbar for live theme preview. NexoraLight / NexoraDark: toolbar on Nexora while nested swatches show each palette’s own tokens.',
       },
     },
   },
@@ -35,5 +35,7 @@ export const {
   SlateTealDark,
   ClaudePlusLight,
   ClaudePlusDark,
+  NexoraLight,
+  NexoraDark,
 } = withAllPalettes(Default)
 
