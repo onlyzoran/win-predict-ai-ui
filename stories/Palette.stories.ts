@@ -39,33 +39,40 @@ function outcomesSection() {
   `
 }
 
-function paletteTemplate(includeOutcomes = false) {
+function paletteTemplate(glass = false, includeOutcomes = false) {
+  const panel = glass ? 'nexora-glass-panel' : ''
+  const bg = (token: string, opacity?: number) =>
+    glass && opacity != null ? `${token}/${opacity}` : token
+
   return `
     <div class="mx-auto flex w-full max-w-3xl flex-col gap-8">
       <section>
         <h2 class="mb-3 text-sm font-semibold text-foreground">Surfaces</h2>
+        ${glass ? `<p class="mb-3 text-xs text-muted-foreground">
+          Frosted glass поверх ambient-canvas — backdrop-blur + полупрозрачные токены (как в референсе Nexora CRM).
+        </p>` : ''}
         <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <div class="rounded-lg border border-border bg-background p-3 text-foreground">
+          <div class="${panel} rounded-lg border border-border bg-${bg('background', 60)} p-3 text-foreground">
             <p class="text-xs font-medium">background</p>
             <p class="mt-1 text-xs opacity-80">Sample text</p>
           </div>
-          <div class="rounded-lg border border-border bg-card p-3 text-card-foreground">
+          <div class="${panel} rounded-lg border border-border bg-${bg('card', 70)} p-3 text-card-foreground">
             <p class="text-xs font-medium">card</p>
             <p class="mt-1 text-xs opacity-80">Sample text</p>
           </div>
-          <div class="rounded-lg border border-border bg-popover p-3 text-popover-foreground">
+          <div class="${panel} rounded-lg border border-border bg-${bg('popover', 75)} p-3 text-popover-foreground">
             <p class="text-xs font-medium">popover</p>
             <p class="mt-1 text-xs opacity-80">Sample text</p>
           </div>
-          <div class="rounded-lg border border-border bg-muted p-3 text-muted-foreground">
+          <div class="${panel} rounded-lg border border-border bg-${glass ? 'muted/55' : 'muted'} p-3 text-muted-foreground">
             <p class="text-xs font-medium">muted</p>
             <p class="mt-1 text-xs opacity-80">Sample text</p>
           </div>
-          <div class="rounded-lg border border-border bg-secondary p-3 text-secondary-foreground">
+          <div class="${panel} rounded-lg border border-border bg-${glass ? 'secondary/60' : 'secondary'} p-3 text-secondary-foreground">
             <p class="text-xs font-medium">secondary</p>
             <p class="mt-1 text-xs opacity-80">Sample text</p>
           </div>
-          <div class="rounded-lg border border-border bg-accent p-3 text-accent-foreground">
+          <div class="${panel} rounded-lg border border-border bg-${glass ? 'accent/55' : 'accent'} p-3 text-accent-foreground">
             <p class="text-xs font-medium">accent</p>
             <p class="mt-1 text-xs opacity-80">Sample text</p>
           </div>
@@ -83,11 +90,11 @@ function paletteTemplate(includeOutcomes = false) {
       <section>
         <h2 class="mb-3 text-sm font-semibold text-foreground">Sidebar</h2>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <div class="rounded-lg border border-sidebar-border bg-sidebar p-3 text-sidebar-foreground">
+          <div class="${panel} rounded-lg border border-sidebar-border bg-${glass ? 'sidebar/75' : 'sidebar'} p-3 text-sidebar-foreground">
             <p class="text-xs font-medium">sidebar</p>
             <p class="mt-1 text-xs opacity-80">Nav item</p>
           </div>
-          <div class="rounded-lg border border-sidebar-border bg-sidebar-accent p-3 text-sidebar-accent-foreground">
+          <div class="${panel} rounded-lg border border-sidebar-border bg-${glass ? 'sidebar-accent/55' : 'sidebar-accent'} p-3 text-sidebar-accent-foreground">
             <p class="text-xs font-medium">sidebar-accent</p>
             <p class="mt-1 text-xs opacity-80">Nav item</p>
           </div>
@@ -100,7 +107,7 @@ function paletteTemplate(includeOutcomes = false) {
 
       <section>
         <h2 class="mb-3 text-sm font-semibold text-foreground">Charts</h2>
-        <div class="flex h-24 items-end gap-2 rounded-lg border border-border bg-card p-4">
+        <div class="${panel} flex h-24 items-end gap-2 rounded-lg border border-border bg-${bg('card', 70)} p-4">
           <div class="h-[72%] flex-1 rounded-sm bg-chart-1" title="chart-1" />
           <div class="h-[56%] flex-1 rounded-sm bg-chart-2" title="chart-2" />
           <div class="h-[88%] flex-1 rounded-sm bg-chart-3" title="chart-3" />
@@ -127,6 +134,24 @@ function paletteTemplate(includeOutcomes = false) {
       </section>
 
       ${includeOutcomes ? outcomesSection() : ''}
+
+      <section>
+        <h2 class="mb-3 text-sm font-semibold text-foreground">Controls</h2>
+        <div class="flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground"
+          >
+            Primary CTA
+          </button>
+          <button
+            type="button"
+            class="inline-flex h-9 items-center justify-center rounded-md border border-border bg-background px-4 text-sm font-medium text-foreground shadow-xs hover:bg-accent hover:text-accent-foreground"
+          >
+            Outline
+          </button>
+        </div>
+      </section>
 
       <section>
         <h2 class="mb-3 text-sm font-semibold text-foreground">Borders &amp; input</h2>
@@ -200,12 +225,26 @@ export const ClaudePlusDark: Story = {
 export const PastelLight: Story = {
   globals: { theme: 'pastel-light' },
   render: () => ({
-    template: paletteTemplate(true),
+    template: paletteTemplate(false, true),
   }),
 }
 
 export const PastelDark: Story = {
   globals: { theme: 'pastel-dark' },
+  render: () => ({
+    template: paletteTemplate(false, true),
+  }),
+}
+
+export const NexoraLight: Story = {
+  globals: { theme: 'nexora-light' },
+  render: () => ({
+    template: paletteTemplate(true),
+  }),
+}
+
+export const NexoraDark: Story = {
+  globals: { theme: 'nexora-dark' },
   render: () => ({
     template: paletteTemplate(true),
   }),

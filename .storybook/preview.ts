@@ -2,7 +2,7 @@ import type { Preview } from '@storybook/vue3'
 import { addons } from 'storybook/preview-api'
 import './preview.css'
 
-/** Toolbar values: zinc | slate-teal | claude-plus | pastel × light/dark */
+/** Toolbar values: zinc | slate-teal | claude-plus | pastel | nexora × light/dark */
 const THEME_VALUES = [
   'zinc-light',
   'zinc-dark',
@@ -12,11 +12,13 @@ const THEME_VALUES = [
   'claude-plus-dark',
   'pastel-light',
   'pastel-dark',
+  'nexora-light',
+  'nexora-dark',
 ] as const
 
 type ThemeValue = (typeof THEME_VALUES)[number]
 
-type PaletteName = 'zinc' | 'slate-teal' | 'claude-plus' | 'pastel'
+type PaletteName = 'zinc' | 'slate-teal' | 'claude-plus' | 'pastel' | 'nexora'
 
 function parseTheme(value: string): { palette: PaletteName; dark: boolean } {
   switch (value as ThemeValue) {
@@ -34,6 +36,10 @@ function parseTheme(value: string): { palette: PaletteName; dark: boolean } {
       return { palette: 'pastel', dark: false }
     case 'pastel-dark':
       return { palette: 'pastel', dark: true }
+    case 'nexora-light':
+      return { palette: 'nexora', dark: false }
+    case 'nexora-dark':
+      return { palette: 'nexora', dark: true }
     case 'slate-teal-light':
     default:
       return { palette: 'slate-teal', dark: false }
@@ -77,6 +83,8 @@ const preview: Preview = {
           { value: 'claude-plus-dark', title: 'Claude+ · Dark', icon: 'moon' },
           { value: 'pastel-light', title: 'Pastel · Light', icon: 'sun' },
           { value: 'pastel-dark', title: 'Pastel · Dark', icon: 'moon' },
+          { value: 'nexora-light', title: 'Nexora · Light', icon: 'sun' },
+          { value: 'nexora-dark', title: 'Nexora · Dark', icon: 'moon' },
         ],
         dynamicTitle: true,
       },
@@ -92,7 +100,7 @@ const preview: Preview = {
       return {
         components: { story },
         template: `
-          <div class="min-h-screen bg-background text-foreground p-6">
+          <div class="min-h-screen bg-background text-foreground p-6 nexora-canvas">
             <story />
           </div>
         `,
