@@ -1,8 +1,8 @@
 import type { Preview } from '@storybook/vue3'
-import { computed, onMounted, watch } from 'vue'
+import { addons } from 'storybook/preview-api'
 import './preview.css'
 
-/** Toolbar values: zinc | slate-teal | claude-plus × light/dark */
+/** Toolbar values: zinc | slate-teal | claude-plus | nexora × light/dark */
 const THEME_VALUES = [
   'zinc-light',
   'zinc-dark',
@@ -10,11 +10,13 @@ const THEME_VALUES = [
   'slate-teal-dark',
   'claude-plus-light',
   'claude-plus-dark',
+  'nexora-light',
+  'nexora-dark',
 ] as const
 
 type ThemeValue = (typeof THEME_VALUES)[number]
 
-type PaletteName = 'zinc' | 'slate-teal' | 'claude-plus'
+type PaletteName = 'zinc' | 'slate-teal' | 'claude-plus' | 'nexora'
 
 function parseTheme(value: string): { palette: PaletteName; dark: boolean } {
   switch (value as ThemeValue) {
@@ -28,6 +30,10 @@ function parseTheme(value: string): { palette: PaletteName; dark: boolean } {
       return { palette: 'claude-plus', dark: false }
     case 'claude-plus-dark':
       return { palette: 'claude-plus', dark: true }
+    case 'nexora-light':
+      return { palette: 'nexora', dark: false }
+    case 'nexora-dark':
+      return { palette: 'nexora', dark: true }
     case 'slate-teal-light':
     default:
       return { palette: 'slate-teal', dark: false }
@@ -39,6 +45,11 @@ function applyTheme(value: string) {
   document.documentElement.setAttribute('data-palette', palette)
   document.documentElement.classList.toggle('dark', dark)
 }
+
+// Toolbar меняет globals без remount декоратора — слушаем канал Storybook.
+addons.getChannel().on('globalsUpdated', ({ globals }: { globals: { theme?: string } }) => {
+  if (globals.theme) applyTheme(globals.theme)
+})
 
 const preview: Preview = {
   parameters: {
@@ -64,6 +75,8 @@ const preview: Preview = {
           { value: 'slate-teal-dark', title: 'Slate + Teal · Dark', icon: 'moon' },
           { value: 'claude-plus-light', title: 'Claude+ · Light', icon: 'sun' },
           { value: 'claude-plus-dark', title: 'Claude+ · Dark', icon: 'moon' },
+          { value: 'nexora-light', title: 'Nexora · Light', icon: 'sun' },
+          { value: 'nexora-dark', title: 'Nexora · Dark', icon: 'moon' },
         ],
         dynamicTitle: true,
       },
@@ -73,22 +86,18 @@ const preview: Preview = {
     theme: 'slate-teal-light',
   },
   decorators: [
-    (story, context) => ({
-      components: { story },
-      setup() {
-        const theme = computed(() => context.globals.theme as string)
+    (story, context) => {
+      applyTheme(context.globals.theme as string)
 
-        onMounted(() => applyTheme(theme.value))
-        watch(theme, applyTheme)
-
-        return { theme }
-      },
-      template: `
-        <div class="min-h-screen bg-background text-foreground p-6">
-          <story />
-        </div>
-      `,
-    }),
+      return {
+        components: { story },
+        template: `
+          <div class="min-h-screen bg-background text-foreground p-6 nexora-canvas">
+            <story />
+          </div>
+        `,
+      }
+    },
   ],
 }
 

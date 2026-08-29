@@ -57,7 +57,7 @@
 | Темы (CSS tokens) | `src/themes/` — `@onlyzoran/win-predict-ai-ui/themes` |
 | Storybook | `stories/<Name>.stories.ts`, title `Win Predict AI / UI / <Name>` |
 
-Стори: минимум **Default** + **Light** / **Dark** через `globals.theme`, по образцу `ThemeToggle.stories.ts`.
+Стори: **Default** (+ варианты структуры/API, если есть). Палитру и light/dark — через toolbar **Palette** в `.storybook/preview.ts`, не дублировать шесть копий story на каждый `zinc-*` / `slate-teal-*` / `claude-plus-*`. Исключение: `Palette.stories.ts` и осознанный `withAllPalettes` для регрессии конкретной палитры (не для Card).
 
 ## Accessibility
 
@@ -69,7 +69,8 @@
 
 - Фон/текст: `bg-card` / `text-card-foreground`.
 - Структура в духе shadcn-vue: контейнер + слоты/подкомпоненты header / content / footer (и title/description при необходимости).
-- Не изобретать отдельную палитру «карточки».
+- Не изобретать отдельную палитру «карточки» и **не** плодить story под каждую тему — Card читает те же CSS variables, что переключает toolbar Palette.
+- Storybook: `Default` + структурные варианты (например без header action); preview всех палитр — toolbar, не `ZincLight` / `SlateTealDark` и т.п.
 - Один согласованный API в PR; альтернативы — только в тексте PR, не несколько копий в коде.
 
 ## Do / Don't

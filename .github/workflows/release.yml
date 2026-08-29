@@ -54,6 +54,7 @@ jobs:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
           INPUT_BUMP: ${{ inputs.bump }}
           BEFORE_SHA: ${{ github.event.before }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "type=${INPUT_BUMP}" >> "$GITHUB_OUTPUT"
@@ -62,6 +63,15 @@ jobs:
 
           if echo "$COMMIT_MSG" | grep -qiE '\[skip release\]|\[no release\]'; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Orchestrator already bumped package.json before merge: publish that version.
+          CUR="$(node -p "require('./package.json').version")"
+          NAME="$(node -p "require('./package.json').name")"
+          if ! npm view "${NAME}@${CUR}" version >/dev/null 2>&1; then
+            echo "Pre-bumped unpublished version ${NAME}@${CUR}"
+            echo "type=keep" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -118,7 +128,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Bump version
-        if: steps.bump.outputs.skip != 'true'
+        if: steps.bump.outputs.skip != 'true' && steps.bump.outputs.type != 'keep'
         run: |
           npm version "${{ steps.bump.outputs.type }}" -m "chore(release): %s"
 
@@ -131,5 +141,10 @@ jobs:
       - name: Push version commit and tag
         if: steps.bump.outputs.skip != 'true'
         run: |
-          git push
-          git push --tags
+          VER="$(node -p "require('./package.json').version")"
+          git push || true
+          if ! git rev-parse "v${VER}" >/dev/null 2>&1; then
+            git tag "v${VER}"
+          fi
+          git push origin "v${VER}"
+          git push || true

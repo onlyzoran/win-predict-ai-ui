@@ -11,21 +11,26 @@ import {
   CardTitle,
 } from '../../../src/components/ui/card'
 
-/** Story-only palette picker — mirrors AppearanceView without app routing/i18n. */
-const lightPalette = ref<Palette>('slate-teal')
-const darkPalette = ref<Palette>('slate-teal')
+/** Storybook-only — Nexora is not published in npm palettes. */
+type StoryPalette = Palette | 'nexora'
+const STORY_PALETTES = [...PALETTES, 'nexora'] as const satisfies readonly StoryPalette[]
 
-const paletteMeta: Record<Palette, { name: string; description: string }> = {
+/** Story-only palette picker — mirrors AppearanceView without app routing/i18n. */
+const lightPalette = ref<StoryPalette>('slate-teal')
+const darkPalette = ref<StoryPalette>('slate-teal')
+
+const paletteMeta: Record<StoryPalette, { name: string; description: string }> = {
   zinc: { name: 'Zinc', description: 'Neutral default, minimal chroma' },
   'slate-teal': { name: 'Slate + Teal', description: 'Product default — calm terminal' },
   'claude-plus': { name: 'Claude+', description: 'Warm paper tones, soft accent' },
+  nexora: { name: 'Nexora', description: 'Storybook — violet glass cockpit (CRM ref)' },
 }
 
-function selectLight(palette: Palette) {
+function selectLight(palette: StoryPalette) {
   lightPalette.value = palette
 }
 
-function selectDark(palette: Palette) {
+function selectDark(palette: StoryPalette) {
   darkPalette.value = palette
 }
 </script>
@@ -60,7 +65,7 @@ function selectDark(palette: Palette) {
         <p class="mb-4 text-sm text-muted-foreground">Palette when the app is in light theme.</p>
         <div class="grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <button
-            v-for="palette in PALETTES"
+            v-for="palette in STORY_PALETTES"
             :key="`light-${palette}`"
             type="button"
             class="h-full w-full text-left"
@@ -107,7 +112,7 @@ function selectDark(palette: Palette) {
         <p class="mb-4 text-sm text-muted-foreground">Palette when the app is in dark theme.</p>
         <div class="grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <button
-            v-for="palette in PALETTES"
+            v-for="palette in STORY_PALETTES"
             :key="`dark-${palette}`"
             type="button"
             class="h-full w-full text-left"

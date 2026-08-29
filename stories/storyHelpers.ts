@@ -8,12 +8,14 @@ export const PALETTE_THEMES = [
   ['SlateTealDark', 'slate-teal-dark'],
   ['ClaudePlusLight', 'claude-plus-light'],
   ['ClaudePlusDark', 'claude-plus-dark'],
+  ['NexoraLight', 'nexora-light'],
+  ['NexoraDark', 'nexora-dark'],
 ] as const
 
 export type PaletteStoryName = (typeof PALETTE_THEMES)[number][0]
 export type PaletteTheme = (typeof PALETTE_THEMES)[number][1]
 
-/** Clone a story for each palette × mode (6 variants). Optional namePrefix for secondary stories. */
+/** Clone a story for each palette × mode (8 variants). Optional namePrefix for secondary stories. */
 export function withAllPalettes<T>(
   base: StoryObj<T>,
   namePrefix = '',

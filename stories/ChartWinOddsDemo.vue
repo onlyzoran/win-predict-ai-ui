@@ -58,14 +58,17 @@ function formatPercent(value: number): string {
       <p class="text-xs text-muted-foreground">Mock chart — ChartContainer + Unovis donut</p>
     </div>
 
-    <ChartContainer :config="chartConfig" class="mx-auto aspect-square max-h-[260px] w-full">
-      <VisSingleContainer :data="slices" :margin="{ top: 4, bottom: 4 }">
+    <ChartContainer :config="chartConfig" class="mx-auto w-full max-w-md">
+      <VisSingleContainer
+        :data="slices"
+        :margin="{ top: 4, bottom: 4 }"
+        class="mx-auto aspect-square max-h-[260px] w-full"
+      >
         <VisDonut :value="valueAccessor" :color="colorAccessor" :arc-width="28" />
         <ChartTooltip :triggers="tooltipTriggers" />
       </VisSingleContainer>
+      <ChartLegendContent />
     </ChartContainer>
-
-    <ChartLegendContent />
 
     <ul class="grid gap-2 text-sm">
       <li v-for="slice in slices" :key="slice.key" class="flex items-center justify-between gap-3">
