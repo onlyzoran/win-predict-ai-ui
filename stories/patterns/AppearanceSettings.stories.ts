@@ -35,6 +35,8 @@ export const {
   SlateTealDark,
   ClaudePlusLight,
   ClaudePlusDark,
+  PastelLight,
+  PastelDark,
   NexoraLight,
   NexoraDark,
 } = withAllPalettes(Default)
