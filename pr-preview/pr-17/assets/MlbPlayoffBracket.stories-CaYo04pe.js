@@ -1,0 +1,15 @@
+import{w as r}from"./storyHelpers-BtxSlO8i.js";import{_ as a}from"./MlbPlayoffBracketPattern-Bxdp_plJ.js";import"./iframe-Cjt7rWhq.js";import"./preload-helper-BpNApFJb.js";import"./bracket-CVcalzVL.js";import"./cn-DaT-yT0k.js";import"./utils-DlQ6874p.js";import"./MlbLeagueBracketPattern-CRLcZBIE.js";import"./index-DcH2s0gs.js";import"./Primitive-B8dr5XQd.js";import"./index-B34JahxU.js";const u={title:"Win Predict AI / Patterns / MlbPlayoffBracket",component:a,tags:["autodocs"],parameters:{layout:"padded"}},t={render:()=>({components:{MlbPlayoffBracketPattern:a},template:"<MlbPlayoffBracketPattern />"})},e={render:()=>({components:{MlbPlayoffBracketPattern:a},template:'<MlbPlayoffBracketPattern layout="mobile" />'})},{ZincLight:k,ZincDark:b,SlateTealLight:y,SlateTealDark:M,ClaudePlusLight:g,ClaudePlusDark:B}=r(t);t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  render: () => ({
+    components: {
+      MlbPlayoffBracketPattern
+    },
+    template: '<MlbPlayoffBracketPattern />'
+  })
+}`,...t.parameters?.docs?.source}}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+  render: () => ({
+    components: {
+      MlbPlayoffBracketPattern
+    },
+    template: '<MlbPlayoffBracketPattern layout="mobile" />'
+  })
+}`,...e.parameters?.docs?.source}}};const D=["Default","Mobile","ZincLight","ZincDark","SlateTealLight","SlateTealDark","ClaudePlusLight","ClaudePlusDark"];export{B as ClaudePlusDark,g as ClaudePlusLight,t as Default,e as Mobile,M as SlateTealDark,y as SlateTealLight,b as ZincDark,k as ZincLight,D as __namedExportsOrder,u as default};
