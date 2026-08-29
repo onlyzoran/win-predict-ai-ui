@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0 (2026-08-29)
+
+* feat(StandingsGlossary): экспорт легенды колонок футбольных standings ([PR](https://github.com/onlyzoran/win-predict-ai-ui/pull/36), [issue](https://github.com/onlyzoran/win-predict-ai-ui/issues/35))
+
 ## 0.3.5 (2026-08-27)
 
 * Изолировать Nexora CSS от превью палитр ([PR](https://github.com/onlyzoran/win-predict-ai-ui/pull/44), [issue](https://github.com/onlyzoran/win-predict-ai-ui/issues/43))
