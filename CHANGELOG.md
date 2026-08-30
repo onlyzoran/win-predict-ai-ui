@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0 (2026-08-30)
+
+* Акцент «AI» в бренде header ([PR](https://github.com/onlyzoran/win-predict-ai-ui/pull/47), [issue](https://github.com/onlyzoran/win-predict-ai-orchestrator/issues/31))
+
 ## 0.4.0 (2026-08-29)
 
 * feat(StandingsGlossary): экспорт легенды колонок футбольных standings ([PR](https://github.com/onlyzoran/win-predict-ai-ui/pull/36), [issue](https://github.com/onlyzoran/win-predict-ai-ui/issues/35))
