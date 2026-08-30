@@ -1,4 +1,10 @@
 export { cn } from './utils/cn'
+export {
+  MULTI_WORD_NICKNAMES,
+  shortTeamName,
+  teamNameLabels,
+  type TeamNameLabels,
+} from './utils/shortTeamName'
 
 export { DEFAULT_PALETTE, PALETTES, type Palette } from './themes/palettes'
 

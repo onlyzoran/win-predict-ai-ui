@@ -25,16 +25,7 @@ export function abbreviateGroup(group: string): string {
   return group.slice(0, 3).toUpperCase()
 }
 
-export function shortTeamName(name: string): string {
-  const multi = ['Red Sox', 'White Sox', 'Blue Jays'] as const
-  for (const nick of multi) {
-    if (name.endsWith(nick)) {
-      return nick
-    }
-  }
-  const parts = name.trim().split(/\s+/)
-  return parts[parts.length - 1] ?? name
-}
+export { shortTeamName, teamNameLabels } from '../../src/utils/shortTeamName'
 
 export function hasWinsStandings(
   teams: Array<{ standings?: { wins: number } }>,

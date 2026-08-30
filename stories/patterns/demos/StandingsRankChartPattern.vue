@@ -11,6 +11,7 @@ import {
   componentToString,
 } from '../../../src/components/ui/chart'
 import type { RankSeries } from '../types'
+import { shortTeamName } from '../utils'
 
 const PLOT_HEIGHT_PX = 384
 const PLOT_INSET_PX = 6
@@ -183,7 +184,10 @@ function labelClass(teamName: string): string {
           @mouseenter="setHighlightedTeam(team.name)"
           @mouseleave="setHighlightedTeam(null)"
         >
-          <span class="truncate font-medium" :style="{ color: team.color }">{{ team.name }}</span>
+          <span class="truncate font-medium" :style="{ color: team.color }" :title="team.name">
+            <span class="md:hidden">{{ shortTeamName(team.name) }}</span>
+            <span class="hidden md:inline">{{ team.name }}</span>
+          </span>
           <span
             class="size-1.5 shrink-0 rounded-full"
             :style="{ backgroundColor: team.color }"
@@ -255,7 +259,10 @@ function labelClass(teamName: string): string {
             :style="{ backgroundColor: team.color }"
             aria-hidden="true"
           />
-          <span class="truncate font-medium" :style="{ color: team.color }">{{ team.name }}</span>
+          <span class="truncate font-medium" :style="{ color: team.color }" :title="team.name">
+            <span class="md:hidden">{{ shortTeamName(team.name) }}</span>
+            <span class="hidden md:inline">{{ team.name }}</span>
+          </span>
         </li>
       </ul>
     </div>
