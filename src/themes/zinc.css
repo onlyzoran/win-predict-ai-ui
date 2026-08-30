@@ -36,6 +36,8 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --brand-ai-from: oklch(0.44 0.13 195);
+  --brand-ai-to: oklch(0.50 0.15 210);
 }
 
 [data-palette='zinc'].dark {
@@ -70,4 +72,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+  --brand-ai-from: oklch(0.76 0.11 195);
+  --brand-ai-to: oklch(0.82 0.13 225);
 }

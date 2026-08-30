@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
 import { IconLogin } from '@onlyzoran/win-predict-ai-icons'
 import AppHeaderShell from '../src/components/AppHeaderShell.vue'
+import BrandTitle from '../src/components/BrandTitle.vue'
 import { withAllPalettes } from './storyHelpers'
 
 const locales = ['en', 'ru'] as const
@@ -32,7 +33,7 @@ function terminalTemplate() {
         github-aria-label="GitHub"
       >
         <template #brand>
-          <span class="font-semibold text-foreground">Win Predict AI</span>
+          <BrandTitle href="#" />
         </template>
         <template #actions>
           <a
@@ -135,7 +136,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: () => ({
-    components: { AppHeaderShell, IconLogin },
+    components: { AppHeaderShell, IconLogin, BrandTitle },
     setup() {
       const locale = ref('en')
       return { locale, locales, localeLabels, predictions }

@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
 import { IconLogin } from '@onlyzoran/win-predict-ai-icons'
 import AppHeaderShell from '../src/components/AppHeaderShell.vue'
+import BrandTitle from '../src/components/BrandTitle.vue'
 
 const locales = ['en', 'ru'] as const
 const localeLabels: Record<string, string> = {
@@ -31,7 +32,7 @@ function terminalTemplate() {
         github-aria-label="GitHub"
       >
         <template #brand>
-          <span class="font-semibold text-foreground">Win Predict AI</span>
+          <BrandTitle href="#" />
         </template>
         <template #actions>
           <a
@@ -134,7 +135,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: () => ({
-    components: { AppHeaderShell, IconLogin },
+    components: { AppHeaderShell, IconLogin, BrandTitle },
     setup() {
       const locale = ref('en')
       return { locale, locales, localeLabels, predictions }
@@ -146,7 +147,7 @@ export const Default: Story = {
 export const Light: Story = {
   globals: { theme: 'nexora-light' },
   render: () => ({
-    components: { AppHeaderShell, IconLogin },
+    components: { AppHeaderShell, IconLogin, BrandTitle },
     setup() {
       const locale = ref('en')
       return { locale, locales, localeLabels, predictions }
@@ -158,7 +159,7 @@ export const Light: Story = {
 export const Dark: Story = {
   globals: { theme: 'nexora-dark' },
   render: () => ({
-    components: { AppHeaderShell, IconLogin },
+    components: { AppHeaderShell, IconLogin, BrandTitle },
     setup() {
       const locale = ref('en')
       return { locale, locales, localeLabels, predictions }
