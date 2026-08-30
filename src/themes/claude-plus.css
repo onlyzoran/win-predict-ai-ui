@@ -42,6 +42,8 @@
   --sidebar-accent-foreground: oklch(0.3250 0 0);
   --sidebar-border: oklch(0.9401 0 0);
   --sidebar-ring: oklch(0.7731 0 0);
+  --brand-ai-from: oklch(0.58 0.14 39);
+  --brand-ai-to: oklch(0.62 0.12 55);
 }
 
 [data-palette='claude-plus'].dark {
@@ -76,4 +78,6 @@
   --sidebar-accent-foreground: oklch(0.8074 0.0142 93.0137);
   --sidebar-border: oklch(0.9401 0 0);
   --sidebar-ring: oklch(0.7731 0 0);
+  --brand-ai-from: oklch(0.75 0.12 42);
+  --brand-ai-to: oklch(0.80 0.10 65);
 }

@@ -3,6 +3,7 @@ import { withAllPalettes } from './storyHelpers'
 import { ref } from 'vue'
 import { IconLogin } from '@onlyzoran/win-predict-ai-icons'
 import AppHeaderShell from '../src/components/AppHeaderShell.vue'
+import BrandTitle from '../src/components/BrandTitle.vue'
 
 const locales = ['en', 'ru'] as const
 const localeLabels: Record<string, string> = {
@@ -31,7 +32,7 @@ export const WithGitHubAndActions: Story = {
     githubAriaLabel: 'GitHub',
   },
   render: (args) => ({
-    components: { AppHeaderShell, IconLogin },
+    components: { AppHeaderShell, IconLogin, BrandTitle },
     setup() {
       const locale = ref(args.locale)
       return { args, locale, locales, localeLabels }
@@ -49,7 +50,7 @@ export const WithGitHubAndActions: Story = {
           :github-aria-label="args.githubAriaLabel"
         >
           <template #brand>
-            <a href="#" class="font-semibold text-foreground hover:opacity-80">Win Predict AI</a>
+            <BrandTitle href="#" />
           </template>
           <template #actions>
             <a
@@ -74,7 +75,7 @@ export const BrandOnly: Story = {
     localeLabels,
   },
   render: (args) => ({
-    components: { AppHeaderShell },
+    components: { AppHeaderShell, BrandTitle },
     setup() {
       const locale = ref(args.locale)
       return { args, locale, locales, localeLabels }
@@ -87,7 +88,7 @@ export const BrandOnly: Story = {
           :locale-labels="localeLabels"
         >
           <template #brand>
-            <span class="font-semibold text-foreground">Win Predict AI Admin</span>
+            <BrandTitle suffix=" Admin" />
           </template>
         </AppHeaderShell>
         <p class="text-sm text-muted-foreground">No GitHub link, no actions slot.</p>

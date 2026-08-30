@@ -5,6 +5,7 @@ export { DEFAULT_PALETTE, PALETTES, type Palette } from './themes/palettes'
 export { default as ThemeToggle } from './components/ThemeToggle.vue'
 export { default as LocaleSwitcher } from './components/LocaleSwitcher.vue'
 export { default as AppHeaderShell } from './components/AppHeaderShell.vue'
+export { default as BrandTitle } from './components/BrandTitle.vue'
 export { default as SearchInput } from './components/SearchInput.vue'
 export { default as StandingsGlossary } from './components/StandingsGlossary.vue'
 export {
