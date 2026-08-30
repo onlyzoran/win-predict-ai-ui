@@ -7,6 +7,7 @@ import {
 } from '@onlyzoran/win-predict-ai-icons'
 import LocaleSwitcher from '../../../src/components/LocaleSwitcher.vue'
 import ThemeToggle from '../../../src/components/ThemeToggle.vue'
+import BrandTitle from '../../../src/components/BrandTitle.vue'
 
 const locale = ref('en')
 const locales = ['en', 'ru'] as const
@@ -22,7 +23,7 @@ const localeLabels: Record<string, string> = {
       class="fixed top-0 right-0 left-0 z-50 flex h-14 items-center justify-between border-b bg-background/80 px-6 shadow-sm backdrop-blur-md"
     >
       <div class="min-w-0">
-        <a href="#" class="font-semibold text-foreground hover:opacity-80">Win Predict AI</a>
+        <BrandTitle href="#" />
       </div>
       <div class="flex items-center gap-1">
         <LocaleSwitcher

@@ -40,6 +40,8 @@
   --sidebar-accent-foreground: oklch(0.28 0.025 235);
   --sidebar-border: oklch(0.885 0.016 235);
   --sidebar-ring: oklch(0.48 0.13 195);
+  --brand-ai-from: oklch(0.46 0.14 195);
+  --brand-ai-to: oklch(0.52 0.16 215);
 }
 
 [data-palette='slate-teal'].dark {
@@ -74,4 +76,6 @@
   --sidebar-accent-foreground: oklch(0.92 0.012 235);
   --sidebar-border: oklch(0.35 0.025 235 / 55%);
   --sidebar-ring: oklch(0.72 0.11 195);
+  --brand-ai-from: oklch(0.78 0.12 195);
+  --brand-ai-to: oklch(0.84 0.14 230);
 }

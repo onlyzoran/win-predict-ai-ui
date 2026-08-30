@@ -21,12 +21,21 @@
 | primary / secondary / muted / accent | `bg-primary`, `text-muted-foreground`, … |
 | destructive | `bg-destructive`, `text-destructive` |
 | border / input / ring | `border-border`, `bg-input`, `ring-ring` |
+| brand AI accent | `--brand-ai-from`, `--brand-ai-to` (градиент «AI» в `BrandTitle`) |
 
 **Do:** `bg-card`, `border-border`, `text-muted-foreground`, `focus-visible:ring-ring/50`.
 
 **Don't (в новых компонентах):** сырые hex, `oklch(...)` в SFC, палитра `zinc-*` / `slate-*` как замена токенам.
 
 Значения токенов менять только в `src/themes/*.css` (и синхронно проверять Storybook). Имена токенов и utility-классы не трогать.
+
+### BrandTitle
+
+- Публичный компонент `BrandTitle` — брендовый заголовок «Win Predict **AI**» с градиентным акцентом на `accent` (по умолчанию `AI`).
+- «Win Predict» и опциональный `suffix` (например ` Admin`) — `text-foreground`; акцент читает `--brand-ai-from` / `--brand-ai-to` из активной палитры.
+- Light и dark задаются **отдельно** в каждой палитре (не инверсия): dark — более светлый и с другим вторым hue для читаемости на тёмном фоне.
+- Проп `href` рендерит `<a>` с hover; без href — `<span>`.
+- Storybook: `BrandTitle` → Default + toolbar Palette (light/dark); также в слоте `#brand` у `AppHeaderShell`.
 
 ## Типографика
 
