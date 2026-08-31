@@ -192,6 +192,20 @@ export const ClaudePlusDark: Story = {
   }),
 }
 
+export const PastelLight: Story = {
+  globals: { theme: 'pastel-light' },
+  render: () => ({
+    template: paletteTemplate(),
+  }),
+}
+
+export const PastelDark: Story = {
+  globals: { theme: 'pastel-dark' },
+  render: () => ({
+    template: paletteTemplate(),
+  }),
+}
+
 export const NexoraLight: Story = {
   globals: { theme: 'nexora-light' },
   render: () => ({

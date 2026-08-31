@@ -23,6 +23,7 @@ const paletteMeta: Record<StoryPalette, { name: string; description: string }> =
   zinc: { name: 'Zinc', description: 'Neutral default, minimal chroma' },
   'slate-teal': { name: 'Slate + Teal', description: 'Product default — calm terminal' },
   'claude-plus': { name: 'Claude+', description: 'Warm paper tones, soft accent' },
+  pastel: { name: 'Pastel', description: 'Soft sage + butter — final/intermediate results' },
   nexora: { name: 'Nexora', description: 'Storybook — violet glass cockpit (CRM ref)' },
 }
 
