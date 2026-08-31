@@ -151,9 +151,44 @@ import {
   ThemeToggle,
   LocaleSwitcher,
   AppHeaderShell,
+  BrandTitle,
+  SearchInput,
   cn,
 } from '@onlyzoran/win-predict-ai-ui'
 ```
+
+### UI-примитивы (Vue SFC)
+
+Shared shadcn-примитивы экспортируются как **компоненты**, не как «скопируй `components/ui` в приложение». Импорт в `<script setup>` и использование в шаблоне:
+
+```vue
+<script setup lang="ts">
+import { Button, Badge, Card, CardContent, CardHeader, CardTitle } from '@onlyzoran/win-predict-ai-ui'
+</script>
+
+<template>
+  <Card>
+    <CardHeader><CardTitle>MLB</CardTitle></CardHeader>
+    <CardContent>
+      <Badge variant="secondary">Live</Badge>
+      <Button size="sm">Details</Button>
+    </CardContent>
+  </Card>
+</template>
+```
+
+| Семейство | Компоненты | Утилиты / типы |
+| --- | --- | --- |
+| Button | `Button` | `buttonVariants`, `ButtonVariant`, `ButtonSize` |
+| Badge | `Badge` | `badgeVariants`, `BadgeVariant` |
+| Card | `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`, `CardAction` | — |
+| Sheet | `Sheet`, `SheetTrigger`, `SheetContent`, `SheetHeader`, `SheetTitle`, `SheetDescription`, `SheetFooter`, `SheetClose` | — |
+| Tabs | `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` | — |
+| DropdownMenu | `DropdownMenu`, `DropdownMenuTrigger`, `DropdownMenuContent`, `DropdownMenuItem`, `DropdownMenuLabel`, `DropdownMenuSeparator`, `DropdownMenuRadioGroup`, `DropdownMenuRadioItem` | — |
+| Chart | `ChartContainer`, `ChartTooltip`, `ChartTooltipContent`, `ChartLegendContent`, `ChartCrosshair` | `useChart`, `provideChartContext`, `componentToString`, `THEMES`, `ChartConfig` |
+| Прочие | `Progress`, `Separator`, `Skeleton` | — |
+
+Peer `@unovis/vue` нужен для Chart. Storybook-истории импортируют примитивы из `src/index.ts` — тот же публичный API, что у потребителей.
 
 - **`ThemeToggle`** — pill Moon/Sun, `useColorMode` (`auto` / `light` / `dark`). Aria через `ariaLabelLight` / `ariaLabelDark`.
 - **`LocaleSwitcher`** — controlled: `v-model`, `locales`, `labels`, `ariaLabel`.
@@ -232,11 +267,18 @@ src/
     ThemeToggle.vue
     LocaleSwitcher.vue
     AppHeaderShell.vue
-    ui/dropdown-menu/   # минимальный shadcn/reka набор (внутренний)
+    BrandTitle.vue
+    SearchInput.vue
+    ui/                 # shadcn/reka SFC — реэкспорт примитивов в index.ts
+      button/
+      badge/
+      card/
+      …
   themes/               # CSS tokens (zinc, slate-teal, claude-plus) — в npm
   utils/cn.ts
-  index.ts
+  index.ts              # публичный API: компоненты + cn + палитры
 stories/                # Storybook stories (не в npm)
 .storybook/             # preview + theme CSS (не в npm)
 dist/                   # публикуется
+.github/workflows/ci.yml  # build + type-check на PR
 ```

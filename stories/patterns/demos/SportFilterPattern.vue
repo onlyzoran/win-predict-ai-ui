@@ -6,15 +6,15 @@ import {
   IconBallBasketball,
   IconBallFootball,
 } from '@onlyzoran/win-predict-ai-icons'
-import SearchInput from '../../../src/components/SearchInput.vue'
-import { Button } from '../../../src/components/ui/button'
+import { SearchInput } from '../../../src/index'
 import {
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from '../../../src/components/ui/dropdown-menu'
+} from '../../../src/index'
 import type { SortMode } from '../types'
 
 const sport = ref<'all' | 'mlb' | 'nba' | 'nfl'>('all')

@@ -7,7 +7,7 @@ import {
   IconPin,
   IconSearch,
 } from '@onlyzoran/win-predict-ai-icons'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../src/components/ui/tabs'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../src/index'
 import { withAllPalettes } from './storyHelpers'
 
 const meta = {

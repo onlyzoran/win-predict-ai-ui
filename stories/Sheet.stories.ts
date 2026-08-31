@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { Button } from '../src/components/ui/button'
 import {
+  Button,
   Sheet,
   SheetClose,
   SheetContent,
@@ -9,7 +9,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '../src/components/ui/sheet'
+} from '../src/index'
 import { withAllPalettes } from './storyHelpers'
 
 const meta = {

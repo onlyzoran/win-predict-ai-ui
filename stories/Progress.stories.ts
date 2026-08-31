@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { withAllPalettes } from './storyHelpers'
-import { Progress } from '../src/components/ui/progress'
+import { Progress } from '../src/index'
 
 const meta = {
   title: 'Win Predict AI / UI / Progress',

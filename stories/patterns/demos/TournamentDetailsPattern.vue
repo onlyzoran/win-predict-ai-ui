@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { IconBallFootball, IconChartSankey, IconReplace, IconTable } from '@onlyzoran/win-predict-ai-icons'
-import { Progress } from '../../../src/components/ui/progress'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../../src/components/ui/tabs'
+import { Progress, Tabs, TabsContent, TabsList, TabsTrigger } from '../../../src/index'
 import { mockRankSeries } from '../fixtures/rankSeries'
 import { mlbWorldSeriesTeams } from '../fixtures/teams'
 import MlbPlayoffBracketPattern from './MlbPlayoffBracketPattern.vue'

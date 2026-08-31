@@ -2,14 +2,14 @@
 import { computed, ref } from 'vue'
 import { CurveType, Line } from '@unovis/ts'
 import { VisAxis, VisLine, VisXYContainer } from '@unovis/vue'
-import type { ChartConfig } from '../../../src/components/ui/chart'
 import {
   ChartContainer,
   ChartCrosshair,
   ChartTooltip,
   ChartTooltipContent,
   componentToString,
-} from '../../../src/components/ui/chart'
+  type ChartConfig,
+} from '../../../src/index'
 import type { RankSeries } from '../types'
 
 const PLOT_HEIGHT_PX = 384

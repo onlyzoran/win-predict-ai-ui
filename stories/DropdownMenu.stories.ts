@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { computed, ref } from 'vue'
 import { IconArrowsSort } from '@onlyzoran/win-predict-ai-icons'
-import { Button } from '../src/components/ui/button'
 import {
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -11,7 +11,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '../src/components/ui/dropdown-menu'
+} from '../src/index'
 import { withAllPalettes } from './storyHelpers'
 
 const meta = {

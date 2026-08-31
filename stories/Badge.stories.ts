@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { Badge, type BadgeVariant } from '../src/components/ui/badge'
+import { Badge, type BadgeVariant } from '../src/index'
 import { withAllPalettes } from './storyHelpers'
 
 const meta = {

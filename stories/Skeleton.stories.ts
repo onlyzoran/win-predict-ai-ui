@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { withAllPalettes } from './storyHelpers'
-import { Skeleton } from '../src/components/ui/skeleton'
+import { Skeleton } from '../src/index'
 
 const meta = {
   title: 'Win Predict AI / UI / Skeleton',
