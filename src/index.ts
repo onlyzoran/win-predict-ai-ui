@@ -67,3 +67,28 @@ export {
   SheetTitle,
   SheetTrigger,
 } from './components/ui/sheet'
+
+export { default as CookieConsentBanner } from './components/CookieConsentBanner.vue'
+
+export {
+  CONSENT_MESSAGES,
+  resolveConsentMessages,
+  type ConsentCategoryMessages,
+  type ConsentLocale,
+  type ConsentMessages,
+} from './composables/consent-i18n'
+
+export {
+  ACCEPT_ALL_CATEGORIES,
+  CONSENT_STORAGE_KEY,
+  CONSENT_VERSION,
+  DEFAULT_CATEGORIES,
+  REJECT_NON_ESSENTIAL_CATEGORIES,
+  createInitialConsentState,
+  type ConsentCategories,
+  type ConsentCategory,
+  type ConsentPreferencesInput,
+  type ConsentState,
+} from './composables/consent-types'
+
+export { useConsent, type UseConsentOptions, type UseConsentReturn } from './composables/useConsent'
