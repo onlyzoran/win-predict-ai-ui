@@ -82,6 +82,14 @@
 - Storybook: `Default` + структурные варианты (например без header action); preview всех палитр — toolbar, не `ZincLight` / `SlateTealDark` и т.п.
 - Один согласованный API в PR; альтернативы — только в тексте PR, не несколько копий в коде.
 
+## CookieConsentBanner
+
+- Публичный компонент + composable `useConsent()` — consent-инфраструктура для публичного app (не admin).
+- Категории: `necessary` (always on), `preferences`, `analytics` (opt-in). Persist в `localStorage` (`cookie-consent-preferences`).
+- i18n: `en` + `ru` через `CONSENT_MESSAGES`; другие локали — props `messages`.
+- Storybook: FirstVisit, AfterAccept, CustomizeOpen (+ ru); toolbar Palette для light/dark.
+- Consumer gate'ит скрипты через `hasConsent('analytics')` и т.п.; реальные analytics не подключаются в ui-пакете.
+
 ## Do / Don't
 
 **Do**
