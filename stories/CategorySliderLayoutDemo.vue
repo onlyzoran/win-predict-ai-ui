@@ -5,17 +5,17 @@ import {
   IconBallFootball,
 } from '@onlyzoran/win-predict-ai-icons'
 import type { Component } from 'vue'
-import CategorySliderLayout from '../../src/components/CategorySliderLayout.vue'
-import type { CategorySliderCategory } from '../../src/components/category-slider-layout'
-import { Badge } from '../../src/components/ui/badge'
+import CategorySliderLayout from '../src/components/CategorySliderLayout.vue'
+import type { CategorySliderCategory } from '../src/components/category-slider-layout'
+import { Badge } from '../src/components/ui/badge'
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '../../src/components/ui/card'
-import { Progress } from '../../src/components/ui/progress'
+} from '../src/components/ui/card'
+import { Progress } from '../src/components/ui/progress'
 
 interface TournamentCardItem {
   id: string
