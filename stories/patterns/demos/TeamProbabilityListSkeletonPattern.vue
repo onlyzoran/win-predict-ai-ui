@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { Card, CardContent, CardFooter, CardHeader } from '../../../src/components/ui/card'
-import { Separator } from '../../../src/components/ui/separator'
-import { Skeleton } from '../../../src/components/ui/skeleton'
+import { Card, CardContent, CardFooter, CardHeader, Separator, Skeleton } from '../../../src/index'
 
 const ROW_COUNT = 6
 </script>

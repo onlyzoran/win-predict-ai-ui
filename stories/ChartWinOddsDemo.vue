@@ -2,14 +2,14 @@
 import { computed } from 'vue'
 import { Donut } from '@unovis/ts'
 import { VisDonut, VisSingleContainer } from '@unovis/vue'
-import type { ChartConfig } from '../src/components/ui/chart'
+import type { ChartConfig } from '../src/index'
 import {
   ChartContainer,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
   componentToString,
-} from '../src/components/ui/chart'
+} from '../src/index'
 
 interface WinOddsSlice {
   key: string

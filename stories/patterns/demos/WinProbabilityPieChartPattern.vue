@@ -2,12 +2,12 @@
 import { computed } from 'vue'
 import { Donut } from '@unovis/ts'
 import { VisDonut, VisSingleContainer } from '@unovis/vue'
-import type { ChartConfig } from '../../../src/components/ui/chart'
 import {
   ChartContainer,
   ChartTooltip,
   componentToString,
-} from '../../../src/components/ui/chart'
+  type ChartConfig,
+} from '../../../src/index'
 import { mlbWorldSeriesTeams } from '../fixtures/teams'
 import { formatPercent } from '../utils'
 import WinProbabilityPieTooltipPattern from './WinProbabilityPieTooltipPattern.vue'

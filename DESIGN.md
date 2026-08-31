@@ -52,7 +52,7 @@
 
 - Vue SFC, `<script setup lang="ts">`.
 - Стили: Tailwind utility + `cn()` из `src/utils/cn.ts` (`clsx` + `tailwind-merge`).
-- Headless: **reka-ui** (shadcn-vue style) под `src/components/ui/` — внутренние примитивы, не обязаны быть в публичном API.
+- Headless: **reka-ui** (shadcn-vue style) под `src/components/ui/` — shadcn-примитивы; общие (Button, Badge, Card, …) реэкспортируются из `src/index.ts` как Vue SFC для app/admin.
 - Иконки: `@onlyzoran/win-predict-ai-icons` (dependency пакета, external в сборке), не копировать SVG в пакет без нужды.
 - Не ломать peer dependencies (`vue`, `@vueuse/core`, `reka-ui`).
 
@@ -61,7 +61,7 @@
 | Что | Куда |
 | --- | --- |
 | Публичный компонент | `src/components/<Name>.vue` |
-| Внутренние reka/shadcn куски | `src/components/ui/<primitive>/` |
+| shadcn/reka примитивы (источник SFC) | `src/components/ui/<primitive>/` — публичный реэкспорт в `src/index.ts` |
 | Публичный экспорт | `src/index.ts` |
 | Темы (CSS tokens) | `src/themes/` — `@onlyzoran/win-predict-ai-ui/themes` |
 | Storybook | `stories/<Name>.stories.ts`, title `Win Predict AI / UI / <Name>` |

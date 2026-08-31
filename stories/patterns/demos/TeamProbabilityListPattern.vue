@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { IconBallFootball, IconPin, IconPinnedOff } from '@onlyzoran/win-predict-ai-icons'
-import { Badge } from '../../../src/components/ui/badge'
-import { Button } from '../../../src/components/ui/button'
 import {
+  Badge,
+  Button,
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '../../../src/components/ui/card'
-import { Progress } from '../../../src/components/ui/progress'
-import { Separator } from '../../../src/components/ui/separator'
+  Progress,
+  Separator,
+} from '../../../src/index'
 import { leagueCardTeams } from '../fixtures/teams'
 import { formatPercent } from '../utils'
 

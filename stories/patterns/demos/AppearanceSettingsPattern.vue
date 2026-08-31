@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { IconArrowLeft, IconPalette } from '@onlyzoran/win-predict-ai-icons'
-import { cn } from '../../../src/utils/cn'
-import { PALETTES, type Palette } from '../../../src/themes/palettes'
+import { cn, PALETTES, type Palette } from '../../../src/index'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '../../../src/components/ui/card'
+} from '../../../src/index'
 
 /** Storybook-only — Nexora is not published in npm palettes. */
 type StoryPalette = Palette | 'nexora'

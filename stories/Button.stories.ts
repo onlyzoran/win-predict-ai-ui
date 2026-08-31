@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { IconSearch } from '@onlyzoran/win-predict-ai-icons'
-import { Button, type ButtonSize, type ButtonVariant } from '../src/components/ui/button'
+import { Button, type ButtonSize, type ButtonVariant } from '../src/index'
 import { withAllPalettes } from './storyHelpers'
 
 const meta = {

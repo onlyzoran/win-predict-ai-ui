@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { Card } from '../src/components/ui/card'
+import { Card } from '../src/index'
 import LeaguePredictionCardDemo from './LeaguePredictionCardDemo.vue'
 
 const meta = {

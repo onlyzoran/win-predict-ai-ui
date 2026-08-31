@@ -2,14 +2,14 @@
 import { computed } from 'vue'
 import { Donut } from '@unovis/ts'
 import { VisDonut, VisSingleContainer } from '@unovis/vue'
-import { Badge } from '../../../src/components/ui/badge'
-import { Separator } from '../../../src/components/ui/separator'
-import type { ChartConfig } from '../../../src/components/ui/chart'
 import {
+  Badge,
   ChartContainer,
   ChartTooltip,
   componentToString,
-} from '../../../src/components/ui/chart'
+  Separator,
+  type ChartConfig,
+} from '../../../src/index'
 import type { TeamProbability } from '../types'
 import {
   abbreviateGroup,

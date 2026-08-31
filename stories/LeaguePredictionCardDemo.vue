@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { IconBallFootball, IconPin } from '@onlyzoran/win-predict-ai-icons'
-import { Badge } from '../src/components/ui/badge'
-import { Button } from '../src/components/ui/button'
 import {
+  Badge,
+  Button,
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '../src/components/ui/card'
-import { Progress } from '../src/components/ui/progress'
-import { Separator } from '../src/components/ui/separator'
+  Progress,
+  Separator,
+} from '../src/index'
 
 /** Top 5 + Others — как на главной app (MLB World Series card snapshot). */
 const leagueTeams = [

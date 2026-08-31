@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { ChartContainer } from '../src/components/ui/chart'
+import { ChartContainer } from '../src/index'
 import { withAllPalettes } from './storyHelpers'
 import ChartWinOddsDemo from './ChartWinOddsDemo.vue'
 

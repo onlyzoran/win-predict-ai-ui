@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Badge } from '../../../src/components/ui/badge'
+import { Badge } from '../../../src/index'
 import { mockMlbPlayoffBracket } from '../fixtures/bracket'
 import { formatPercent, shortTeamName } from '../utils'
 import MlbBracketMatchupPattern from './MlbBracketMatchupPattern.vue'

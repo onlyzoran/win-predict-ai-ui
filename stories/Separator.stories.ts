@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { withAllPalettes } from './storyHelpers'
-import { Separator } from '../src/components/ui/separator'
+import { Separator } from '../src/index'
 
 const meta = {
   title: 'Win Predict AI / UI / Separator',
