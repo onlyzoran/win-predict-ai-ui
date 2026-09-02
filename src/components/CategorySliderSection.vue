@@ -14,11 +14,11 @@ const headingId = `category-slider-${props.category.id}`
 
 <template>
   <section
-    class="space-y-3"
+    class="space-y-3 overflow-visible"
     :aria-labelledby="headingId"
   >
-    <div class="px-4">
-      <slot name="header" :category="category">
+    <div class="overflow-visible px-6">
+      <slot name="header" :category="category" :heading-id="headingId">
         <h2
           :id="headingId"
           class="text-base font-semibold tracking-tight text-foreground"
@@ -34,7 +34,7 @@ const headingId = `category-slider-${props.category.id}`
       :aria-label="category.title"
       :class="
         cn(
-          'flex w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
+          'flex w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto scroll-pl-6 px-6 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
           trackClass,
         )
       "
@@ -54,7 +54,7 @@ const headingId = `category-slider-${props.category.id}`
       </div>
     </div>
 
-    <div v-else class="px-4">
+    <div v-else class="px-6">
       <slot name="empty" :category="category">
         <p class="text-sm text-muted-foreground">
           No items in this category.

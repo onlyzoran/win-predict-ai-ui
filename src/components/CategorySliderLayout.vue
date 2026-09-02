@@ -22,7 +22,7 @@ const props = withDefaults(
 
 <template>
   <div
-    :class="cn('flex w-full min-w-0 flex-col gap-8 py-4', props.class)"
+    :class="cn('flex w-full flex-col gap-8 overflow-visible py-4', props.class)"
     :aria-label="ariaLabel"
   >
     <CategorySliderSection
@@ -33,8 +33,8 @@ const props = withDefaults(
       :item-class="itemClass"
       :class="sectionClass"
     >
-      <template #header="{ category }">
-        <slot name="category-header" :category="category" />
+      <template #header="{ category, headingId }">
+        <slot name="category-header" :category="category" :heading-id="headingId" />
       </template>
       <template #item="{ item, category, index }">
         <slot name="item" :item="item" :category="category" :index="index" />

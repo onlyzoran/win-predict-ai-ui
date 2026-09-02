@@ -9,7 +9,7 @@ const meta = {
   component: CategorySliderLayoutDemo,
   tags: ['autodocs'],
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
     docs: {
       description: {
         component:
