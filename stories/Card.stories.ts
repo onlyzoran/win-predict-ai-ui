@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { Card } from '../src/components/ui/card'
 import LeaguePredictionCardDemo from './LeaguePredictionCardDemo.vue'
+import MatchResultCardsDemo from './MatchResultCardsDemo.vue'
 
 const meta = {
   title: 'Win Predict AI / UI / Card',
@@ -32,4 +33,20 @@ export const WithoutHeaderAction: Story = {
     components: { LeaguePredictionCardDemo },
     template: '<LeaguePredictionCardDemo :with-header-action="false" />',
   }),
+}
+
+/** Match/result cards: sage (chart-1) — финал, butter (chart-2) — промежуточный итог. Palette → Pastel Light/Dark. */
+export const ResultOutcomes: Story = {
+  render: () => ({
+    components: { MatchResultCardsDemo },
+    template: '<MatchResultCardsDemo />',
+  }),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Карточки итогов: приглушённый зелёный (chart-1 / primary) для финальных результатов, приглушённый жёлтый (chart-2) для промежуточных. Переключите toolbar **Palette** на Pastel · Light / Dark.',
+      },
+    },
+  },
 }

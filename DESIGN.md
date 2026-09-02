@@ -29,6 +29,36 @@
 
 Значения токенов менять только в `src/themes/*.css` (и синхронно проверять Storybook). Имена токенов и utility-классы не трогать.
 
+### Палитры
+
+| `data-palette` | Назначение |
+| --- | --- |
+| `zinc` | Нейтральный baseline |
+| `slate-teal` | Продуктовый default — холодный терминал |
+| `claude-plus` | Тёплые paper-тона, clay-акцент |
+| `pastel` | Мягкая пастель — sage + butter для итогов |
+
+Импорт: `@import '@onlyzoran/win-predict-ai-ui/themes/pastel.css'` + `data-palette="pastel"`.
+
+#### Pastel (`pastel.css`)
+
+**Design Read:** терминал прогнозов — мягкий, спокойный, доверительный; не zinc-SaaS и не кислотный dark.
+
+**Референс:** [tweakcn community — Sage Green](https://tweakcn.com/community) (Mayank Pal) + лестница поверхностей Pastel Dreams; адаптировано под спортивную семантику итогов.
+
+**Акцент:** sage ~145° (`primary`, `ring`, `chart-1`) — финальные итоги, подтверждённые standings.
+
+**Промежуточные итоги:** butter ~88° (`chart-2`) — сезон/тур в процессе; пастельный жёлтый, не кислота.
+
+**Light vs dark (не зеркало):**
+
+- Light: тёплый cream-sage фон (`background` ~L 0.976, hue ~98°), карточка светлее с белым lift.
+- Dark: deep sage forest (`background` ~L 0.18, hue ~148°), карточка поднята за счёт chroma, не инверсия light.
+
+**Charts:** пять различимых hue — `chart-1` sage (final), `chart-2` butter (intermediate), `chart-3` sky, `chart-4` coral, `chart-5` lavender.
+
+Storybook: `Palette` → Pastel Light/Dark; `Pastel` → terminal + result cards; `Card` → ResultOutcomes (sage/butter badges).
+
 ### BrandTitle
 
 - Публичный компонент `BrandTitle` — брендовый заголовок «Win Predict **AI**» с градиентным акцентом на `accent` (по умолчанию `AI`).
@@ -66,7 +96,7 @@
 | Темы (CSS tokens) | `src/themes/` — `@onlyzoran/win-predict-ai-ui/themes` |
 | Storybook | `stories/<Name>.stories.ts`, title `Win Predict AI / UI / <Name>` |
 
-Стори: **Default** (+ варианты структуры/API, если есть). Палитру и light/dark — через toolbar **Palette** в `.storybook/preview.ts`, не дублировать шесть копий story на каждый `zinc-*` / `slate-teal-*` / `claude-plus-*`. Исключение: `Palette.stories.ts` и осознанный `withAllPalettes` для регрессии конкретной палитры (не для Card).
+Стори: **Default** (+ варианты структуры/API, если есть). Палитру и light/dark — через toolbar **Palette** в `.storybook/preview.ts`, не дублировать шесть копий story на каждый `zinc-*` / `slate-teal-*` / `claude-plus-*` / `pastel-*`. Исключение: `Palette.stories.ts` и осознанный `withAllPalettes` для регрессии конкретной палитры (не для Card).
 
 ## Accessibility
 

@@ -1,0 +1,89 @@
+/*
+ * Pastel — мягкая пастельная палитра для спортивного терминала прогнозов.
+ *
+ * Design Read: терминал прогнозов для человека со ставкой — мягкий, спокойный,
+ * доверительный; не zinc-SaaS и не кислотный dark, не фиолетовый Pastel Dreams.
+ *
+ * Референс: tweakcn community «Sage Green» (Mayank Pal) + лестница поверхностей
+ * из Pastel Dreams; адаптировано под семантику итогов (финал = sage, промежуток = butter).
+ *
+ * Акцентный hue: sage ~145° — подтверждённые финальные итоги, доверие к цифрам;
+ * chart-2 ~88° — приглушённый жёлтый для промежуточных итогов (не кислота).
+ *
+ * Light + dark через класс .dark на том же элементе с data-palette="pastel".
+ */
+
+[data-palette='pastel'] {
+  --radius: 0.625rem;
+  --background: oklch(0.976 0.014 98);
+  --foreground: oklch(0.27 0.028 145);
+  --card: oklch(0.993 0.009 102);
+  --card-foreground: oklch(0.27 0.028 145);
+  --popover: oklch(0.996 0.007 100);
+  --popover-foreground: oklch(0.27 0.028 145);
+  --primary: oklch(0.56 0.11 145);
+  --primary-foreground: oklch(0.98 0.012 145);
+  --secondary: oklch(0.938 0.018 96);
+  --secondary-foreground: oklch(0.32 0.026 145);
+  --muted: oklch(0.948 0.016 95);
+  --muted-foreground: oklch(0.47 0.024 145);
+  --accent: oklch(0.928 0.022 92);
+  --accent-foreground: oklch(0.32 0.026 145);
+  --destructive: oklch(0.58 0.18 25);
+  --border: oklch(0.888 0.018 96);
+  --input: oklch(0.908 0.016 98);
+  --ring: oklch(0.56 0.11 145);
+  /* chart-1: финальные итоги (sage green) */
+  --chart-1: oklch(0.56 0.11 145);
+  /* chart-2: промежуточные итоги (pastel butter) */
+  --chart-2: oklch(0.76 0.10 88);
+  --chart-3: oklch(0.64 0.12 220);
+  --chart-4: oklch(0.60 0.14 25);
+  --chart-5: oklch(0.58 0.10 285);
+  --sidebar: oklch(0.962 0.012 100);
+  --sidebar-foreground: oklch(0.27 0.028 145);
+  --sidebar-primary: oklch(0.56 0.11 145);
+  --sidebar-primary-foreground: oklch(0.98 0.012 145);
+  --sidebar-accent: oklch(0.928 0.022 92);
+  --sidebar-accent-foreground: oklch(0.32 0.026 145);
+  --sidebar-border: oklch(0.888 0.018 96);
+  --sidebar-ring: oklch(0.56 0.11 145);
+  --brand-ai-from: oklch(0.54 0.12 145);
+  --brand-ai-to: oklch(0.58 0.10 165);
+}
+
+[data-palette='pastel'].dark {
+  --background: oklch(0.18 0.024 148);
+  --foreground: oklch(0.91 0.016 98);
+  --card: oklch(0.23 0.028 146);
+  --card-foreground: oklch(0.91 0.016 98);
+  --popover: oklch(0.25 0.030 146);
+  --popover-foreground: oklch(0.91 0.016 98);
+  --primary: oklch(0.70 0.10 145);
+  --primary-foreground: oklch(0.17 0.026 148);
+  --secondary: oklch(0.28 0.026 146);
+  --secondary-foreground: oklch(0.91 0.016 98);
+  --muted: oklch(0.26 0.024 146);
+  --muted-foreground: oklch(0.67 0.022 98);
+  --accent: oklch(0.30 0.028 92);
+  --accent-foreground: oklch(0.91 0.016 98);
+  --destructive: oklch(0.64 0.17 22);
+  --border: oklch(0.38 0.026 146 / 55%);
+  --input: oklch(0.28 0.024 146);
+  --ring: oklch(0.70 0.10 145);
+  --chart-1: oklch(0.70 0.10 145);
+  --chart-2: oklch(0.78 0.09 88);
+  --chart-3: oklch(0.68 0.11 220);
+  --chart-4: oklch(0.66 0.13 25);
+  --chart-5: oklch(0.64 0.09 285);
+  --sidebar: oklch(0.20 0.026 148);
+  --sidebar-foreground: oklch(0.88 0.018 98);
+  --sidebar-primary: oklch(0.70 0.10 145);
+  --sidebar-primary-foreground: oklch(0.17 0.026 148);
+  --sidebar-accent: oklch(0.28 0.026 146);
+  --sidebar-accent-foreground: oklch(0.88 0.018 98);
+  --sidebar-border: oklch(0.38 0.026 146 / 55%);
+  --sidebar-ring: oklch(0.70 0.10 145);
+  --brand-ai-from: oklch(0.72 0.11 145);
+  --brand-ai-to: oklch(0.76 0.09 175);
+}

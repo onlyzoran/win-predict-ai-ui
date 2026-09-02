@@ -2,7 +2,7 @@ import type { Preview } from '@storybook/vue3'
 import { addons } from 'storybook/preview-api'
 import './preview.css'
 
-/** Toolbar values: zinc | slate-teal | claude-plus | nexora × light/dark */
+/** Toolbar values: zinc | slate-teal | claude-plus | pastel | nexora × light/dark */
 const THEME_VALUES = [
   'zinc-light',
   'zinc-dark',
@@ -10,13 +10,15 @@ const THEME_VALUES = [
   'slate-teal-dark',
   'claude-plus-light',
   'claude-plus-dark',
+  'pastel-light',
+  'pastel-dark',
   'nexora-light',
   'nexora-dark',
 ] as const
 
 type ThemeValue = (typeof THEME_VALUES)[number]
 
-type PaletteName = 'zinc' | 'slate-teal' | 'claude-plus' | 'nexora'
+type PaletteName = 'zinc' | 'slate-teal' | 'claude-plus' | 'pastel' | 'nexora'
 
 function parseTheme(value: string): { palette: PaletteName; dark: boolean } {
   switch (value as ThemeValue) {
@@ -30,6 +32,10 @@ function parseTheme(value: string): { palette: PaletteName; dark: boolean } {
       return { palette: 'claude-plus', dark: false }
     case 'claude-plus-dark':
       return { palette: 'claude-plus', dark: true }
+    case 'pastel-light':
+      return { palette: 'pastel', dark: false }
+    case 'pastel-dark':
+      return { palette: 'pastel', dark: true }
     case 'nexora-light':
       return { palette: 'nexora', dark: false }
     case 'nexora-dark':
@@ -75,6 +81,8 @@ const preview: Preview = {
           { value: 'slate-teal-dark', title: 'Slate + Teal · Dark', icon: 'moon' },
           { value: 'claude-plus-light', title: 'Claude+ · Light', icon: 'sun' },
           { value: 'claude-plus-dark', title: 'Claude+ · Dark', icon: 'moon' },
+          { value: 'pastel-light', title: 'Pastel · Light', icon: 'sun' },
+          { value: 'pastel-dark', title: 'Pastel · Dark', icon: 'moon' },
           { value: 'nexora-light', title: 'Nexora · Light', icon: 'sun' },
           { value: 'nexora-dark', title: 'Nexora · Dark', icon: 'moon' },
         ],
