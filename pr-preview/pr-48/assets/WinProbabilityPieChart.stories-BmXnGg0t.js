@@ -1,0 +1,20 @@
+import{w as k}from"./storyHelpers-C8GjIxNC.js";import{d as C,f as n,a as m,w as _,u as r,b as t,F as h,h as x,l as f,o as s,k as v,e as W,t as p}from"./iframe-DOGP0jui.js";import{T as D,_ as S,c as T}from"./index-Bcpf0SKN.js";import{m as N}from"./teams-C7RLY5nc.js";import{f as L}from"./utils-CTyml5eC.js";import{_ as V}from"./WinProbabilityPieTooltipPattern-DlnnzTrA.js";import{S as $,D as Z,a as B}from"./index-CURuVh1X.js";import{s as F}from"./shortTeamName-D1eMPfg5.js";import"./preload-helper-DLzIWJua.js";import"./useId-C7S5JFNM.js";import"./createContext-277sqqAX.js";import"./cn-DaT-yT0k.js";import"./Primitive-CzodhsL4.js";import"./index-BvGfxNU8.js";import"./_commonjsHelpers-CqkleIqs.js";const M={"data-testid":"win-probability-pie",class:"mx-auto w-full max-w-md space-y-4"},O={class:"grid gap-2 text-sm"},z={class:"flex min-w-0 items-center gap-2"},A=["title"],E={class:"md:hidden"},I={class:"hidden md:inline"},j={class:"shrink-0 text-muted-foreground tabular-nums"},g=5,d=C({__name:"WinProbabilityPieChartPattern",setup(q){const u=N,b=f(()=>{const i=u.slice(0,g),a=Math.max(0,u.length-g),e=u.slice(g).reduce((o,P)=>o+P.winProbability,0);return[...i.map((o,P)=>({key:`team-${o.id}`,name:o.name,winProbability:o.winProbability,fill:`var(--chart-${P+1})`})),{key:"others",name:`Others (${a})`,winProbability:e,fill:"var(--chart-4)"}]}),y=f(()=>{const i={};for(const a of b.value)i[a.key]={label:a.name,color:a.fill};return i}),w=f(()=>({[B.selectors.segment]:T({},V)}));return(i,a)=>(s(),n("div",M,[m(r(S),{config:y.value,class:"mx-auto aspect-square max-h-[260px] w-full"},{default:_(()=>[m(r($),{data:b.value,margin:{top:4,bottom:4}},{default:_(()=>[m(r(Z),{value:e=>e.winProbability,color:e=>e.fill,"arc-width":28},null,8,["value","color"]),m(r(D),{triggers:w.value},null,8,["triggers"])]),_:1},8,["data"])]),_:1},8,["config"]),t("ul",O,[(s(!0),n(h,null,x(b.value,e=>(s(),n("li",{key:e.key,class:"flex items-center justify-between gap-3"},[t("span",z,[t("span",{class:"size-2.5 shrink-0 rounded-xs",style:v({backgroundColor:e.fill}),"aria-hidden":"true"},null,4),t("span",{class:"truncate font-medium",title:e.name},[e.key==="others"?(s(),n(h,{key:0},[W(p(e.name),1)],64)):(s(),n(h,{key:1},[t("span",E,p(r(F)(e.name)),1),t("span",I,p(e.name),1)],64))],8,A)]),t("span",j,p(r(L)(e.winProbability)),1)]))),128))])]))}});d.__docgenInfo={exportName:"default",displayName:"WinProbabilityPieChartPattern",description:"",tags:{},sourceFiles:["/home/runner/work/win-predict-ai-ui/win-predict-ai-ui/stories/patterns/demos/WinProbabilityPieChartPattern.vue"]};const ne={title:"Win Predict AI / Patterns / WinProbabilityPieChart",component:d,tags:["autodocs"]},c={render:()=>({components:{WinProbabilityPieChartPattern:d},template:"<WinProbabilityPieChartPattern />"})},l={parameters:{viewport:{defaultViewport:"mobile1"}},render:()=>({components:{WinProbabilityPieChartPattern:d},template:"<WinProbabilityPieChartPattern />"})},{ZincLight:se,ZincDark:le,SlateTealLight:ce,SlateTealDark:me,ClaudePlusLight:pe,ClaudePlusDark:de}=k(c);c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:`{
+  render: () => ({
+    components: {
+      WinProbabilityPieChartPattern
+    },
+    template: '<WinProbabilityPieChartPattern />'
+  })
+}`,...c.parameters?.docs?.source}}};l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  parameters: {
+    viewport: {
+      defaultViewport: 'mobile1'
+    }
+  },
+  render: () => ({
+    components: {
+      WinProbabilityPieChartPattern
+    },
+    template: '<WinProbabilityPieChartPattern />'
+  })
+}`,...l.parameters?.docs?.source},description:{story:"Narrow viewport — league abbreviations in legend.",...l.parameters?.docs?.description}}};const ue=["Default","Mobile","ZincLight","ZincDark","SlateTealLight","SlateTealDark","ClaudePlusLight","ClaudePlusDark"];export{de as ClaudePlusDark,pe as ClaudePlusLight,c as Default,l as Mobile,me as SlateTealDark,ce as SlateTealLight,le as ZincDark,se as ZincLight,ue as __namedExportsOrder,ne as default};
