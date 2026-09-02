@@ -25,7 +25,7 @@ export const Pinned: Story = {
   }),
 }
 
-/** Narrow viewport — nicknames visible without resizing the canvas manually. */
+/** Narrow viewport — league abbreviations visible without resizing the canvas manually. */
 export const Mobile: Story = {
   parameters: {
     viewport: { defaultViewport: 'mobile1' },

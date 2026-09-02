@@ -29,6 +29,18 @@ export const WithChart: Story = {
   }),
 }
 
+/** Narrow viewport — abbreviations in table and pie legend. */
+export const Mobile: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'mobile1' },
+  },
+  render: () => ({
+    components: { TournamentStandingsPanelPattern },
+    setup: () => ({ teams: mlbWorldSeriesTeams }),
+    template: '<TournamentStandingsPanelPattern :teams="teams" show-chart />',
+  }),
+}
+
 export const Compact: Story = {
   render: () => ({
     components: { TournamentStandingsPanelPattern },

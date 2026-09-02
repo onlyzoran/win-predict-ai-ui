@@ -1,53 +1,59 @@
 import { describe, expect, it } from 'vitest'
-import { shortTeamName, teamNameLabels } from './shortTeamName'
+import { shortTeamName, teamAbbreviation, teamNameLabels } from './shortTeamName'
 
-describe('shortTeamName', () => {
-  it('uses the last word as nickname', () => {
-    expect(shortTeamName('New York Yankees')).toBe('Yankees')
-    expect(shortTeamName('Los Angeles Dodgers')).toBe('Dodgers')
-    expect(shortTeamName('Milwaukee Brewers')).toBe('Brewers')
-    expect(shortTeamName('Philadelphia Phillies')).toBe('Phillies')
-    expect(shortTeamName('Houston Astros')).toBe('Astros')
-    expect(shortTeamName('Baltimore Orioles')).toBe('Orioles')
+describe('teamAbbreviation', () => {
+  it('maps MLB teams to official 3-letter codes', () => {
+    expect(teamAbbreviation('Cincinnati Reds')).toBe('CIN')
+    expect(teamAbbreviation('Milwaukee Brewers')).toBe('MIL')
+    expect(teamAbbreviation('Los Angeles Dodgers')).toBe('LAD')
+    expect(teamAbbreviation('Boston Red Sox')).toBe('BOS')
+    expect(teamAbbreviation('New York Yankees')).toBe('NYY')
+    expect(teamAbbreviation('Philadelphia Phillies')).toBe('PHI')
+    expect(teamAbbreviation('Houston Astros')).toBe('HOU')
+    expect(teamAbbreviation('Baltimore Orioles')).toBe('BAL')
+    expect(teamAbbreviation('Toronto Blue Jays')).toBe('TOR')
+    expect(teamAbbreviation('Chicago White Sox')).toBe('CWS')
   })
 
-  it('keeps multi-word MLB nicknames intact', () => {
-    expect(shortTeamName('Boston Red Sox')).toBe('Red Sox')
-    expect(shortTeamName('Chicago White Sox')).toBe('White Sox')
-    expect(shortTeamName('Toronto Blue Jays')).toBe('Blue Jays')
-  })
-
-  it('passes through single-word names', () => {
-    expect(shortTeamName('Athletics')).toBe('Athletics')
-    expect(shortTeamName('Arsenal')).toBe('Arsenal')
+  it('does not abbreviate Others aggregates', () => {
+    expect(teamAbbreviation('Others (3)')).toBe('Others (3)')
+    expect(teamAbbreviation('Others (12)')).toBe('Others (12)')
   })
 
   it('trims surrounding whitespace', () => {
-    expect(shortTeamName('  New York Yankees  ')).toBe('Yankees')
+    expect(teamAbbreviation('  Cincinnati Reds  ')).toBe('CIN')
   })
 
   it('returns empty string for empty input', () => {
-    expect(shortTeamName('')).toBe('')
-    expect(shortTeamName('   ')).toBe('')
+    expect(teamAbbreviation('')).toBe('')
+    expect(teamAbbreviation('   ')).toBe('')
   })
 
-  it('does not split compound nicknames that are not in the exception list', () => {
-    expect(shortTeamName('Golden State Warriors')).toBe('Warriors')
+  it('falls back for unknown teams', () => {
+    expect(teamAbbreviation('Arsenal')).toBe('ARS')
+    expect(teamAbbreviation('Golden State Warriors')).toBe('GSW')
+  })
+})
+
+describe('shortTeamName', () => {
+  it('is an alias for teamAbbreviation', () => {
+    expect(shortTeamName('Milwaukee Brewers')).toBe('MIL')
+    expect(shortTeamName('Others (2)')).toBe('Others (2)')
   })
 })
 
 describe('teamNameLabels', () => {
-  it('returns full and short labels', () => {
+  it('returns full and abbreviated labels', () => {
     expect(teamNameLabels('Boston Red Sox')).toEqual({
       full: 'Boston Red Sox',
-      short: 'Red Sox',
+      short: 'BOS',
     })
   })
 
   it('trims the full label', () => {
-    expect(teamNameLabels('  New York Yankees  ')).toEqual({
-      full: 'New York Yankees',
-      short: 'Yankees',
+    expect(teamNameLabels('  Los Angeles Dodgers  ')).toEqual({
+      full: 'Los Angeles Dodgers',
+      short: 'LAD',
     })
   })
 })

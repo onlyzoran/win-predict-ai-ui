@@ -1,7 +1,8 @@
 export { cn } from './utils/cn'
 export {
-  MULTI_WORD_NICKNAMES,
+  MLB_TEAM_ABBREVIATIONS,
   shortTeamName,
+  teamAbbreviation,
   teamNameLabels,
   type TeamNameLabels,
 } from './utils/shortTeamName'

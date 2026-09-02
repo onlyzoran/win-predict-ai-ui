@@ -25,7 +25,7 @@ export function abbreviateGroup(group: string): string {
   return group.slice(0, 3).toUpperCase()
 }
 
-export { shortTeamName, teamNameLabels } from '../../src/utils/shortTeamName'
+export { shortTeamName, teamAbbreviation, teamNameLabels } from '../../src/utils/shortTeamName'
 
 export function hasWinsStandings(
   teams: Array<{ standings?: { wins: number } }>,

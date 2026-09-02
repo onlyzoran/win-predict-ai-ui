@@ -167,12 +167,12 @@ function labelClass(teamName: string): string {
 </script>
 
 <template>
-  <div data-testid="standings-rank-chart" class="w-full space-y-3">
-    <h3 class="text-sm font-medium">Rank movement</h3>
+  <div data-testid="standings-rank-chart" class="w-full min-w-0 space-y-3">
+    <h3 class="text-sm font-medium max-md:px-4 md:px-0">Rank movement</h3>
 
-    <div class="flex w-full gap-2">
+    <div class="flex w-full min-w-0 gap-1 md:gap-2">
       <ul
-        class="relative w-24 shrink-0 sm:w-32 md:w-36"
+        class="relative w-10 shrink-0 sm:w-11 md:w-36"
         :style="{ height: `${PLOT_HEIGHT_PX}px` }"
         aria-label="Start standings"
       >
@@ -242,7 +242,7 @@ function labelClass(teamName: string): string {
       </div>
 
       <ul
-        class="relative w-24 shrink-0 sm:w-32 md:w-36"
+        class="relative w-10 shrink-0 sm:w-11 md:w-36"
         :style="{ height: `${PLOT_HEIGHT_PX}px` }"
         aria-label="Latest standings"
       >

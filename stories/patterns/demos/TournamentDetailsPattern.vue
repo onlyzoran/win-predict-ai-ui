@@ -72,7 +72,7 @@ const progress = 64
         </div>
       </TabsContent>
 
-      <TabsContent value="movement" class="mt-4 w-full px-4">
+      <TabsContent value="movement" class="mt-4 w-full max-md:px-0 md:px-4">
         <StandingsRankChartPattern :series="mockRankSeries" />
       </TabsContent>
 
