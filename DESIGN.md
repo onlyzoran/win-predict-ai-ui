@@ -57,7 +57,7 @@
 
 **Charts:** пять различимых hue — `chart-1` sage (final), `chart-2` butter (intermediate), `chart-3` sky, `chart-4` coral, `chart-5` lavender.
 
-Storybook: `Palette` → Pastel Light/Dark; `Pastel` → terminal с финальными/промежуточными badges.
+Storybook: `Palette` → Pastel Light/Dark; `Pastel` → terminal + result cards; `Card` → ResultOutcomes (sage/butter badges).
 
 ### BrandTitle
 

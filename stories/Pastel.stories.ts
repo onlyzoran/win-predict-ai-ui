@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { IconLogin } from '@onlyzoran/win-predict-ai-icons'
 import AppHeaderShell from '../src/components/AppHeaderShell.vue'
 import BrandTitle from '../src/components/BrandTitle.vue'
+import MatchResultCardsDemo from './MatchResultCardsDemo.vue'
 
 const locales = ['en', 'ru'] as const
 const localeLabels: Record<string, string> = {
@@ -89,6 +90,8 @@ function terminalTemplate() {
             </span>
           </div>
 
+          <MatchResultCardsDemo />
+
           <div class="flex h-20 items-end gap-2 rounded-lg border border-border bg-card p-3">
             <div class="h-[72%] flex-1 rounded-sm bg-chart-1" title="Final" />
             <div class="h-[48%] flex-1 rounded-sm bg-chart-2" title="Intermediate" />
@@ -155,7 +158,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   globals: { theme: 'pastel-light' },
   render: () => ({
-    components: { AppHeaderShell, IconLogin, BrandTitle },
+    components: { AppHeaderShell, IconLogin, BrandTitle, MatchResultCardsDemo },
     setup() {
       const locale = ref('en')
       return { locale, locales, localeLabels, standings }
@@ -167,7 +170,7 @@ export const Default: Story = {
 export const Light: Story = {
   globals: { theme: 'pastel-light' },
   render: () => ({
-    components: { AppHeaderShell, IconLogin, BrandTitle },
+    components: { AppHeaderShell, IconLogin, BrandTitle, MatchResultCardsDemo },
     setup() {
       const locale = ref('en')
       return { locale, locales, localeLabels, standings }
@@ -179,11 +182,54 @@ export const Light: Story = {
 export const Dark: Story = {
   globals: { theme: 'pastel-dark' },
   render: () => ({
-    components: { AppHeaderShell, IconLogin, BrandTitle },
+    components: { AppHeaderShell, IconLogin, BrandTitle, MatchResultCardsDemo },
     setup() {
       const locale = ref('en')
       return { locale, locales, localeLabels, standings }
     },
     template: terminalTemplate(),
+  }),
+}
+
+/** Карточки итогов на пастельной палитре — без полного terminal chrome. */
+export const ResultCards: Story = {
+  globals: { theme: 'pastel-light' },
+  parameters: {
+    layout: 'padded',
+  },
+  render: () => ({
+    components: { MatchResultCardsDemo },
+    template: `
+      <div class="mx-auto flex w-full max-w-4xl flex-col gap-4">
+        <div>
+          <h1 class="text-lg font-semibold text-foreground">Result outcome cards</h1>
+          <p class="text-sm text-muted-foreground">
+            Sage (chart-1) — final · Butter (chart-2) — in progress
+          </p>
+        </div>
+        <MatchResultCardsDemo />
+      </div>
+    `,
+  }),
+}
+
+export const ResultCardsDark: Story = {
+  globals: { theme: 'pastel-dark' },
+  parameters: {
+    layout: 'padded',
+  },
+  render: () => ({
+    components: { MatchResultCardsDemo },
+    template: `
+      <div class="mx-auto flex w-full max-w-4xl flex-col gap-4">
+        <div>
+          <h1 class="text-lg font-semibold text-foreground">Result outcome cards</h1>
+          <p class="text-sm text-muted-foreground">
+            Sage (chart-1) — final · Butter (chart-2) — in progress
+          </p>
+        </div>
+        <MatchResultCardsDemo />
+      </div>
+    `,
   }),
 }
