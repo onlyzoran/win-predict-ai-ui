@@ -9,7 +9,7 @@ import {
   componentToString,
 } from '../../../src/components/ui/chart'
 import { mlbWorldSeriesTeams } from '../fixtures/teams'
-import { formatPercent } from '../utils'
+import { formatPercent, shortTeamName } from '../utils'
 import WinProbabilityPieTooltipPattern from './WinProbabilityPieTooltipPattern.vue'
 
 interface PieSlice {
@@ -77,7 +77,13 @@ const tooltipTriggers = computed(() => ({
             :style="{ backgroundColor: slice.fill }"
             aria-hidden="true"
           />
-          <span class="truncate font-medium">{{ slice.name }}</span>
+          <span class="truncate font-medium" :title="slice.name">
+            <template v-if="slice.key === 'others'">{{ slice.name }}</template>
+            <template v-else>
+              <span class="md:hidden">{{ shortTeamName(slice.name) }}</span>
+              <span class="hidden md:inline">{{ slice.name }}</span>
+            </template>
+          </span>
         </span>
         <span class="shrink-0 text-muted-foreground tabular-nums">
           {{ formatPercent(slice.winProbability) }}

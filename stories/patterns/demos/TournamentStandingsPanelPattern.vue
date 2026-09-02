@@ -17,6 +17,7 @@ import {
   formatRecord,
   formatWinPercent,
   hasWinsStandings,
+  shortTeamName,
 } from '../utils'
 import WinProbabilityPieTooltipPattern from './WinProbabilityPieTooltipPattern.vue'
 
@@ -118,7 +119,12 @@ const tooltipTriggers = computed(() => ({
             class="border-border"
             :class="index < teams.length - 1 ? 'border-b' : undefined"
           >
-            <td class="truncate py-2 pr-3 font-medium">{{ team.name }}</td>
+            <td class="truncate py-2 pr-3 font-medium">
+              <span :title="team.name">
+                <span class="md:hidden">{{ shortTeamName(team.name) }}</span>
+                <span class="hidden md:inline">{{ team.name }}</span>
+              </span>
+            </td>
             <template v-if="!compact">
               <td class="hidden py-2 text-center tabular-nums text-muted-foreground md:table-cell">
                 {{ team.standings ? abbreviateGroup(team.standings.group) : '—' }}
@@ -157,7 +163,10 @@ const tooltipTriggers = computed(() => ({
     <div v-else>
       <div v-for="(team, index) in teams" :key="team.id">
         <div class="flex items-center justify-between gap-3 py-2">
-          <span class="truncate font-medium">{{ team.name }}</span>
+          <span class="truncate font-medium" :title="team.name">
+            <span class="md:hidden">{{ shortTeamName(team.name) }}</span>
+            <span class="hidden md:inline">{{ team.name }}</span>
+          </span>
           <Badge variant="secondary" class="shrink-0">
             {{ formatPercent(team.winProbability) }}
           </Badge>
@@ -186,7 +195,13 @@ const tooltipTriggers = computed(() => ({
               :style="{ backgroundColor: slice.fill }"
               aria-hidden="true"
             />
-            <span class="truncate font-medium">{{ slice.name }}</span>
+            <span class="truncate font-medium" :title="slice.name">
+              <template v-if="slice.key === 'others'">{{ slice.name }}</template>
+              <template v-else>
+                <span class="md:hidden">{{ shortTeamName(slice.name) }}</span>
+                <span class="hidden md:inline">{{ slice.name }}</span>
+              </template>
+            </span>
           </span>
           <span class="shrink-0 text-muted-foreground tabular-nums">
             {{ formatPercent(slice.winProbability) }}

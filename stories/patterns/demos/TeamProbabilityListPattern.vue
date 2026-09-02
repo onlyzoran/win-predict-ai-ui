@@ -13,7 +13,7 @@ import {
 import { Progress } from '../../../src/components/ui/progress'
 import { Separator } from '../../../src/components/ui/separator'
 import { leagueCardTeams } from '../fixtures/teams'
-import { formatPercent } from '../utils'
+import { formatPercent, shortTeamName } from '../utils'
 
 const props = withDefaults(
   defineProps<{
@@ -66,7 +66,13 @@ const visibleTeams = computed(() => {
     <CardContent class="p-0">
       <div v-for="(team, index) in visibleTeams" :key="team.id">
         <div class="flex items-center justify-between px-4 py-2">
-          <span class="font-medium">{{ team.name }}</span>
+          <span class="font-medium" :title="team.id === 'others' ? undefined : team.name">
+            <template v-if="team.id === 'others'">{{ team.name }}</template>
+            <template v-else>
+              <span class="md:hidden">{{ shortTeamName(team.name) }}</span>
+              <span class="hidden md:inline">{{ team.name }}</span>
+            </template>
+          </span>
           <Badge variant="secondary">
             {{ formatPercent(team.winProbability) }}
           </Badge>
