@@ -1,25 +1,12 @@
-<script setup lang="ts" generic="TItem">
+<script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
 import { cn } from '../utils/cn'
 import type { CategorySliderCategory } from './category-slider-layout'
 
-const props = withDefaults(
-  defineProps<{
-    category: CategorySliderCategory<TItem>
-    trackClass?: HTMLAttributes['class']
-    itemClass?: HTMLAttributes['class']
-  }>(),
-  {},
-)
-
-defineSlots<{
-  header(props: { category: CategorySliderCategory<TItem> }): unknown
-  item(props: {
-    item: TItem
-    category: CategorySliderCategory<TItem>
-    index: number
-  }): unknown
-  empty(props: { category: CategorySliderCategory<TItem> }): unknown
+const props = defineProps<{
+  category: CategorySliderCategory
+  trackClass?: HTMLAttributes['class']
+  itemClass?: HTMLAttributes['class']
 }>()
 
 const headingId = `category-slider-${props.category.id}`
@@ -47,7 +34,7 @@ const headingId = `category-slider-${props.category.id}`
       :aria-label="category.title"
       :class="
         cn(
-          'flex gap-4 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
+          'flex w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
           trackClass,
         )
       "

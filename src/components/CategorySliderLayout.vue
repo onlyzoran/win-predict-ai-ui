@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="TItem">
+<script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
 import { cn } from '../utils/cn'
 import CategorySliderSection from './CategorySliderSection.vue'
@@ -6,7 +6,7 @@ import type { CategorySliderCategory } from './category-slider-layout'
 
 const props = withDefaults(
   defineProps<{
-    categories: CategorySliderCategory<TItem>[]
+    categories: CategorySliderCategory[]
     class?: HTMLAttributes['class']
     sectionClass?: HTMLAttributes['class']
     trackClass?: HTMLAttributes['class']
@@ -14,24 +14,15 @@ const props = withDefaults(
     ariaLabel?: string
   }>(),
   {
+    categories: () => [],
     ariaLabel: 'Category sliders',
   },
 )
-
-defineSlots<{
-  'category-header'(props: { category: CategorySliderCategory<TItem> }): unknown
-  item(props: {
-    item: TItem
-    category: CategorySliderCategory<TItem>
-    index: number
-  }): unknown
-  empty(props: { category: CategorySliderCategory<TItem> }): unknown
-}>()
 </script>
 
 <template>
   <div
-    :class="cn('flex flex-col gap-8 py-4', props.class)"
+    :class="cn('flex w-full min-w-0 flex-col gap-8 py-4', props.class)"
     :aria-label="ariaLabel"
   >
     <CategorySliderSection
@@ -42,14 +33,14 @@ defineSlots<{
       :item-class="itemClass"
       :class="sectionClass"
     >
-      <template #header="slotProps">
-        <slot name="category-header" v-bind="slotProps" />
+      <template #header="{ category }">
+        <slot name="category-header" :category="category" />
       </template>
-      <template #item="slotProps">
-        <slot name="item" v-bind="slotProps" />
+      <template #item="{ item, category, index }">
+        <slot name="item" :item="item" :category="category" :index="index" />
       </template>
-      <template #empty="slotProps">
-        <slot name="empty" v-bind="slotProps" />
+      <template #empty="{ category }">
+        <slot name="empty" :category="category" />
       </template>
     </CategorySliderSection>
   </div>

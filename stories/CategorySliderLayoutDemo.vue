@@ -109,7 +109,8 @@ function iconForCategory(categoryId: string): Component | undefined {
 </script>
 
 <template>
-  <CategorySliderLayout :categories="categories">
+  <div class="w-full min-w-0">
+    <CategorySliderLayout :categories="categories">
     <template #category-header="{ category }">
       <h2 class="flex items-center gap-2 text-base font-semibold tracking-tight text-foreground">
         <component
@@ -149,5 +150,6 @@ function iconForCategory(categoryId: string): Component | undefined {
         </CardFooter>
       </Card>
     </template>
-  </CategorySliderLayout>
+    </CategorySliderLayout>
+  </div>
 </template>
