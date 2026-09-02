@@ -7,6 +7,13 @@ export { default as LocaleSwitcher } from './components/LocaleSwitcher.vue'
 export { default as AppHeaderShell } from './components/AppHeaderShell.vue'
 export { default as BrandTitle } from './components/BrandTitle.vue'
 export { default as SearchInput } from './components/SearchInput.vue'
+export { default as CategorySliderLayout } from './components/CategorySliderLayout.vue'
+export { default as CategorySliderSection } from './components/CategorySliderSection.vue'
+export {
+  CATEGORY_SLIDER_LAYOUT_CONTENT_INSET,
+  CATEGORY_SLIDER_LAYOUT_SHOWS_FILTERS,
+  type CategorySliderCategory,
+} from './components/category-slider-layout'
 export { default as StandingsGlossary } from './components/StandingsGlossary.vue'
 export {
   FOOTBALL_STANDINGS_GLOSSARY,
